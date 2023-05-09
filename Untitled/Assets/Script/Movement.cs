@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     public float sens;
     private float mousex, mousey;
     private Vector3 MouseV3;
-    private GameObject cam;
+    public GameObject cam;
 
     //Sprint   
     private float speedlock;
@@ -40,7 +40,7 @@ public class Movement : MonoBehaviour
         JumpV3.y = jumphight;
         MouseV3.z = 0;
 
-        cam = GameObject.Find("Main Camera");
+        //cam = GameObject.Find("Main Camera");
         rb = GetComponent<Rigidbody>();
     }
 
