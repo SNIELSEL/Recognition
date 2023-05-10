@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BaseGun : MonoBehaviour
@@ -18,6 +19,8 @@ public class BaseGun : MonoBehaviour
 
     public AmmoType ammoType;
 
+    public TextMeshProUGUI AmmoText;
+
     public enum AmmoType
     {
         light,
@@ -28,6 +31,7 @@ public class BaseGun : MonoBehaviour
 
     private void Start()
     {
+        AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
         cam = GameObject.Find("Main Camera Shooting");
         fovMain = cam.GetComponent<Camera>().fieldOfView;
         player = GameObject.Find("Player Shooting").GetComponent<Movement>();
@@ -76,5 +80,6 @@ public class BaseGun : MonoBehaviour
     {
         print("Base reload");
         ammoCount = startAmmo;
+        AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
     }
 }
