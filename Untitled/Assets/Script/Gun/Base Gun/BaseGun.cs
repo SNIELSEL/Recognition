@@ -63,6 +63,7 @@ public class BaseGun : MonoBehaviour
             //Instantiate(hitmarker, hit.point, cam.transform.rotation);
 
             print(hit.transform.name);
+            Destroy(hit.transform.gameObject);
         }
     }
 
@@ -81,5 +82,7 @@ public class BaseGun : MonoBehaviour
         print("Base reload");
         ammoCount = startAmmo;
         AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
+
+        AmmoText.color = Color.black;
     }
 }

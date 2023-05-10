@@ -13,6 +13,11 @@ public class M4A1 : BaseGun
             recoil = new Vector3(recoilMain, 0, 0);
             cam.transform.eulerAngles -= recoil;
             base.AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
+            
+            if(ammoCount == 0)
+            {
+                AmmoText.color = Color.red;
+            }
         }
     }
 }
