@@ -6,17 +6,17 @@ public class M4A1 : BaseGun
 {
     public override void Shoot()
     {
-        if (shootDelay < timer && ammoCount > 0)
+        if (shootDelay < extra.timer && ammoCount > 0)
         {
             base.Shoot();
             ammoCount -= 1;
-            recoil = new Vector3(recoilMain, 0, 0);
-            cam.transform.eulerAngles -= recoil;
-            base.AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
+            extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
+            extra.cam.transform.eulerAngles -= extra.recoil;
+            base.extra.AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
             
             if(ammoCount == 0)
             {
-                AmmoText.color = Color.red;
+                extra.AmmoText.color = Color.red;
             }
         }
     }
