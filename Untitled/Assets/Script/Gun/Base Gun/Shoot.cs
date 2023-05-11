@@ -24,7 +24,7 @@ public class Shoot : MonoBehaviour
 
     private void Start()
     {
-        Player = GameObject.Find("Player Shooting").GetComponent<Movement>();
+        Player = GameObject.Find("Player").GetComponent<Movement>();
     }
 
     private void Update()
