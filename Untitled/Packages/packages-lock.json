@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.coffee.ui-particle": {
-      "version": "file:C:/Users/offic/Downloads/ParticleEffectForUGUI-main",
+      "version": "file:C:/Users/brian/Downloads/ParticleEffectForUGUI-main/ParticleEffectForUGUI-main",
       "depth": 0,
       "source": "local",
       "dependencies": {}
@@ -66,6 +66,15 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.4.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.newtonsoft-json": {
