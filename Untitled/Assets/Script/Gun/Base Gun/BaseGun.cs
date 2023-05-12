@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -14,7 +11,7 @@ public class BaseGun : MonoBehaviour
 
         public float bloomMain, fovMain;
 
-        public TextMeshProUGUI AmmoText;
+        public TextMeshProUGUI ammoText, aim;
 
         public float timer;
     }
@@ -53,8 +50,12 @@ public class BaseGun : MonoBehaviour
         extra = new Extra();
         stats = new ShootingStats();
 
-        extra.AmmoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
-        extra.AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
+        stats.accurate = stats.hit / stats.fired * 100;
+
+        extra.ammoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
+        extra.ammoText.text = ammoCount.ToString() + "/" + startAmmo;
+        extra.aim = GameObject.Find("Accurate").GetComponent<TextMeshProUGUI>();
+        extra.aim.text = "100" + "%";
         extra.cam = GameObject.Find("Main Camera");
         extra.fovMain = extra.cam.GetComponent<Camera>().fieldOfView;
         extra.hitmarker = GameObject.Find("HitMarker");
@@ -88,13 +89,18 @@ public class BaseGun : MonoBehaviour
         {
             stats.hit += 1;
 
-            print(hit.transform.name);
-            Destroy(hit.transform.gameObject);
+            if (hit.transform.parent.tag == "targets")
+            {
+                if (hit.transform.tag == "tile")
+                {
+                    hit.transform.GetComponent<Tile>().Hit();
+                }
+            }
         }
 
-        stats.accurate = stats.hit / stats.fired * 100;
+        stats.accurate = (int)(stats.hit / stats.fired * 100);
 
-        print(stats.accurate);
+        extra.aim.text = stats.accurate.ToString() + "%";
     }
 
     public virtual void ADS()
@@ -111,8 +117,8 @@ public class BaseGun : MonoBehaviour
     {
         print("Base reload");
         ammoCount = startAmmo;
-        extra.AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
+        extra.ammoText.text = ammoCount.ToString() + "/" + startAmmo;
 
-        extra.AmmoText.color = Color.black;
+        extra.ammoText.color = Color.black;
     }
 }
