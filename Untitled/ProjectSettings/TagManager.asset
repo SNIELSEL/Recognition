@@ -6,6 +6,8 @@ TagManager:
   tags:
   - tile
   - targets
+  - Ground
+  - Falling
   layers:
   - Default
   - TransparentFX
