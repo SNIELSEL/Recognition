@@ -95,6 +95,11 @@ public class BaseGun : MonoBehaviour
                 {
                     hit.transform.GetComponent<Tile>().Hit();
                 }
+
+                if (hit.transform.tag == "Falling")
+                {
+                    hit.transform.GetComponent<Falling>().Hit();
+                }
             }
         }
 
