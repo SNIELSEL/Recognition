@@ -8,6 +8,7 @@ TagManager:
   - targets
   - Ground
   - Falling
+  - weapon
   layers:
   - Default
   - TransparentFX

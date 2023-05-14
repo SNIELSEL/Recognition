@@ -14,7 +14,7 @@ public class M16 : BaseGun
                 base.Shoot();
                 extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
                 extra.cam.transform.eulerAngles -= extra.recoil;
-                base.extra.ammoText.text = ammoCount.ToString() + "/" + startAmmo;
+                base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
                 if (extra.infiniteAmmo == false)
                 {
@@ -29,7 +29,7 @@ public class M16 : BaseGun
                 base.Shoot();
                 extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
                 extra.cam.transform.eulerAngles -= extra.recoil;
-                base.extra.ammoText.text = ammoCount.ToString() + "/" + startAmmo;
+                base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
                 if (extra.infiniteAmmo == false)
                 {
@@ -44,7 +44,7 @@ public class M16 : BaseGun
                 base.Shoot();
                 extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
                 extra.cam.transform.eulerAngles -= extra.recoil;
-                base.extra.ammoText.text = ammoCount.ToString() + "/" + startAmmo;
+                base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
                 if (extra.infiniteAmmo == false)
                 {

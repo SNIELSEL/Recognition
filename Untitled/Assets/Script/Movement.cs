@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     private float hor, vert;
     private Vector3 MoveV3;
     private RaycastHit face;
+    private GameObject block;
 
     //Rotation
     public float sens;
@@ -40,8 +41,9 @@ public class Movement : MonoBehaviour
         JumpV3.y = jumphight;
         MouseV3.z = 0;
 
-        //cam = GameObject.Find("Main Camera");
+        cam = GameObject.Find("Main Camera");
         rb = GetComponent<Rigidbody>();
+        block = GameObject.Find("Block");
     }
 
     private void Update()
@@ -83,20 +85,57 @@ public class Movement : MonoBehaviour
             MoveV3.x = hor;
         }
 
+        MoveBlock();
+
         Debug.DrawRay(transform.position, transform.forward * 1.01f, Color.green);
 
-        if (Physics.Raycast(transform.position, transform.forward, out face, .5f) && face.transform.tag != "weapon")
+        MoveV3.z = vert;
+
+        transform.Translate(MoveV3* Time.deltaTime * movespeed);
+    }
+
+    public void MoveBlock()
+    {
+        Debug.DrawRay(block.transform.position, transform.forward * .5f, Color.magenta);
+        Debug.DrawRay(block.transform.position, -transform.forward * .5f, Color.magenta);
+        Debug.DrawRay(block.transform.position, transform.right * .5f, Color.magenta);
+        Debug.DrawRay(block.transform.position, -transform.right * .5f, Color.magenta);
+
+        if (Physics.Raycast(block.transform.position, transform.forward, out face, .5f) && face.transform.tag != "weapon")
         {
-            print("Block");
+            print("BlockVert1");
             if (vert > 0)
             {
                 vert = 0;
             }
         }
 
-        MoveV3.z = vert;
+        if (Physics.Raycast(block.transform.position, -transform.forward, out face, .5f) && face.transform.tag != "weapon")
+        {
+            print("BlockVert2");
+            if (vert < 0)
+            {
+                vert = 0;
+            }
+        }
 
-        transform.Translate(MoveV3* Time.deltaTime * movespeed);
+        if (Physics.Raycast(block.transform.position, transform.right, out face, .5f) && face.transform.tag != "weapon")
+        {
+            print("BlockHor1");
+            if (hor < 0)
+            {
+                hor = 0;
+            }
+        }
+
+        if (Physics.Raycast(block.transform.position, -transform.right, out face, .5f) && face.transform.tag != "weapon")
+        {
+            print("BlockHor2");
+            if (hor > 0)
+            {
+                hor = 0;
+            }
+        }
     }
 
     private void Rotation()
