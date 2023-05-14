@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BaseGun : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class BaseGun : MonoBehaviour
         public TextMeshProUGUI ammoText, aim;
 
         public float timer;
+
+        public bool infiniteAmmo;
     }
 
     public class ShootingStats
@@ -39,7 +42,7 @@ public class BaseGun : MonoBehaviour
 
     //Private
 
-    private GameObject ADSloc;
+    private GameObject ADSloc, hipfireLoc, infiniteAmmoIcon;
 
     private Movement player;
 
@@ -64,11 +67,38 @@ public class BaseGun : MonoBehaviour
 
         player = GameObject.Find("Player").GetComponent<Movement>();
         ADSloc = GameObject.Find("ADS");
+        hipfireLoc = GameObject.Find("Hand");
+        infiniteAmmoIcon = GameObject.Find("infiniteAmmo");
     }
 
     private void Update()
     {
         extra.timer += Time.deltaTime;
+
+        if (Input.GetKeyUp(KeyCode.I))
+        {
+            if (extra.infiniteAmmo == false)
+            {
+                extra.infiniteAmmo = true;
+                infiniteAmmoIcon.GetComponent<Toggle>().isOn = true;
+            }
+
+            else if (extra.infiniteAmmo == true)
+            {
+                extra.infiniteAmmo = false;
+                infiniteAmmoIcon.GetComponent<Toggle>().isOn = false;
+            }
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            ADS();
+        }
+
+        else
+        {
+            Normal();
+        }
     }
 
     public virtual void Shoot()
@@ -111,12 +141,20 @@ public class BaseGun : MonoBehaviour
 
     public virtual void ADS()
     {
-
+        transform.SetParent(ADSloc.transform);
+        transform.localScale = Vector3.zero;
+        transform.localRotation = Quaternion.Euler(Vector3.zero);
+        transform.localPosition = Vector3.zero;
+        transform.localScale = Vector3.one;
     }
 
     public virtual void Normal()
     {
-
+        transform.SetParent(hipfireLoc.transform);
+        transform.localScale = Vector3.zero;
+        transform.localRotation = Quaternion.Euler(Vector3.zero);
+        transform.localPosition = Vector3.zero;
+        transform.localScale = Vector3.one;
     }
 
     public virtual void Reload()
