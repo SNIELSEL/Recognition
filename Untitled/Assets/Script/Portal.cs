@@ -13,7 +13,7 @@ public class Portal : MonoBehaviour
 
     private void Update()
     {
-        gamePlayer.transform.eulerAngles = Player.transform.eulerAngles;
+        //gamePlayer.transform.eulerAngles = Player.transform.eulerAngles;
     }
 
     private void OnTriggerEnter(Collider other)
