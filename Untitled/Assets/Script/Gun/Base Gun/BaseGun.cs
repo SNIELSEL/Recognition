@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ public class BaseGun : MonoBehaviour
         public Vector3 bloom, recoil;
 
         public float bloomMain, fovMain;
+
+        public int startAmmo;
 
         public TextMeshProUGUI ammoText, aim;
 
@@ -27,7 +30,7 @@ public class BaseGun : MonoBehaviour
     //Public
 
     public string nameWeapon;
-    public int startAmmo, ammoCount, maxDistance, damage;
+    public int ammoCount, maxDistance, damage;
     public float bloomRange, shootDelay, recoilMain, zoom;
     public AmmoType ammoType;
 
@@ -56,13 +59,15 @@ public class BaseGun : MonoBehaviour
         stats.accurate = stats.hit / stats.fired * 100;
 
         extra.ammoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
-        extra.ammoText.text = ammoCount.ToString() + "/" + startAmmo;
+        extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
         extra.aim = GameObject.Find("Accurate").GetComponent<TextMeshProUGUI>();
         extra.aim.text = "100" + "%";
         extra.cam = GameObject.Find("Main Camera");
         extra.fovMain = extra.cam.GetComponent<Camera>().fieldOfView;
         extra.hitmarker = GameObject.Find("HitMarker");
+        extra.hitmarker.SetActive(false);
 
+        extra.startAmmo = ammoCount;
 
         player = GameObject.Find("Player").GetComponent<Movement>();
         ADSloc = GameObject.Find("ADS");
@@ -119,6 +124,8 @@ public class BaseGun : MonoBehaviour
         {
             stats.hit += 1;
 
+            Hit();
+
             if (hit.transform.parent.tag == "targets")
             {
                 if (hit.transform.tag == "tile")
@@ -136,6 +143,15 @@ public class BaseGun : MonoBehaviour
         stats.accurate = (int)(stats.hit / stats.fired * 100);
 
         extra.aim.text = stats.accurate.ToString() + "%";
+    }
+
+    public async void Hit()
+    {
+        extra.hitmarker.SetActive(true);
+
+        await Task.Delay(200);
+
+        extra.hitmarker.SetActive(false);
     }
 
     public virtual void ADS()
@@ -159,8 +175,8 @@ public class BaseGun : MonoBehaviour
     public virtual void Reload()
     {
         print("Base reload");
-        ammoCount = startAmmo;
-        extra.ammoText.text = ammoCount.ToString() + "/" + startAmmo;
+        ammoCount = extra.startAmmo;
+        extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
         extra.ammoText.color = Color.black;
     }
