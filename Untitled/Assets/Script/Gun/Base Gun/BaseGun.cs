@@ -57,18 +57,13 @@ public class BaseGun : MonoBehaviour
         extra = new Extra();
         stats = new ShootingStats();
 
-
-
-        extra.AmmoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
-        extra.AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
+        stats.accurate = stats.hit / stats.fired * 100;
 
         extra.startAmmo = ammoCount;
 
-        stats.accurate = stats.hit / stats.fired * 100;
-
-
         extra.ammoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
         extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+
         extra.aim = GameObject.Find("Accurate").GetComponent<TextMeshProUGUI>();
         extra.aim.text = "100" + "%";
 

@@ -63,9 +63,10 @@ public class M16 : BaseGun
 
                 base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
-            if (ammoCount == 0)
-            {
-                extra.ammoText.color = Color.red;
+                if (ammoCount == 0)
+                {
+                    extra.ammoText.color = Color.red;
+                }
             }
         }
     }
