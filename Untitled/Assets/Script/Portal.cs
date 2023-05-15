@@ -1,10 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
     public GameObject gamePlayer;
+
+    private GameObject Player;
+
+    private void Start()
+    {
+        Player = GameObject.Find("Main Camera");
+    }
+
+    private void Update()
+    {
+        //gamePlayer.transform.eulerAngles = Player.transform.eulerAngles;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

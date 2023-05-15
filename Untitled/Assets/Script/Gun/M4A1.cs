@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class M4A1 : BaseGun
@@ -9,19 +7,24 @@ public class M4A1 : BaseGun
         if (shootDelay < extra.timer && ammoCount > 0)
         {
             base.Shoot();
-            ammoCount -= 1;
             extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
             extra.cam.transform.eulerAngles -= extra.recoil;
-<<<<<<< Updated upstream
-            base.extra.AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
             
             if(ammoCount == 0)
-=======
+
 
             if (extra.infiniteAmmo == false)
->>>>>>> Stashed changes
+
+            base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+
+            if (extra.infiniteAmmo == false)
             {
-                extra.AmmoText.color = Color.red;
+                ammoCount -= 1;
+            }
+
+            if (ammoCount == 0)
+            {
+                extra.ammoText.color = Color.red;
             }
 
             base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;

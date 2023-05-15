@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BaseGun : MonoBehaviour
 {
@@ -15,9 +14,13 @@ public class BaseGun : MonoBehaviour
 
         public float bloomMain, fovMain;
 
-        public TextMeshProUGUI AmmoText;
+        public int startAmmo;
+
+        public TextMeshProUGUI ammoText, aim;
 
         public float timer;
+
+        public bool infiniteAmmo;
     }
 
     public class ShootingStats
@@ -28,7 +31,7 @@ public class BaseGun : MonoBehaviour
     //Public
 
     public string nameWeapon;
-    public int startAmmo, ammoCount, maxDistance, damage;
+    public int ammoCount, maxDistance, damage;
     public float bloomRange, shootDelay, recoilMain, zoom;
     public AmmoType ammoType;
 
@@ -42,7 +45,7 @@ public class BaseGun : MonoBehaviour
 
     //Private
 
-    private GameObject ADSloc;
+    private GameObject ADSloc, hipfireLoc, infiniteAmmoIcon;
 
     private Movement player;
 
@@ -54,33 +57,62 @@ public class BaseGun : MonoBehaviour
         extra = new Extra();
         stats = new ShootingStats();
 
-<<<<<<< Updated upstream
+
+
         extra.AmmoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
         extra.AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
-=======
-        stats.accurate = stats.hit / stats.fired * 100;
+
         extra.startAmmo = ammoCount;
+
+        stats.accurate = stats.hit / stats.fired * 100;
+
 
         extra.ammoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
         extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
         extra.aim = GameObject.Find("Accurate").GetComponent<TextMeshProUGUI>();
         extra.aim.text = "100" + "%";
->>>>>>> Stashed changes
+
         extra.cam = GameObject.Find("Main Camera");
         extra.fovMain = extra.cam.GetComponent<Camera>().fieldOfView;
         extra.hitmarker = GameObject.Find("HitMarker");
+        extra.hitmarker.SetActive(false);
 
-<<<<<<< Updated upstream
+        extra.startAmmo = ammoCount;
 
-=======
->>>>>>> Stashed changes
         player = GameObject.Find("Player").GetComponent<Movement>();
         ADSloc = GameObject.Find("ADS");
+        hipfireLoc = GameObject.Find("Hand");
+        infiniteAmmoIcon = GameObject.Find("infiniteAmmo");
     }
 
     private void Update()
     {
         extra.timer += Time.deltaTime;
+
+        if (Input.GetKeyUp(KeyCode.I))
+        {
+            if (extra.infiniteAmmo == false)
+            {
+                extra.infiniteAmmo = true;
+                infiniteAmmoIcon.GetComponent<Toggle>().isOn = true;
+            }
+
+            else if (extra.infiniteAmmo == true)
+            {
+                extra.infiniteAmmo = false;
+                infiniteAmmoIcon.GetComponent<Toggle>().isOn = false;
+            }
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            ADS();
+        }
+
+        else
+        {
+            Normal();
+        }
     }
 
     public virtual void Shoot()
@@ -102,31 +134,60 @@ public class BaseGun : MonoBehaviour
         {
             stats.hit += 1;
 
-            print(hit.transform.name);
-            Destroy(hit.transform.gameObject);
+            Hit();
+
+            if (hit.transform.parent.tag == "targets")
+            {
+                if (hit.transform.tag == "tile")
+                {
+                    hit.transform.GetComponent<Tile>().Hit();
+                }
+
+                if (hit.transform.tag == "Falling")
+                {
+                    hit.transform.GetComponent<Falling>().Hit();
+                }
+            }
         }
 
-        stats.accurate = stats.hit / stats.fired * 100;
+        stats.accurate = (int)(stats.hit / stats.fired * 100);
 
-        print(stats.accurate);
+        extra.aim.text = stats.accurate.ToString() + "%";
+    }
+
+    public async void Hit()
+    {
+        extra.hitmarker.SetActive(true);
+
+        await Task.Delay(200);
+
+        extra.hitmarker.SetActive(false);
     }
 
     public virtual void ADS()
     {
-
+        transform.SetParent(ADSloc.transform);
+        transform.localScale = Vector3.zero;
+        transform.localRotation = Quaternion.Euler(Vector3.zero);
+        transform.localPosition = Vector3.zero;
+        transform.localScale = Vector3.one;
     }
 
     public virtual void Normal()
     {
-
+        transform.SetParent(hipfireLoc.transform);
+        transform.localScale = Vector3.zero;
+        transform.localRotation = Quaternion.Euler(Vector3.zero);
+        transform.localPosition = Vector3.zero;
+        transform.localScale = Vector3.one;
     }
 
     public virtual void Reload()
     {
         print("Base reload");
-        ammoCount = startAmmo;
-        extra.AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
+        ammoCount = extra.startAmmo;
+        extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
-        extra.AmmoText.color = Color.black;
+        extra.ammoText.color = Color.black;
     }
 }
