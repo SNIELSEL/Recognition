@@ -9,17 +9,25 @@ public class M16 : BaseGun
     {
         if (shootDelay < extra.timer && ammoCount > 0)
         {
+
+            base.Shoot();
+            ammoCount -= 1;
+            extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
+            extra.cam.transform.eulerAngles -= extra.recoil;
+
             if (ammoCount > 0)
             {
                 base.Shoot();
                 extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
                 extra.cam.transform.eulerAngles -= extra.recoil;
-                base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
                 if (extra.infiniteAmmo == false)
                 {
                     ammoCount -= 1;
                 }
+
+                base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+
             }
 
             await Task.Delay(burstDelayMS);
@@ -29,12 +37,15 @@ public class M16 : BaseGun
                 base.Shoot();
                 extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
                 extra.cam.transform.eulerAngles -= extra.recoil;
-                base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
                 if (extra.infiniteAmmo == false)
                 {
                     ammoCount -= 1;
                 }
+
+                base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+
+
             }
 
             await Task.Delay(burstDelayMS);
@@ -44,13 +55,13 @@ public class M16 : BaseGun
                 base.Shoot();
                 extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
                 extra.cam.transform.eulerAngles -= extra.recoil;
-                base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
                 if (extra.infiniteAmmo == false)
                 {
                     ammoCount -= 1;
                 }
-            }
+
+                base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
             if (ammoCount == 0)
             {
