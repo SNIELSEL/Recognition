@@ -9,6 +9,12 @@ public class M4A1 : BaseGun
             base.Shoot();
             extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
             extra.cam.transform.eulerAngles -= extra.recoil;
+            
+            if(ammoCount == 0)
+
+
+            if (extra.infiniteAmmo == false)
+
             base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
             if (extra.infiniteAmmo == false)
@@ -20,6 +26,8 @@ public class M4A1 : BaseGun
             {
                 extra.ammoText.color = Color.red;
             }
+
+            base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
         }
     }
 }
