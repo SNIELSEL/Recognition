@@ -54,13 +54,26 @@ public class BaseGun : MonoBehaviour
         extra = new Extra();
         stats = new ShootingStats();
 
+<<<<<<< Updated upstream
         extra.AmmoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
         extra.AmmoText.text = ammoCount.ToString() + "/" + startAmmo;
+=======
+        stats.accurate = stats.hit / stats.fired * 100;
+        extra.startAmmo = ammoCount;
+
+        extra.ammoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
+        extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+        extra.aim = GameObject.Find("Accurate").GetComponent<TextMeshProUGUI>();
+        extra.aim.text = "100" + "%";
+>>>>>>> Stashed changes
         extra.cam = GameObject.Find("Main Camera");
         extra.fovMain = extra.cam.GetComponent<Camera>().fieldOfView;
         extra.hitmarker = GameObject.Find("HitMarker");
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         player = GameObject.Find("Player").GetComponent<Movement>();
         ADSloc = GameObject.Find("ADS");
     }
