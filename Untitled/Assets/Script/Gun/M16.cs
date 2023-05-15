@@ -52,9 +52,10 @@ public class M16 : BaseGun
                 }
             }
 
-            if (ammoCount == 0)
-            {
-                extra.ammoText.color = Color.red;
+                if (ammoCount == 0)
+                {
+                    extra.ammoText.color = Color.red;
+                }
             }
         }
     }

@@ -85,7 +85,7 @@ public class Movement : MonoBehaviour
             MoveV3.x = hor;
         }
 
-        MoveBlock();
+        //MoveBlock();
 
         Debug.DrawRay(transform.position, transform.forward * 1.01f, Color.green);
 
