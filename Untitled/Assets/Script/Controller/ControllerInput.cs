@@ -28,7 +28,7 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
             ""id"": ""d6eacde5-4d93-4407-9712-6db8a5851ab2"",
             ""actions"": [
                 {
-                    ""name"": ""Movement"",
+                    ""name"": ""PlayerMovement"",
                     ""type"": ""PassThrough"",
                     ""id"": ""28ba5527-ac40-46c8-aad3-895c15740b6b"",
                     ""expectedControlType"": """",
@@ -63,7 +63,7 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""PlayerMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -74,7 +74,7 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""PlayerMovement"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -85,7 +85,7 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""PlayerMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -96,7 +96,7 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""PlayerMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -107,7 +107,7 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""PlayerMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -118,14 +118,14 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""PlayerMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
                     ""id"": ""d30cdc81-54e0-4625-a587-c00872ea5787"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -154,6 +154,61 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Rotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Mouse"",
+                    ""id"": ""0bc00c47-5c49-4164-8746-3cfc08f57a02"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""b44c2b0e-0621-496b-b467-4bf06140be0e"",
+                    ""path"": ""<Mouse>/delta/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""08bbd2fd-40c6-4915-b9e5-bcec8789a468"",
+                    ""path"": ""<Mouse>/delta/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b97cf1d1-ef59-45be-8ecb-bf6944da9bc2"",
+                    ""path"": ""<Mouse>/scroll/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""6110810a-c59d-402e-92a2-c758fc94200c"",
+                    ""path"": ""<Mouse>/scroll/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -370,7 +425,7 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
 }");
         // Default
         m_Default = asset.FindActionMap("Default", throwIfNotFound: true);
-        m_Default_Movement = m_Default.FindAction("Movement", throwIfNotFound: true);
+        m_Default_PlayerMovement = m_Default.FindAction("PlayerMovement", throwIfNotFound: true);
         m_Default_Jump = m_Default.FindAction("Jump", throwIfNotFound: true);
         m_Default_Rotation = m_Default.FindAction("Rotation", throwIfNotFound: true);
         // InputActions
@@ -444,14 +499,14 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
     // Default
     private readonly InputActionMap m_Default;
     private IDefaultActions m_DefaultActionsCallbackInterface;
-    private readonly InputAction m_Default_Movement;
+    private readonly InputAction m_Default_PlayerMovement;
     private readonly InputAction m_Default_Jump;
     private readonly InputAction m_Default_Rotation;
     public struct DefaultActions
     {
         private @ControllerInput m_Wrapper;
         public DefaultActions(@ControllerInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_Default_Movement;
+        public InputAction @PlayerMovement => m_Wrapper.m_Default_PlayerMovement;
         public InputAction @Jump => m_Wrapper.m_Default_Jump;
         public InputAction @Rotation => m_Wrapper.m_Default_Rotation;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
@@ -463,9 +518,9 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_DefaultActionsCallbackInterface != null)
             {
-                @Movement.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnMovement;
-                @Movement.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnMovement;
-                @Movement.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnMovement;
+                @PlayerMovement.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPlayerMovement;
+                @PlayerMovement.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPlayerMovement;
+                @PlayerMovement.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnPlayerMovement;
                 @Jump.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnJump;
@@ -476,9 +531,9 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
             m_Wrapper.m_DefaultActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Movement.started += instance.OnMovement;
-                @Movement.performed += instance.OnMovement;
-                @Movement.canceled += instance.OnMovement;
+                @PlayerMovement.started += instance.OnPlayerMovement;
+                @PlayerMovement.performed += instance.OnPlayerMovement;
+                @PlayerMovement.canceled += instance.OnPlayerMovement;
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
@@ -596,7 +651,7 @@ public partial class @ControllerInput : IInputActionCollection2, IDisposable
     public InputActionsActions @InputActions => new InputActionsActions(this);
     public interface IDefaultActions
     {
-        void OnMovement(InputAction.CallbackContext context);
+        void OnPlayerMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnRotation(InputAction.CallbackContext context);
     }
