@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.coffee.ui-particle": {
-      "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
+      "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git#4.1.7",
       "depth": 0,
       "source": "git",
       "dependencies": {},
