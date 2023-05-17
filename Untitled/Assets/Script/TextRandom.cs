@@ -28,7 +28,7 @@ public class TextRandom : MonoBehaviour
             TextRandoms();
         }
     }
-
+    
     void TextRandoms()
     {
         chats = text.ToCharArray();
@@ -44,9 +44,7 @@ public class TextRandom : MonoBehaviour
                 }
             }
         }
-
         textMeshPro.text = new string(chats);
-
         return;
     }
 }

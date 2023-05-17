@@ -125,7 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linkedPortal: {fileID: 0}
   screen: {fileID: 5170575706487414486}
-  recursionLimit: 10
+
+  recursionLimit: 2
+
   nearClipOffset: 0.05
   nearClipLimit: 0.2
 --- !u!65 &3743597651704331079
@@ -136,7 +138,9 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3743597651704331074}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+
+  m_IsTrigger: 0
+
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 4.04, y: 2.69, z: 1.55}
@@ -222,13 +226,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56077d372be5d304395be8faa968d652, type: 3}
---- !u!4 &3070212415339125728 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 56077d372be5d304395be8faa968d652, type: 3}
+--- !u!1 &2436523540862206298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 56077d372be5d304395be8faa968d652, type: 3}
   m_PrefabInstance: {fileID: 3247425810544802827}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &5170575706487414486 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -1526509560930016547, guid: 56077d372be5d304395be8faa968d652, type: 3}
-  m_PrefabInstance: {fileID: 3247425810544802827}
+--- !u!64 &6075357557999702110
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2436523540862206298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6360558719573625917, guid: 56077d372be5d304395be8faa968d652, type: 3}
+
