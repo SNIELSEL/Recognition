@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -150,7 +150,7 @@ RectTransform:
   m_GameObject: {fileID: 620500032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.5505, y: 7.45, z: 1}
+  m_LocalScale: {x: 9.661987, y: 7.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2010337557}
@@ -227,7 +227,7 @@ RectTransform:
   m_GameObject: {fileID: 635662580}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2010337557}
@@ -236,7 +236,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 500}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635662582
 MonoBehaviour:
@@ -344,14 +344,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 635662580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3dd7d5a5daa8304ebb96d648a4717df, type: 3}
+  m_Script: {fileID: 11500000, guid: 290ddab37401ef545b8be8c5b7a535b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letters: 6100620063006400650066006700680069006a006b006c006d006e006f0070007100720073007400750076007700780079007a00
-  tekens: 60007e00210040002300240025005e0026002a00280029005f002d002b003d007b005b003a003c002c003f002f0027007c005c00
-  random: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  unlocked: 0000000000000000000000000000000000000000000000000000
-  text: 
+  text: test
   chats: 
 --- !u!1 &1266985477
 GameObject:
@@ -421,6 +417,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1622166911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1622166912}
+  - component: {fileID: 1622166913}
+  m_Layer: 0
+  m_Name: Keep
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1622166912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622166911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 285.77725, y: 159.3511, z: 1.4188433}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1622166913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622166911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3dd7d5a5daa8304ebb96d648a4717df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  letters: 6100620063006400650066006700680069006a006b006c006d006e006f0070007100720073007400750076007700780079007a00
+  tekens: 210040002300240025005e0026002a00280029005f002b003d007b005d007c005c003b003c003f0027007e007d005d0029003e00
+  random: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  unlocked: 0000000000000000000000000000000000000001000000000000
+  done: 0
 --- !u!1 &1998393061
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,12 +563,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3dd7d5a5daa8304ebb96d648a4717df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letters: 6100620063006400650066006700680069006a006b006c006d006e006f0070007100720073007400750076007700780079007a00
-  tekens: 60007e00210040002300240025005e0026002a00280029005f002d002b003d007b005b003a003c002c003f002f0027007c005c00
-  random: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  unlocked: 0000000000000000000000000000000000000000000000000000
-  text: hallo world
-  chats: 
+  letters: 
+  tekens: 
+  random: 
+  unlocked: 
+  done: 0
 --- !u!1 &2008465913
 GameObject:
   m_ObjectHideFlags: 0
