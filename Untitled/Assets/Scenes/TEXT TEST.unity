@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -150,7 +150,7 @@ RectTransform:
   m_GameObject: {fileID: 620500032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9.661987, y: 7.45, z: 1}
+  m_LocalScale: {x: 12.652372, y: 7.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2010337557}
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ddab37401ef545b8be8c5b7a535b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: test
+  text: test2
   chats: 
 --- !u!1 &1266985477
 GameObject:
@@ -462,9 +462,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letters: 6100620063006400650066006700680069006a006b006c006d006e006f0070007100720073007400750076007700780079007a00
+  numbers: 0000000000000000000000000000000000000000
   tekens: 210040002300240025005e0026002a00280029005f002b003d007b005d007c005c003b003c003f0027007e007d005d0029003e00
-  random: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  unlocked: 0000000000000000000000000000000000000001000000000000
+  randomL: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  randomN: 0000000000000000000000000000000000000000
+  unlockedL: 0000000000000000000000000000000000000000000000000000
+  unlockedN: 00000000000000000000
   done: 0
 --- !u!1 &1998393061
 GameObject:
@@ -564,9 +567,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letters: 
+  numbers: 
   tekens: 
-  random: 
-  unlocked: 
+  randomL: 
+  randomN: 
+  unlockedL: 
+  unlockedN: 
   done: 0
 --- !u!1 &2008465913
 GameObject:

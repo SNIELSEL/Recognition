@@ -6,18 +6,19 @@ using UnityEngine;
 
 public class LetterRandom : MonoBehaviour
 {
-    public char[] letters, tekens , random;
+    public char[] letters, numbers, tekens , randomL, randomN;
 
-    public bool[] unlocked;
+    public bool[] unlockedL, unlockedN;
 
     public bool done;
 
     private void Start()
     {
         letters = new char[] {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+        numbers = new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
         tekens = new char[] {'!', '@', '~', '$', '#', '%', '^', '&', '*', '(', ')', '-', '=', '+', '|', '[', ']', '{', '}', ';', '<', '>', '/', '?', '"', '€'};
 
-        LetterRandomV();
+        NumberRandomV();
     }
 
     private void Update()
@@ -32,17 +33,44 @@ public class LetterRandom : MonoBehaviour
     {
         for (int i = 0; i < letters.Length; i++)
         {
-            if (unlocked[i] == false)
+            if (unlockedL[i] == false)
             {
-                random[i] = tekens[Random.Range(0, 25)];
+                randomL[i] = tekens[Random.Range(0, 25)];
             }
 
             else
             {
-                random[i] = letters[i];
+                randomL[i] = letters[i];
             }
 
-            if (i == letters.Length) { 
+            if (i == letters.Length) 
+            {
+                //NumberRandomV();
+                print("LetterDone");
+            }
+
+        }
+
+        return;
+    }
+
+    void NumberRandomV()
+    {
+        for (int j = 0; j < numbers.Length; j++)
+        {
+            if (unlockedN[j] == false)
+            {
+                randomN[j] = tekens[Random.Range(0, 25)];
+            }
+
+            else
+            {
+                randomN[j] = letters[j];
+            }
+
+            if (j == letters.Length)
+            {
+                done = true;
             }
 
         }
