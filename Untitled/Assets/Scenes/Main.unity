@@ -2360,6 +2360,7 @@ GameObject:
   - component: {fileID: 1408768568}
   - component: {fileID: 1408768574}
   - component: {fileID: 1408768575}
+  - component: {fileID: 1408768576}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2509,7 +2510,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5b6f77c3c5d8249b4a98c25ac20e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+--- !u!114 &1408768576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408768567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 56e98e1ca86e86444ad7d9aa50722011, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a8603a35-608f-458f-a93a-10414996f1f1
+    m_ActionName: Deafult Movement/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fecf2d47-8106-4b39-97f5-2e929f8f327d
+    m_ActionName: Deafult Movement/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 140e4e71-3f29-4f12-bfc8-277d6b7bd5d8
+    m_ActionName: Deafult Movement/Rotation[/Mouse/position/y,/Mouse/position/x]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Deafult Movement
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1425549254
 PrefabInstance:
   m_ObjectHideFlags: 0
