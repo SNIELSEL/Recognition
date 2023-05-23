@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6170609463083308283
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -517247324034074566, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338244076479394619, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_Name
+      value: M4A1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338244076479394619, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338244076479394619, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_TagString
+      value: weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862719246767974785, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862719246767974785, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862719246767974785, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862719246767974785, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862719246767974785, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862719246767974785, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862719246767974785, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862719246767974785, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862719246767974785, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862719246767974785, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862719246767974785, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536948184679494915, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536948184679494915, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536948184679494915, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+--- !u!1 &5129614787708037056 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1338244076479394619, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
+  m_PrefabInstance: {fileID: 6170609463083308283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1509695628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5129614787708037056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdcd2f6f4b5dd84d9012d87682973f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameWeapon: M4A1
+  ammoCount: 30
+  maxDistance: 300
+  damage: 30
+  bloomRange: 1
+  shootDelay: 0.1
+  recoilMain: 1
+  zoom: 1
+  ammoType: 0
+--- !u!114 &1509695629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5129614787708037056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70156454de478b5438fbf348dc193dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sniper: 0
+  reload: 114
+  fireMode: 2

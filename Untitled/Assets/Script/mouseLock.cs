@@ -1,12 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 using UnityEngine.SceneManagement;
+using UnityEngine.Windows;
 
 public class mouseLock : MonoBehaviour
 {
     public bool isLocked;
-    public KeyCode lockButton;
+    private PlayerControlls playerControlls;
+    private InputAction action;
+
+    private void Awake()
+    {
+        playerControlls = new PlayerControlls();
+    }
+
+    public void OnEnable()
+    {
+        action = playerControlls.DeafultMovement.MouseLock;
+        action.Enable();
+        action.performed += Switch;
+    }
+
+    public void OnDisable()
+    {
+        action.Disable();
+    }
 
     private void Start()
     {
@@ -15,20 +36,21 @@ public class mouseLock : MonoBehaviour
 
         isLocked = true;
     }
+
+    public void Switch(InputAction.CallbackContext context)
+    {
+        if (isLocked == false)
+        {
+            isLocked = true;
+        }
+        else
+        {
+            isLocked = false;
+        }
+    }
+
     private void Update()
     {
-        if (Input.GetKeyUp(lockButton))
-        {
-            if (isLocked == false)
-            {
-                isLocked = true;
-            }
-            else
-            {
-                isLocked = false;
-            }
-        }
-
         if (isLocked == true)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -39,6 +61,5 @@ public class mouseLock : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-
     }
 }
