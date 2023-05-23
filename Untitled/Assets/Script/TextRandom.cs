@@ -17,8 +17,6 @@ public class TextRandom : MonoBehaviour
     {
         letters = GameObject.Find("Keep").GetComponent<LetterRandom>();
         textMeshPro = GetComponent<TextMeshProUGUI>();
-
-        TextRandoms();
     }
 
     private void Update()
@@ -28,7 +26,7 @@ public class TextRandom : MonoBehaviour
             TextRandoms();
         }
     }
-
+    
     void TextRandoms()
     {
         chats = text.ToCharArray();
@@ -40,13 +38,20 @@ public class TextRandom : MonoBehaviour
 
                 if (chats[i] == letters.letters[j])
                 {
-                    chats[i] = letters.random[j];
+                    chats[i] = letters.randomL[j];
+                }
+            }
+
+            for (int k = 0; k < letters.letters.Length; k++)
+            {
+
+                if (chats[i] == letters.numbers[k])
+                {
+                    chats[i] = letters.randomN[k];
                 }
             }
         }
-
         textMeshPro.text = new string(chats);
-
         return;
     }
 }
