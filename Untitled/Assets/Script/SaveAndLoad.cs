@@ -64,8 +64,6 @@ public class SaveAndLoad : MonoBehaviour
                 slot = tempSave.slot;
                 sensitivity = tempSave.sensitivity;
                 volume = tempSave.volume;
-
-                Debug.Log(tempSave.sensitivity);
             }
         }
         catch
