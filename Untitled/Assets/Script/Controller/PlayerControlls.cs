@@ -269,6 +269,15 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UI"",
+                    ""type"": ""Button"",
+                    ""id"": ""81664ce8-d79b-435b-8a4e-da30dce5bb4c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -359,6 +368,28 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a158f08a-7346-4ee4-a8e9-3f38bf68ee35"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""816d0b0e-d5b6-4a85-8296-58d52cb1f497"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -378,6 +409,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_DeafultInput_Aim = m_DeafultInput.FindAction("Aim", throwIfNotFound: true);
         m_DeafultInput_Reload = m_DeafultInput.FindAction("Reload", throwIfNotFound: true);
         m_DeafultInput_Interact = m_DeafultInput.FindAction("Interact", throwIfNotFound: true);
+        m_DeafultInput_UI = m_DeafultInput.FindAction("UI", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -506,6 +538,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_DeafultInput_Aim;
     private readonly InputAction m_DeafultInput_Reload;
     private readonly InputAction m_DeafultInput_Interact;
+    private readonly InputAction m_DeafultInput_UI;
     public struct DeafultInputActions
     {
         private @PlayerControlls m_Wrapper;
@@ -514,6 +547,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         public InputAction @Aim => m_Wrapper.m_DeafultInput_Aim;
         public InputAction @Reload => m_Wrapper.m_DeafultInput_Reload;
         public InputAction @Interact => m_Wrapper.m_DeafultInput_Interact;
+        public InputAction @UI => m_Wrapper.m_DeafultInput_UI;
         public InputActionMap Get() { return m_Wrapper.m_DeafultInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -535,6 +569,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnInteract;
+                @UI.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnUI;
+                @UI.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnUI;
+                @UI.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnUI;
             }
             m_Wrapper.m_DeafultInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -551,6 +588,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @UI.started += instance.OnUI;
+                @UI.performed += instance.OnUI;
+                @UI.canceled += instance.OnUI;
             }
         }
     }
@@ -569,5 +609,6 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnUI(InputAction.CallbackContext context);
     }
 }

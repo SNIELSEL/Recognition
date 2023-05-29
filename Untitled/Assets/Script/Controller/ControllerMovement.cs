@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class ControllerMovement : MonoBehaviour
 {
     private PlayerControlls playerControlls;
     private InputAction rightStick;
+    private InputAction leftStick;
     public GameObject fPPCamera;
     private Vector3 movementInput;
-    private Vector2 cameraRotation;
+    public Vector2 cameraRotation;
 
     private float moveSpeed, startSpeed, rotationSpeed;
 
@@ -21,11 +23,17 @@ public class ControllerMovement : MonoBehaviour
     public void OnEnable()
     {
         playerControlls.Enable();
+
+        rightStick = playerControlls.DeafultMovement.Rotation;
+        rightStick.Enable();
+
+        leftStick = playerControlls.DeafultMovement.Movement;
     }
 
     public void OnDisable()
     {
         playerControlls.Disable();
+        rightStick.Disable();
     }
 
     public void Start()
