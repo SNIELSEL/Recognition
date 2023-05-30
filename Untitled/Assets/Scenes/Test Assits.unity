@@ -350,8 +350,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 5
-  sens: 3
+  sens: 1
   jumpHight: 4
+  saveAndLoad: {fileID: 1588392197}
 --- !u!1001 &1172800841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -427,6 +428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1588392195}
   - component: {fileID: 1588392196}
+  - component: {fileID: 1588392197}
   m_Layer: 0
   m_Name: Keep
   m_TagString: Untagged
@@ -463,6 +465,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocked: 0
+--- !u!114 &1588392197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588392194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f559a6841f60714daa9f9101c826645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot: 0
+  sensitivity: 0
+  volume: 0
 --- !u!1001 &1931258134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -518,10 +535,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4119987775079411406, guid: d1830b90bd64a78489fa06bb5360d4d7, type: 3}
+    - target: {fileID: 4119987775079411407, guid: d1830b90bd64a78489fa06bb5360d4d7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4119987775658802956, guid: d1830b90bd64a78489fa06bb5360d4d7, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 4119987775079411406, guid: d1830b90bd64a78489fa06bb5360d4d7, type: 3}
+    - {fileID: 4119987776671546744, guid: d1830b90bd64a78489fa06bb5360d4d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d1830b90bd64a78489fa06bb5360d4d7, type: 3}
