@@ -6,9 +6,8 @@ using UnityEngine.UI;
 
 public class Movement144 : MonoBehaviour
 {
-    public float moveFactor, sens, jumpHight;
-    private float sprintFactor = 1f;
-    private float maxSprintFactor = 1.5f;
+    public float movespeed, sens, jumpHight;
+    private float moveLock;
 
     private PlayerControlls input;
 
@@ -17,7 +16,7 @@ public class Movement144 : MonoBehaviour
     private InputAction jump;
     private InputAction sprint;
 
-    private Vector3 moveV3;
+    private Vector3 moveV2;
     private Vector2 mouseV2;
     private Vector3 jumpV3;
 
@@ -43,6 +42,7 @@ public class Movement144 : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         jumpV3.y = jumpHight;
+        moveLock = movespeed;
     }
 
     private void OnEnable()
@@ -82,25 +82,24 @@ public class Movement144 : MonoBehaviour
 
     public void Movement()
     {
-        moveV3 = new Vector3(move.ReadValue<Vector2>().x, 0f, move.ReadValue<Vector2>().y);
-        rb.AddRelativeForce((moveV3 * moveFactor) * Time.deltaTime, ForceMode.Acceleration);
+        moveV2.x = move.ReadValue<Vector2>().x;
+        moveV2.z = move.ReadValue<Vector2>().y;
+
+        transform.Translate(moveV2 * Time.deltaTime * movespeed);
     }
 
     public void Sprint(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (sprinting == true)
         {
-            if (sprinting == true)
-            {
-                sprintFactor = 1f;
-                sprinting = false;
-            }
+            sprinting = false;
+            movespeed = moveLock;
+        }
 
-            else if (sprinting == false)
-            {
-                sprintFactor = maxSprintFactor;
-                sprinting = true;
-            }
+        else if (sprinting == false)
+        {
+            sprinting = true;
+            movespeed = moveLock * 1.5f;
         }
     }
 

@@ -2461,7 +2461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408768567}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -166.7, y: 2.71, z: 0}
+  m_LocalPosition: {x: 0, y: 2.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2653,13 +2653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed9e6d436c5c954bb50b3e37821c68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream:Untitled/Assets/Scenes/Main.unity
-=======
-  movespeed: 5
-  sens: 1
-  jumpHight: 4
-  saveAndLoad: {fileID: 0}
->>>>>>> Stashed changes:Untitled/Assets/Scenes/shooting range.unity
 --- !u!1 &1509695625 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1338244076479394619, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
@@ -3654,6 +3647,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e746ab206bc4c254f922905982cd71b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activScene: 0
+  maxScene: 0
 --- !u!1 &1940444017
 GameObject:
   m_ObjectHideFlags: 0
