@@ -9,10 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Menu.unity
     guid: c3088e519220ec9439fc0d51077c1ecf
   - enabled: 1
-    path: Assets/Scenes/shooting range.unity
+    path: Assets/Scenes/Main.unity
     guid: af2b28059db18c24a84e95128007b982
   - enabled: 1
     path: Assets/Scenes/Map 1.unity
     guid: 2d05e8d4c8df81d4fa4f80c21b3dc887
-  m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: bca076e4ea26ea84a9d152cf6d5914a4, type: 2}
+  m_configObjects: {}
