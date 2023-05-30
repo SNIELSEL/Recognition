@@ -218,59 +218,178 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""MouseX,MouseY"",
-                    ""id"": ""c3ae1330-59ea-4582-aa93-fa4de4d25cd0"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""7aee8bb4-4b69-413e-8b4d-681a016319ad"",
+                    ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Rotation"",
-                    ""isComposite"": true,
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Deafult Input"",
+            ""id"": ""3c61260a-652c-4e06-a55f-44a76955e5e2"",
+            ""actions"": [
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""55a3365a-6fad-4acb-a396-f02d06b314ec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Button"",
+                    ""id"": ""18a3c335-ae41-4b70-9945-38632badd2d8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""13c70464-41e3-4b60-91b2-765426f03225"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""d7e3cb75-dec4-4cfb-b722-a81ab0148a55"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UI"",
+                    ""type"": ""Button"",
+                    ""id"": ""81664ce8-d79b-435b-8a4e-da30dce5bb4c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e7b060cc-4192-41b3-bbeb-408a1863e2da"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""0ed6f73d-6004-4776-b212-16729431a609"",
-                    ""path"": ""<Mouse>/delta/up"",
+                    ""name"": """",
+                    ""id"": ""419d3682-9939-4d13-b921-cba994aa0593"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Rotation"",
+                    ""action"": ""Shoot"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""0a82944a-36c9-4d07-9cb0-c745d50b7fae"",
-                    ""path"": ""<Mouse>/delta/down"",
+                    ""name"": """",
+                    ""id"": ""d6958964-4833-417f-933a-b5dcd62711c9"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Rotation"",
+                    ""action"": ""Aim"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""1cc83cca-2097-4d1d-b4c4-4a7ca42d4476"",
-                    ""path"": ""<Mouse>/delta/left"",
+                    ""name"": """",
+                    ""id"": ""42011bb1-9e08-4ed1-9dda-4d7ee5d1e30c"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Rotation"",
+                    ""action"": ""Aim"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""4dd68f3d-89a8-48ba-b44c-82a0c0a1c276"",
-                    ""path"": ""<Mouse>/delta/right"",
+                    ""name"": """",
+                    ""id"": ""69f9f466-9fe4-4f21-bf15-4445cde05ee1"",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Rotation"",
+                    ""action"": ""Reload"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""20f06665-1838-4550-8b95-5467c74c622a"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e8d5262f-daa2-466a-8178-488bc1911d54"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5220a9fc-75a3-4c49-bd1f-0d45d88b28ff"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a158f08a-7346-4ee4-a8e9-3f38bf68ee35"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""816d0b0e-d5b6-4a85-8296-58d52cb1f497"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -284,6 +403,13 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_DeafultMovement_Jump = m_DeafultMovement.FindAction("Jump", throwIfNotFound: true);
         m_DeafultMovement_MouseLock = m_DeafultMovement.FindAction("Mouse Lock", throwIfNotFound: true);
         m_DeafultMovement_Sprint = m_DeafultMovement.FindAction("Sprint", throwIfNotFound: true);
+        // Deafult Input
+        m_DeafultInput = asset.FindActionMap("Deafult Input", throwIfNotFound: true);
+        m_DeafultInput_Shoot = m_DeafultInput.FindAction("Shoot", throwIfNotFound: true);
+        m_DeafultInput_Aim = m_DeafultInput.FindAction("Aim", throwIfNotFound: true);
+        m_DeafultInput_Reload = m_DeafultInput.FindAction("Reload", throwIfNotFound: true);
+        m_DeafultInput_Interact = m_DeafultInput.FindAction("Interact", throwIfNotFound: true);
+        m_DeafultInput_UI = m_DeafultInput.FindAction("UI", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -404,6 +530,71 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         }
     }
     public DeafultMovementActions @DeafultMovement => new DeafultMovementActions(this);
+
+    // Deafult Input
+    private readonly InputActionMap m_DeafultInput;
+    private IDeafultInputActions m_DeafultInputActionsCallbackInterface;
+    private readonly InputAction m_DeafultInput_Shoot;
+    private readonly InputAction m_DeafultInput_Aim;
+    private readonly InputAction m_DeafultInput_Reload;
+    private readonly InputAction m_DeafultInput_Interact;
+    private readonly InputAction m_DeafultInput_UI;
+    public struct DeafultInputActions
+    {
+        private @PlayerControlls m_Wrapper;
+        public DeafultInputActions(@PlayerControlls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Shoot => m_Wrapper.m_DeafultInput_Shoot;
+        public InputAction @Aim => m_Wrapper.m_DeafultInput_Aim;
+        public InputAction @Reload => m_Wrapper.m_DeafultInput_Reload;
+        public InputAction @Interact => m_Wrapper.m_DeafultInput_Interact;
+        public InputAction @UI => m_Wrapper.m_DeafultInput_UI;
+        public InputActionMap Get() { return m_Wrapper.m_DeafultInput; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DeafultInputActions set) { return set.Get(); }
+        public void SetCallbacks(IDeafultInputActions instance)
+        {
+            if (m_Wrapper.m_DeafultInputActionsCallbackInterface != null)
+            {
+                @Shoot.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnShoot;
+                @Aim.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnAim;
+                @Reload.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnReload;
+                @Interact.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnInteract;
+                @UI.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnUI;
+                @UI.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnUI;
+                @UI.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnUI;
+            }
+            m_Wrapper.m_DeafultInputActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
+                @Reload.started += instance.OnReload;
+                @Reload.performed += instance.OnReload;
+                @Reload.canceled += instance.OnReload;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+                @UI.started += instance.OnUI;
+                @UI.performed += instance.OnUI;
+                @UI.canceled += instance.OnUI;
+            }
+        }
+    }
+    public DeafultInputActions @DeafultInput => new DeafultInputActions(this);
     public interface IDeafultMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -411,5 +602,13 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnMouseLock(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+    }
+    public interface IDeafultInputActions
+    {
+        void OnShoot(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnUI(InputAction.CallbackContext context);
     }
 }

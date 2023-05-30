@@ -28,6 +28,8 @@ public class Movement144 : MonoBehaviour
     private RaycastHit ground;
     private Rigidbody rb;
 
+    public SaveAndLoad saveAndLoad;
+
     private void Awake()
     {
         input = new PlayerControlls();
@@ -35,6 +37,8 @@ public class Movement144 : MonoBehaviour
 
     private void Start()
     {
+        saveAndLoad.LoadData();
+
         cam = GameObject.Find("Main Camera");
         rb = GetComponent<Rigidbody>();
 
