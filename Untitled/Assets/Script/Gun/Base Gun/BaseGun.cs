@@ -83,8 +83,6 @@ public class BaseGun : MonoBehaviour
     {
         extra.timer += Time.deltaTime;
 
-        /*
-         
         if (Input.GetKeyUp(KeyCode.I))
         {
             if (extra.infiniteAmmo == false)
@@ -100,7 +98,15 @@ public class BaseGun : MonoBehaviour
             }
         }
 
-        */
+        if (Input.GetMouseButton(1))
+        {
+            ADS();
+        }
+
+        else
+        {
+            Normal();
+        }
     }
 
     public virtual void Shoot()
@@ -170,11 +176,8 @@ public class BaseGun : MonoBehaviour
         transform.localScale = Vector3.one;
     }
 
-    public virtual async void Reload()
+    public virtual void Reload()
     {
-
-        await Task.Delay(1000);
-
         print("Base reload");
         ammoCount = extra.startAmmo;
         extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;

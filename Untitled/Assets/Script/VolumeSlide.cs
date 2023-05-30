@@ -13,37 +13,36 @@ public class VolumeSlide : MonoBehaviour
     public ParticleSystem[] particlesettings;
 
     private bool playingParticles;
-
-    public SaveAndLoad saveAndLoad;
-
     void Start()
     {
-        LoadVolume();
+        sliderParticle.Stop();
 
-        if (saveAndLoad.volume == 0)
+        if (!PlayerPrefs.HasKey("musicVolume"))
         {
-            saveAndLoad.volume = 1;
-            SaveVolume();
+            PlayerPrefs.SetFloat("musicVolume", 1);
+            LoadVolume();
+        }
+
+        else
+        {
             LoadVolume();
         }
     }
 
     public void VolumeChanger()
     {
-        saveAndLoad.volume = volumeSlider.value;
         AudioListener.volume = volumeSlider.value;
         SaveVolume();
     }
 
     public void LoadVolume()
     {
-        saveAndLoad.LoadData();
-        volumeSlider.value = saveAndLoad.volume;
+        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
     }
 
     public void SaveVolume()
     {
-        saveAndLoad.SaveData();
+        PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
     }
 
     public void SpawnParticle()
@@ -61,5 +60,6 @@ public class VolumeSlide : MonoBehaviour
         particlesettings[0].Stop(true, ParticleSystemStopBehavior.StopEmitting);
         particlesettings[1].Stop(true, ParticleSystemStopBehavior.StopEmitting);
         particlesettings[2].Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        particlesettings[3].Stop(true, ParticleSystemStopBehavior.StopEmitting);
     }
 }
