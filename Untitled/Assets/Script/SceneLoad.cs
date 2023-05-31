@@ -43,6 +43,7 @@ public class SceneLoad : MonoBehaviour
     public void NewGame(int levelToLoadNew)
     {
         levelLoadInt = levelToLoadNew;
+        print("test");
         StartCoroutine(ContinueAndSceneCO());
     }
 

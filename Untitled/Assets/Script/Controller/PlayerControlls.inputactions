@@ -249,9 +249,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "UI",
+                    "name": "up",
                     "type": "Button",
                     "id": "81664ce8-d79b-435b-8a4e-da30dce5bb4c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "down",
+                    "type": "Button",
+                    "id": "3faf3fb4-1754-4f24-9f2a-b25e9e77dd9c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -349,23 +358,23 @@
                 },
                 {
                     "name": "",
-                    "id": "a158f08a-7346-4ee4-a8e9-3f38bf68ee35",
-                    "path": "<Gamepad>/buttonSouth",
+                    "id": "719ae018-83c3-4587-b4e5-10dab686116c",
+                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UI",
+                    "action": "up",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "816d0b0e-d5b6-4a85-8296-58d52cb1f497",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "c1f22c3b-9ec9-497a-8d18-199c17573c9d",
+                    "path": "<Gamepad>/dpad/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UI",
+                    "action": "down",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
