@@ -27,6 +27,13 @@ public class Movement144 : MonoBehaviour
     private RaycastHit ground;
     private Rigidbody rb;
 
+<<<<<<< Updated upstream
+=======
+    public SaveAndLoad saveAndLoad;
+
+    private float x, y;
+
+>>>>>>> Stashed changes
     private void Awake()
     {
         input = new PlayerControlls();
@@ -81,7 +88,7 @@ public class Movement144 : MonoBehaviour
         moveV2.x = move.ReadValue<Vector2>().x;
         moveV2.z = move.ReadValue<Vector2>().y;
 
-        transform.Translate(moveV2 * Time.deltaTime * movespeed);
+        rb.AddRelativeForce(moveV2 * Time.deltaTime * movespeed);
     }
 
     public void Sprint(InputAction.CallbackContext context)
@@ -103,7 +110,12 @@ public class Movement144 : MonoBehaviour
     {
         mouseV2 = mouse.ReadValue<Vector2>() * sens;
 
-        cam.transform.Rotate(-mouseV2.y, 0, 0 * Time.deltaTime);
+        x += mouseV2.x;
+        y -= mouseV2.y;
+
+        y = Mathf.Clamp(y, -85, 85);
+
+        cam.transform.localRotation = Quaternion.Euler(y, 0, 0 * Time.deltaTime);
         transform.Rotate(0, mouseV2.x, 0 * Time.deltaTime);
     }
 

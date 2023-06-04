@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290ddab37401ef545b8be8c5b7a535b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: test2
+  text: TEST1
   chats: 
 --- !u!1 &1266985477
 GameObject:
