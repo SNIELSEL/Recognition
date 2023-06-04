@@ -21,7 +21,7 @@ public class TextRandom : MonoBehaviour
 
     private void Update()
     {
-        if (letters.done == true)
+            if (letters.done == true)
         {
             TextRandoms();
         }

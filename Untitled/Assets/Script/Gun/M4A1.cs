@@ -8,7 +8,12 @@ public class M4A1 : BaseGun
         {
             base.Shoot();
             extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
-            extra.cam.transform.localRotation = Quaternion.Euler(extra.recoil.y, extra.recoil.y, 0);
+            extra.cam.transform.eulerAngles -= extra.recoil;
+            
+            if(ammoCount == 0)
+
+
+            if (extra.infiniteAmmo == false)
 
             base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
@@ -20,11 +25,9 @@ public class M4A1 : BaseGun
             if (ammoCount == 0)
             {
                 extra.ammoText.color = Color.red;
-                extra.weaponAmmoUi.color = Color.red;
             }
 
-            extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
-            extra.weaponAmmoUi.text = ammoCount.ToString();
+            base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
         }
     }
 }
