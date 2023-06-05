@@ -287,6 +287,24 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Joystick"",
+                    ""type"": ""Button"",
+                    ""id"": ""6dc2ed51-0738-4551-9b44-dfa5a775330b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Wasd"",
+                    ""type"": ""Button"",
+                    ""id"": ""19c07a62-d38a-45b2-9206-35fe3b38ea6d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -399,6 +417,94 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""action"": ""down"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3fc3c5b2-3f6b-4e34-a071-c5d21bf9205d"",
+                    ""path"": ""<Joystick>/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4676c410-cfdf-41e5-b70d-4d06820e4aa7"",
+                    ""path"": ""<Joystick>/stick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea5d6309-a122-47de-b562-6d0f026203bd"",
+                    ""path"": ""<Joystick>/stick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9b2e42d5-9279-4da3-9c53-8788150336b3"",
+                    ""path"": ""<Joystick>/stick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a894a36-acbe-4ac7-9251-3a9e07bb48e9"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Wasd"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""486a7f6e-b7de-445c-9608-f4882bfe89bb"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Wasd"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2185539b-fcbc-42be-a13a-c3440d18f738"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Wasd"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0339731-e1c2-4e63-be10-87ac273530d2"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Wasd"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -420,6 +526,8 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_DeafultInput_Interact = m_DeafultInput.FindAction("Interact", throwIfNotFound: true);
         m_DeafultInput_up = m_DeafultInput.FindAction("up", throwIfNotFound: true);
         m_DeafultInput_down = m_DeafultInput.FindAction("down", throwIfNotFound: true);
+        m_DeafultInput_Joystick = m_DeafultInput.FindAction("Joystick", throwIfNotFound: true);
+        m_DeafultInput_Wasd = m_DeafultInput.FindAction("Wasd", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -550,6 +658,8 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_DeafultInput_Interact;
     private readonly InputAction m_DeafultInput_up;
     private readonly InputAction m_DeafultInput_down;
+    private readonly InputAction m_DeafultInput_Joystick;
+    private readonly InputAction m_DeafultInput_Wasd;
     public struct DeafultInputActions
     {
         private @PlayerControlls m_Wrapper;
@@ -560,6 +670,8 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_DeafultInput_Interact;
         public InputAction @up => m_Wrapper.m_DeafultInput_up;
         public InputAction @down => m_Wrapper.m_DeafultInput_down;
+        public InputAction @Joystick => m_Wrapper.m_DeafultInput_Joystick;
+        public InputAction @Wasd => m_Wrapper.m_DeafultInput_Wasd;
         public InputActionMap Get() { return m_Wrapper.m_DeafultInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -587,6 +699,12 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @down.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnDown;
                 @down.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnDown;
                 @down.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnDown;
+                @Joystick.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnJoystick;
+                @Joystick.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnJoystick;
+                @Joystick.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnJoystick;
+                @Wasd.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnWasd;
+                @Wasd.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnWasd;
+                @Wasd.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnWasd;
             }
             m_Wrapper.m_DeafultInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -609,6 +727,12 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @down.started += instance.OnDown;
                 @down.performed += instance.OnDown;
                 @down.canceled += instance.OnDown;
+                @Joystick.started += instance.OnJoystick;
+                @Joystick.performed += instance.OnJoystick;
+                @Joystick.canceled += instance.OnJoystick;
+                @Wasd.started += instance.OnWasd;
+                @Wasd.performed += instance.OnWasd;
+                @Wasd.canceled += instance.OnWasd;
             }
         }
     }
@@ -629,5 +753,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnUp(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);
+        void OnJoystick(InputAction.CallbackContext context);
+        void OnWasd(InputAction.CallbackContext context);
     }
 }
