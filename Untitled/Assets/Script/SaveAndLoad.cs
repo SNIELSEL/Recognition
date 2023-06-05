@@ -76,6 +76,22 @@ public class SaveAndLoad : MonoBehaviour
     {
         return tempSave;
     }
+
+    public void ResetData()
+    {
+        XML_SaveData tempSave = new XML_SaveData();
+        tempSave.slot = slot;
+        tempSave.sensitivity = 0;
+        tempSave.volume = 1;
+
+
+        XmlSerializer serializer = new XmlSerializer(typeof(XML_SaveData));
+
+        using (FileStream stream = new FileStream(Application.persistentDataPath + "/SaveData" + slot + ".xml", FileMode.Create))
+        {
+            serializer.Serialize(stream, tempSave);
+        }
+    }
 }
     [System.Serializable]
     public class XML_SaveData
