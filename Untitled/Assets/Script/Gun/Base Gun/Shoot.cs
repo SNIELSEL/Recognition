@@ -17,7 +17,8 @@ public class Shoot : MonoBehaviour
         single,
         burst,
         auto,
-        akimbo
+        akimbo,
+        shotgun
     }
 
     private void Start()
@@ -41,6 +42,15 @@ public class Shoot : MonoBehaviour
         {
             GetComponent<BaseGun>().Shoot();
         }
+<<<<<<< Updated upstream
+=======
+
+        if (context.started && fireMode == FireMode.shotgun)
+        {
+            GetComponent<BaseGun>().Shoot();
+        }
+    }
+>>>>>>> Stashed changes
 
         if (Input.GetMouseButtonDown(1) && fireMode == FireMode.akimbo)
         {
