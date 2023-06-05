@@ -15,7 +15,7 @@ public class BaseGun : MonoBehaviour
 
         public int startAmmo;
 
-        public TextMeshProUGUI ammoText, aim, weaponAmmoUi;
+        public TextMeshProUGUI ammoText, aim;
 
         public float timer;
 
@@ -62,9 +62,6 @@ public class BaseGun : MonoBehaviour
 
         extra.ammoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
         extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
-
-        extra.weaponAmmoUi = GameObject.Find("Weapon Ammo UI").GetComponent<TextMeshProUGUI>();
-        extra.weaponAmmoUi.text = ammoCount.ToString();
 
         extra.aim = GameObject.Find("Accurate").GetComponent<TextMeshProUGUI>();
         extra.aim.text = "100" + "%";
@@ -184,9 +181,7 @@ public class BaseGun : MonoBehaviour
         print("Base reload");
         ammoCount = extra.startAmmo;
         extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
-        extra.weaponAmmoUi.text = ammoCount.ToString();
 
-        extra.ammoText.color = Color.white;
-        extra.weaponAmmoUi.color = Color.white;
+        extra.ammoText.color = Color.black;
     }
 }

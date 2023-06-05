@@ -18,23 +18,20 @@ public class LetterRandom : MonoBehaviour
         numbers = new char[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
         tekens = new char[] {'!', '@', '~', '$', '#', '%', '^', '&', '*', '(', ')', '-', '=', '+', '|', '[', ']', '{', '}', ';', '<', '>', '/', '?', '"', '€'};
 
-        //NumberRandomV();
-        LetterRandomV();
+        NumberRandomV();
     }
 
     private void Update()
     {
-        /* 
         if (Input.GetKeyDown(KeyCode.M))
         {
             Start();
         }
-        */
     }
 
     void LetterRandomV()
     {
-        for (int i = 0; i < letters.Length ; i++)
+        for (int i = 0; i < letters.Length; i++)
         {
             if (unlockedL[i] == false)
             {
@@ -48,7 +45,7 @@ public class LetterRandom : MonoBehaviour
 
             if (i == letters.Length) 
             {
-                NumberRandomV();
+                //NumberRandomV();
                 print("LetterDone");
             }
 
@@ -59,21 +56,19 @@ public class LetterRandom : MonoBehaviour
 
     void NumberRandomV()
     {
-        for (int K = 0; K < numbers.Length; K++)
+        for (int j = 0; j < numbers.Length; j++)
         {
-            print("numbers");
-
-            if (unlockedN[K] == false)
+            if (unlockedN[j] == false)
             {
-                randomN[K] = tekens[Random.Range(0, 25)];
+                randomN[j] = tekens[Random.Range(0, 25)];
             }
 
             else
             {
-                randomN[K] = letters[K];
+                randomN[j] = letters[j];
             }
 
-            if (K == letters.Length)
+            if (j == letters.Length)
             {
                 done = true;
             }
