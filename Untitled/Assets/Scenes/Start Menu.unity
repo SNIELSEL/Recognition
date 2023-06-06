@@ -15215,6 +15215,7 @@ GameObject:
   - component: {fileID: 265301291}
   - component: {fileID: 265301292}
   - component: {fileID: 265301293}
+  - component: {fileID: 265301294}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -15359,6 +15360,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e746ab206bc4c254f922905982cd71b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &265301294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265301283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2f9d35a9ab0161429cffd382d618f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastSelectedUI: {fileID: 0}
+  buttonPress:
+    m_Name: Button Press
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c28a6467-6afd-4ec9-aa03-db627bad1a08
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &296563522
 GameObject:
   m_ObjectHideFlags: 0
