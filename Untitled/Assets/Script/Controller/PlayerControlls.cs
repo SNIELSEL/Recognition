@@ -305,6 +305,15 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Options"",
+                    ""type"": ""Button"",
+                    ""id"": ""08f37835-0712-4385-9b7b-9669b2f1510f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -505,6 +514,17 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""action"": ""Wasd"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07ac5dfe-1644-4a10-aa27-1689231ad6f8"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Options"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -528,6 +548,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_DeafultInput_down = m_DeafultInput.FindAction("down", throwIfNotFound: true);
         m_DeafultInput_Joystick = m_DeafultInput.FindAction("Joystick", throwIfNotFound: true);
         m_DeafultInput_Wasd = m_DeafultInput.FindAction("Wasd", throwIfNotFound: true);
+        m_DeafultInput_Options = m_DeafultInput.FindAction("Options", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -660,6 +681,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_DeafultInput_down;
     private readonly InputAction m_DeafultInput_Joystick;
     private readonly InputAction m_DeafultInput_Wasd;
+    private readonly InputAction m_DeafultInput_Options;
     public struct DeafultInputActions
     {
         private @PlayerControlls m_Wrapper;
@@ -672,6 +694,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         public InputAction @down => m_Wrapper.m_DeafultInput_down;
         public InputAction @Joystick => m_Wrapper.m_DeafultInput_Joystick;
         public InputAction @Wasd => m_Wrapper.m_DeafultInput_Wasd;
+        public InputAction @Options => m_Wrapper.m_DeafultInput_Options;
         public InputActionMap Get() { return m_Wrapper.m_DeafultInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -705,6 +728,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Wasd.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnWasd;
                 @Wasd.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnWasd;
                 @Wasd.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnWasd;
+                @Options.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnOptions;
+                @Options.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnOptions;
+                @Options.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnOptions;
             }
             m_Wrapper.m_DeafultInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -733,6 +759,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Wasd.started += instance.OnWasd;
                 @Wasd.performed += instance.OnWasd;
                 @Wasd.canceled += instance.OnWasd;
+                @Options.started += instance.OnOptions;
+                @Options.performed += instance.OnOptions;
+                @Options.canceled += instance.OnOptions;
             }
         }
     }
@@ -755,5 +784,6 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnDown(InputAction.CallbackContext context);
         void OnJoystick(InputAction.CallbackContext context);
         void OnWasd(InputAction.CallbackContext context);
+        void OnOptions(InputAction.CallbackContext context);
     }
 }

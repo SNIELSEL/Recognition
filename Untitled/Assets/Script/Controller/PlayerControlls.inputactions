@@ -283,6 +283,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Options",
+                    "type": "Button",
+                    "id": "08f37835-0712-4385-9b7b-9669b2f1510f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -481,6 +490,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Wasd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "07ac5dfe-1644-4a10-aa27-1689231ad6f8",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Options",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
