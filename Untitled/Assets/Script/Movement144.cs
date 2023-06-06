@@ -29,6 +29,8 @@ public class Movement144 : MonoBehaviour
 
     public SaveAndLoad saveAndLoad;
 
+    public float x, y;
+
     private void Awake()
     {
         input = new PlayerControlls();
@@ -85,7 +87,7 @@ public class Movement144 : MonoBehaviour
         moveV2.x = move.ReadValue<Vector2>().x;
         moveV2.z = move.ReadValue<Vector2>().y;
 
-        transform.Translate(moveV2 * Time.deltaTime * movespeed);
+        rb.AddRelativeForce(moveV2 * Time.deltaTime * movespeed);
     }
 
     public void Sprint(InputAction.CallbackContext context)
@@ -107,17 +109,26 @@ public class Movement144 : MonoBehaviour
     {
         mouseV2 = mouse.ReadValue<Vector2>() * sens;
 
-        cam.transform.Rotate(-mouseV2.y, 0, 0 * Time.deltaTime);
+        y -= mouseV2.y;
+
+        y = Mathf.Clamp(y, -85, 85);
+
         transform.Rotate(0, mouseV2.x, 0 * Time.deltaTime);
+
+        cam.transform.localRotation = Quaternion.Euler(y, 0, 0 * Time.deltaTime);
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
-        int layerMask = 1 << 3;
 
-        if (Physics.Raycast(transform.position, -transform.up, out ground, 2, layerMask))
+        if (context.started)
         {
-            rb.AddForce(jumpV3 * jumpHight, ForceMode.Impulse);
+            int layerMask = 1 << 3;
+
+            if (Physics.Raycast(transform.position, -transform.up, out ground, 1.5f, layerMask))
+            {
+                rb.AddForce(jumpV3 * jumpHight, ForceMode.Impulse);
+            }
         }
     }
 }

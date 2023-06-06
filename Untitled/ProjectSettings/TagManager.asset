@@ -10,6 +10,8 @@ TagManager:
   - Falling
   - weapon
   - Renderer
+  - Spawns
+  - Enemy
   layers:
   - Default
   - TransparentFX
