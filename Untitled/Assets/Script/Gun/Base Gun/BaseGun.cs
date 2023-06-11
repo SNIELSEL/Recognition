@@ -19,7 +19,7 @@ public class BaseGun : MonoBehaviour
 
         public float timer;
 
-        public bool infiniteAmmo;
+        public bool infiniteAmmo, reload;
     }
 
     public class ShootingStats
@@ -136,6 +136,11 @@ public class BaseGun : MonoBehaviour
                     hit.transform.GetComponent<Falling>().Hit();
                 }
             }
+
+            if (hit.transform.tag == "Enemy")
+            {
+                hit.transform.GetComponent<ZombieAI>().hp -= damage;
+            }
         }
 
         stats.accurate = (int)(stats.hit / stats.fired * 100);
@@ -172,13 +177,14 @@ public class BaseGun : MonoBehaviour
 
     public virtual async void Reload()
     {
-
+        extra.reload = true;
         await Task.Delay(1000);
 
         print("Base reload");
         ammoCount = extra.startAmmo;
         extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
-        extra.ammoText.color = Color.black;
+        extra.ammoText.color = Color.white;
+        extra.reload = false;
     }
 }
