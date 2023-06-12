@@ -36,7 +36,7 @@ public class LockQuitButton : MonoBehaviour
         else
         {
             lockedQuit = false;
-            quitButton.interactable = false;
+            quitButton.interactable = true;
             lockText.text = ("Quit Game");
         }
     }
