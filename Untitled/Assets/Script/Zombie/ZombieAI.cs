@@ -9,9 +9,11 @@ public class ZombieAI : MonoBehaviour
     private NavMeshAgent agent;
 
     public Zombie zombie;
-    public float hp, damage, speed;
+    public float hp, damage, speed, attackSpeed;
 
     public GameObject target;
+
+    private float timer;
 
     private void Start()
     {
@@ -22,6 +24,7 @@ public class ZombieAI : MonoBehaviour
         hp = zombie.hp;
         damage = zombie.damage;
         speed = zombie.speed;
+        attackSpeed = zombie.attackSpeed;
 
         agent.speed = speed;
 
@@ -30,7 +33,15 @@ public class ZombieAI : MonoBehaviour
 
     private void Update()
     {
-        target = GetClosestPlayer().gameObject;    
+        target = GetClosestPlayer().gameObject;
+        agent.destination = target.transform.position;
+
+        timer += Time.deltaTime;
+
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -48,5 +59,14 @@ public class ZombieAI : MonoBehaviour
             }
         }
         return player[closestIndex].transform;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag == "Player" && attackSpeed < timer)
+        {
+            timer = 0;
+            collision.transform.GetComponent<PlayerStats>().hp -= damage;
+        }
     }
 }

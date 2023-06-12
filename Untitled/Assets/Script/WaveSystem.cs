@@ -8,12 +8,14 @@ public class WaveSystem : MonoBehaviour
     public int roundEnemy;
     private int spawnedEnemy;
 
-    private GameObject[] inGameEnemy;
+    private GameObject[] inGameEnemy, spawnLoc;
 
     public float spawnSpeed;
     private float spawnTime;
 
-    public GameObject[] enemy, spawnLoc;
+    public GameObject[] enemy;
+
+    public bool wave;
 
     private void Start()
     {
@@ -22,7 +24,10 @@ public class WaveSystem : MonoBehaviour
 
     private void Update()
     {
-        Spawn();
+        if(wave == true)
+        {
+            Spawn();
+        }
     }
 
     public void Spawn()
