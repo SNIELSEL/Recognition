@@ -1355,6 +1355,65 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""MenuController"",
+            ""id"": ""2a0a6a9a-6d7a-497e-bbc9-bed855151526"",
+            ""actions"": [
+                {
+                    ""name"": ""OptionButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""c131d501-111e-4129-800c-66460744e7b6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LockQuit"",
+                    ""type"": ""Button"",
+                    ""id"": ""8612efce-67eb-4ae4-997c-7d5bc1915c77"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""91124ea8-a4dc-48c5-b0c3-23b8dd248c5f"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OptionButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f34aa993-15c9-4a56-ad14-2d4954aaa107"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OptionButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8c991c88-c317-4fab-8de9-395c3700acdc"",
+                    ""path"": ""<Keyboard>/f10"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LockQuit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -1405,6 +1464,10 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_DeafultInput_Joystick = m_DeafultInput.FindAction("Joystick", throwIfNotFound: true);
         m_DeafultInput_Wasd = m_DeafultInput.FindAction("Wasd", throwIfNotFound: true);
         m_DeafultInput_Options = m_DeafultInput.FindAction("Options", throwIfNotFound: true);
+        // MenuController
+        m_MenuController = asset.FindActionMap("MenuController", throwIfNotFound: true);
+        m_MenuController_OptionButton = m_MenuController.FindAction("OptionButton", throwIfNotFound: true);
+        m_MenuController_LockQuit = m_MenuController.FindAction("LockQuit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1882,6 +1945,47 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         }
     }
     public DeafultInputActions @DeafultInput => new DeafultInputActions(this);
+
+    // MenuController
+    private readonly InputActionMap m_MenuController;
+    private IMenuControllerActions m_MenuControllerActionsCallbackInterface;
+    private readonly InputAction m_MenuController_OptionButton;
+    private readonly InputAction m_MenuController_LockQuit;
+    public struct MenuControllerActions
+    {
+        private @PlayerControlls m_Wrapper;
+        public MenuControllerActions(@PlayerControlls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @OptionButton => m_Wrapper.m_MenuController_OptionButton;
+        public InputAction @LockQuit => m_Wrapper.m_MenuController_LockQuit;
+        public InputActionMap Get() { return m_Wrapper.m_MenuController; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuControllerActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuControllerActions instance)
+        {
+            if (m_Wrapper.m_MenuControllerActionsCallbackInterface != null)
+            {
+                @OptionButton.started -= m_Wrapper.m_MenuControllerActionsCallbackInterface.OnOptionButton;
+                @OptionButton.performed -= m_Wrapper.m_MenuControllerActionsCallbackInterface.OnOptionButton;
+                @OptionButton.canceled -= m_Wrapper.m_MenuControllerActionsCallbackInterface.OnOptionButton;
+                @LockQuit.started -= m_Wrapper.m_MenuControllerActionsCallbackInterface.OnLockQuit;
+                @LockQuit.performed -= m_Wrapper.m_MenuControllerActionsCallbackInterface.OnLockQuit;
+                @LockQuit.canceled -= m_Wrapper.m_MenuControllerActionsCallbackInterface.OnLockQuit;
+            }
+            m_Wrapper.m_MenuControllerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @OptionButton.started += instance.OnOptionButton;
+                @OptionButton.performed += instance.OnOptionButton;
+                @OptionButton.canceled += instance.OnOptionButton;
+                @LockQuit.started += instance.OnLockQuit;
+                @LockQuit.performed += instance.OnLockQuit;
+                @LockQuit.canceled += instance.OnLockQuit;
+            }
+        }
+    }
+    public MenuControllerActions @MenuController => new MenuControllerActions(this);
     public interface IDeafultMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -1933,5 +2037,10 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnJoystick(InputAction.CallbackContext context);
         void OnWasd(InputAction.CallbackContext context);
         void OnOptions(InputAction.CallbackContext context);
+    }
+    public interface IMenuControllerActions
+    {
+        void OnOptionButton(InputAction.CallbackContext context);
+        void OnLockQuit(InputAction.CallbackContext context);
     }
 }
