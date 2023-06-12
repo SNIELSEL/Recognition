@@ -39,7 +39,7 @@ public class ControllerMovement : MonoBehaviour
     public void Start()
     {
         startSpeed = 10;
-        rotationSpeed= 10;
+        rotationSpeed= 5;
 
         moveSpeed = startSpeed;
     }

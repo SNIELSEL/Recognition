@@ -231,6 +231,834 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Deafult Movement1"",
+            ""id"": ""2f6c450f-fcfa-4a46-84df-0ec8d3b544d8"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""16cbbd7e-ec28-4737-990b-9ba0484a2fed"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""84a6f3b5-475f-4b89-b02d-fc1f5c1918cc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""fd20f74c-90a5-4caf-9c05-591f957cb3ca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Mouse Lock"",
+                    ""type"": ""Button"",
+                    ""id"": ""2636892e-417d-428a-a412-4f0983a5fd11"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""6be5d6e7-93f1-4edf-b468-b63a7923174f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""W,A,S,D"",
+                    ""id"": ""18322050-cb81-4e0a-b32c-d7a118556bac"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""0a53fdf2-8a68-46ff-b667-244deabdcf2b"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""f3ce6cdf-57d2-4fc0-916d-95d95f33ff21"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""706cde64-e6f4-4159-8e04-794e999b1bc9"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""579644b6-e79e-403e-8bba-abc84940c40a"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8fdcede6-2fe3-49ad-bd80-4b1f6b5d4f05"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3298fb4b-e0f6-43b3-b797-b0af38ff6be3"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e147c6e0-6a02-4c5f-9598-3a8243686565"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""777e565e-77f6-491f-83cb-2951569f50e0"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse Lock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d5558296-d5db-460f-b490-e8343c1f1a1b"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse Lock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""011081c3-6c5c-4664-98dd-4854b02e5742"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cab8873a-d9be-4f84-9edc-554e2530ef26"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""736f6983-9149-4529-a168-ae822e8e6dae"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2698731d-1852-46a0-9143-827464ca086a"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Deafult Movement2"",
+            ""id"": ""3e19ffed-a754-4dcc-a4f3-6eb174b48f7f"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""53e59157-9b87-4eda-a563-5d72b3c987c5"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""945dfa86-10c7-4848-a9f0-45499006a28e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""30596622-8879-4cec-a1fc-8837435e8fbd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Mouse Lock"",
+                    ""type"": ""Button"",
+                    ""id"": ""f9e96d6a-f108-4ef6-a7c9-1b096feb619b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""d6420061-a129-4734-a4af-4bad38a467b0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""W,A,S,D"",
+                    ""id"": ""b8e75370-0a04-44fc-b01e-81a49bc2abda"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""17db6482-6009-4884-aeba-07e7738ebecd"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""2fd4d376-51a0-473f-bd1d-200ba7014a9c"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""ba730e65-a4e5-4113-a7d6-5547debb4713"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""071df8ca-3f3f-48b9-935e-773ee357f65d"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea0c6294-0003-41e8-8da6-ce59f851e5f5"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5309996a-a9c4-4452-8190-655fc2f999ee"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43c1d051-4021-431c-91da-0258170a879e"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96859b3a-4908-4af7-a84c-209a2f44d7e9"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse Lock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ef88bfd-28d1-4293-ae59-ab5033842d35"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse Lock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4a745eda-ef60-4d93-acfa-5d9456cc97ba"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3786970-5499-4fe5-8b5e-fb82cc5c0535"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66672a02-9b78-4814-baf9-3bc21bee08df"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3f3c1121-eabc-4826-940b-0699fa2b0e42"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Deafult Movement3"",
+            ""id"": ""651c85bf-0b03-4533-8fdf-b185273c09fb"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""b44a6de7-c699-467c-90f8-dac71ff51fd4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""4ee1f515-27e1-4cf7-81bf-2d20d6d93203"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""8487ef1b-2a44-4563-91ee-857ab4c589df"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Mouse Lock"",
+                    ""type"": ""Button"",
+                    ""id"": ""fc962136-f661-4429-881b-55d053e9e254"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""ac21c161-c56c-41e5-bf9b-c48ce86705fd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""W,A,S,D"",
+                    ""id"": ""ca5b47e1-d8a9-43c4-9646-8e9dbb7aec8e"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""f67e2bf3-b786-4133-bac7-1ceae41aa62e"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""9606642f-3ba0-4a88-9c25-74260c5250ca"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""199b6dd4-460c-445e-ac7b-663ed7313e94"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""e16bd7c6-3f71-4ce9-b7d7-0e8a4715094f"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""28e171ad-7dca-49bb-8d99-90974b3067d3"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf088637-1ce4-43ac-b36f-9a33fcf29f0f"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e57d7f13-69b9-4ede-849e-7a76d7f381f5"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c224001-8f9e-466e-8c3b-9d01afa9bd7d"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse Lock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""79f22172-974d-410a-a68c-aa16d6490b27"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse Lock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3b25544c-7ba7-4495-a1ab-7de8fc4eda5e"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b803216f-d51f-4723-b5db-8c5e59f9cbde"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ef8f7f95-943e-4ff2-a029-c64848efb6fd"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d187f9d-4472-4c82-aa6c-c9f7dbe97222"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Deafult Movement4"",
+            ""id"": ""56743d43-2297-4505-99b4-d027c3e85a34"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""77f7523e-7fd1-4c9f-989f-1ac1f68c979a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""de92aca9-942e-4b45-a123-1fed0b64e781"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""78489907-aa9d-45c2-851d-44382aa9d658"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Mouse Lock"",
+                    ""type"": ""Button"",
+                    ""id"": ""655f4f2c-25df-4d9e-8729-a7724015e8c4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""3d9d6397-328a-40a8-8c07-d1b21a1125f7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""W,A,S,D"",
+                    ""id"": ""0960cc28-5d77-4ee9-bd72-46ea6dfe9aad"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""6c88bd73-b8e5-4ff9-b82d-98e1af320bcf"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""eb1fd89e-2589-4cb2-b59f-4dca22e26eb8"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""184cbf01-f980-40d0-843e-08e268cacff1"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""ca0c9de3-7639-4c32-a3c6-935555c1b9fe"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7f031ad9-8eff-4462-a98b-451fcc433b5a"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1089a653-9b1f-45ae-9d30-9c1f858c44c3"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d89dd9f4-9933-44d1-91ad-a488ef046586"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8665c77e-fe20-426a-b24e-b4e7c2b8a519"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse Lock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb5b694f-4e57-4d23-b560-10cb2ecb672f"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mouse Lock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aa0f0614-8818-44c1-8fe9-e9d1bf884d3b"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f23cbe82-01b2-40b2-b7bd-6782b229ac10"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78489739-3e77-4568-a5c0-7cb4e7e32d26"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""85419c54-a603-4c99-8522-6cf3d0b69a96"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Deafult Input"",
             ""id"": ""3c61260a-652c-4e06-a55f-44a76955e5e2"",
             ""actions"": [
@@ -283,6 +1111,33 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""name"": ""down"",
                     ""type"": ""Button"",
                     ""id"": ""3faf3fb4-1754-4f24-9f2a-b25e9e77dd9c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Joystick"",
+                    ""type"": ""Button"",
+                    ""id"": ""6dc2ed51-0738-4551-9b44-dfa5a775330b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Wasd"",
+                    ""type"": ""Button"",
+                    ""id"": ""19c07a62-d38a-45b2-9206-35fe3b38ea6d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Options"",
+                    ""type"": ""Button"",
+                    ""id"": ""08f37835-0712-4385-9b7b-9669b2f1510f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -399,6 +1254,105 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""action"": ""down"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3fc3c5b2-3f6b-4e34-a071-c5d21bf9205d"",
+                    ""path"": ""<Joystick>/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4676c410-cfdf-41e5-b70d-4d06820e4aa7"",
+                    ""path"": ""<Joystick>/stick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea5d6309-a122-47de-b562-6d0f026203bd"",
+                    ""path"": ""<Joystick>/stick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9b2e42d5-9279-4da3-9c53-8788150336b3"",
+                    ""path"": ""<Joystick>/stick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a894a36-acbe-4ac7-9251-3a9e07bb48e9"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Wasd"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""486a7f6e-b7de-445c-9608-f4882bfe89bb"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Wasd"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2185539b-fcbc-42be-a13a-c3440d18f738"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Wasd"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0339731-e1c2-4e63-be10-87ac273530d2"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Wasd"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07ac5dfe-1644-4a10-aa27-1689231ad6f8"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Options"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -412,6 +1366,34 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_DeafultMovement_Jump = m_DeafultMovement.FindAction("Jump", throwIfNotFound: true);
         m_DeafultMovement_MouseLock = m_DeafultMovement.FindAction("Mouse Lock", throwIfNotFound: true);
         m_DeafultMovement_Sprint = m_DeafultMovement.FindAction("Sprint", throwIfNotFound: true);
+        // Deafult Movement1
+        m_DeafultMovement1 = asset.FindActionMap("Deafult Movement1", throwIfNotFound: true);
+        m_DeafultMovement1_Movement = m_DeafultMovement1.FindAction("Movement", throwIfNotFound: true);
+        m_DeafultMovement1_Rotation = m_DeafultMovement1.FindAction("Rotation", throwIfNotFound: true);
+        m_DeafultMovement1_Jump = m_DeafultMovement1.FindAction("Jump", throwIfNotFound: true);
+        m_DeafultMovement1_MouseLock = m_DeafultMovement1.FindAction("Mouse Lock", throwIfNotFound: true);
+        m_DeafultMovement1_Sprint = m_DeafultMovement1.FindAction("Sprint", throwIfNotFound: true);
+        // Deafult Movement2
+        m_DeafultMovement2 = asset.FindActionMap("Deafult Movement2", throwIfNotFound: true);
+        m_DeafultMovement2_Movement = m_DeafultMovement2.FindAction("Movement", throwIfNotFound: true);
+        m_DeafultMovement2_Rotation = m_DeafultMovement2.FindAction("Rotation", throwIfNotFound: true);
+        m_DeafultMovement2_Jump = m_DeafultMovement2.FindAction("Jump", throwIfNotFound: true);
+        m_DeafultMovement2_MouseLock = m_DeafultMovement2.FindAction("Mouse Lock", throwIfNotFound: true);
+        m_DeafultMovement2_Sprint = m_DeafultMovement2.FindAction("Sprint", throwIfNotFound: true);
+        // Deafult Movement3
+        m_DeafultMovement3 = asset.FindActionMap("Deafult Movement3", throwIfNotFound: true);
+        m_DeafultMovement3_Movement = m_DeafultMovement3.FindAction("Movement", throwIfNotFound: true);
+        m_DeafultMovement3_Rotation = m_DeafultMovement3.FindAction("Rotation", throwIfNotFound: true);
+        m_DeafultMovement3_Jump = m_DeafultMovement3.FindAction("Jump", throwIfNotFound: true);
+        m_DeafultMovement3_MouseLock = m_DeafultMovement3.FindAction("Mouse Lock", throwIfNotFound: true);
+        m_DeafultMovement3_Sprint = m_DeafultMovement3.FindAction("Sprint", throwIfNotFound: true);
+        // Deafult Movement4
+        m_DeafultMovement4 = asset.FindActionMap("Deafult Movement4", throwIfNotFound: true);
+        m_DeafultMovement4_Movement = m_DeafultMovement4.FindAction("Movement", throwIfNotFound: true);
+        m_DeafultMovement4_Rotation = m_DeafultMovement4.FindAction("Rotation", throwIfNotFound: true);
+        m_DeafultMovement4_Jump = m_DeafultMovement4.FindAction("Jump", throwIfNotFound: true);
+        m_DeafultMovement4_MouseLock = m_DeafultMovement4.FindAction("Mouse Lock", throwIfNotFound: true);
+        m_DeafultMovement4_Sprint = m_DeafultMovement4.FindAction("Sprint", throwIfNotFound: true);
         // Deafult Input
         m_DeafultInput = asset.FindActionMap("Deafult Input", throwIfNotFound: true);
         m_DeafultInput_Shoot = m_DeafultInput.FindAction("Shoot", throwIfNotFound: true);
@@ -420,6 +1402,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_DeafultInput_Interact = m_DeafultInput.FindAction("Interact", throwIfNotFound: true);
         m_DeafultInput_up = m_DeafultInput.FindAction("up", throwIfNotFound: true);
         m_DeafultInput_down = m_DeafultInput.FindAction("down", throwIfNotFound: true);
+        m_DeafultInput_Joystick = m_DeafultInput.FindAction("Joystick", throwIfNotFound: true);
+        m_DeafultInput_Wasd = m_DeafultInput.FindAction("Wasd", throwIfNotFound: true);
+        m_DeafultInput_Options = m_DeafultInput.FindAction("Options", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -541,6 +1526,266 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     }
     public DeafultMovementActions @DeafultMovement => new DeafultMovementActions(this);
 
+    // Deafult Movement1
+    private readonly InputActionMap m_DeafultMovement1;
+    private IDeafultMovement1Actions m_DeafultMovement1ActionsCallbackInterface;
+    private readonly InputAction m_DeafultMovement1_Movement;
+    private readonly InputAction m_DeafultMovement1_Rotation;
+    private readonly InputAction m_DeafultMovement1_Jump;
+    private readonly InputAction m_DeafultMovement1_MouseLock;
+    private readonly InputAction m_DeafultMovement1_Sprint;
+    public struct DeafultMovement1Actions
+    {
+        private @PlayerControlls m_Wrapper;
+        public DeafultMovement1Actions(@PlayerControlls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_DeafultMovement1_Movement;
+        public InputAction @Rotation => m_Wrapper.m_DeafultMovement1_Rotation;
+        public InputAction @Jump => m_Wrapper.m_DeafultMovement1_Jump;
+        public InputAction @MouseLock => m_Wrapper.m_DeafultMovement1_MouseLock;
+        public InputAction @Sprint => m_Wrapper.m_DeafultMovement1_Sprint;
+        public InputActionMap Get() { return m_Wrapper.m_DeafultMovement1; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DeafultMovement1Actions set) { return set.Get(); }
+        public void SetCallbacks(IDeafultMovement1Actions instance)
+        {
+            if (m_Wrapper.m_DeafultMovement1ActionsCallbackInterface != null)
+            {
+                @Movement.started -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnMovement;
+                @Rotation.started -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnRotation;
+                @Rotation.performed -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnRotation;
+                @Rotation.canceled -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnRotation;
+                @Jump.started -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnJump;
+                @MouseLock.started -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnMouseLock;
+                @MouseLock.performed -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnMouseLock;
+                @MouseLock.canceled -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnMouseLock;
+                @Sprint.started -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_DeafultMovement1ActionsCallbackInterface.OnSprint;
+            }
+            m_Wrapper.m_DeafultMovement1ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Rotation.started += instance.OnRotation;
+                @Rotation.performed += instance.OnRotation;
+                @Rotation.canceled += instance.OnRotation;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @MouseLock.started += instance.OnMouseLock;
+                @MouseLock.performed += instance.OnMouseLock;
+                @MouseLock.canceled += instance.OnMouseLock;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
+            }
+        }
+    }
+    public DeafultMovement1Actions @DeafultMovement1 => new DeafultMovement1Actions(this);
+
+    // Deafult Movement2
+    private readonly InputActionMap m_DeafultMovement2;
+    private IDeafultMovement2Actions m_DeafultMovement2ActionsCallbackInterface;
+    private readonly InputAction m_DeafultMovement2_Movement;
+    private readonly InputAction m_DeafultMovement2_Rotation;
+    private readonly InputAction m_DeafultMovement2_Jump;
+    private readonly InputAction m_DeafultMovement2_MouseLock;
+    private readonly InputAction m_DeafultMovement2_Sprint;
+    public struct DeafultMovement2Actions
+    {
+        private @PlayerControlls m_Wrapper;
+        public DeafultMovement2Actions(@PlayerControlls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_DeafultMovement2_Movement;
+        public InputAction @Rotation => m_Wrapper.m_DeafultMovement2_Rotation;
+        public InputAction @Jump => m_Wrapper.m_DeafultMovement2_Jump;
+        public InputAction @MouseLock => m_Wrapper.m_DeafultMovement2_MouseLock;
+        public InputAction @Sprint => m_Wrapper.m_DeafultMovement2_Sprint;
+        public InputActionMap Get() { return m_Wrapper.m_DeafultMovement2; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DeafultMovement2Actions set) { return set.Get(); }
+        public void SetCallbacks(IDeafultMovement2Actions instance)
+        {
+            if (m_Wrapper.m_DeafultMovement2ActionsCallbackInterface != null)
+            {
+                @Movement.started -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnMovement;
+                @Rotation.started -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnRotation;
+                @Rotation.performed -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnRotation;
+                @Rotation.canceled -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnRotation;
+                @Jump.started -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnJump;
+                @MouseLock.started -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnMouseLock;
+                @MouseLock.performed -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnMouseLock;
+                @MouseLock.canceled -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnMouseLock;
+                @Sprint.started -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_DeafultMovement2ActionsCallbackInterface.OnSprint;
+            }
+            m_Wrapper.m_DeafultMovement2ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Rotation.started += instance.OnRotation;
+                @Rotation.performed += instance.OnRotation;
+                @Rotation.canceled += instance.OnRotation;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @MouseLock.started += instance.OnMouseLock;
+                @MouseLock.performed += instance.OnMouseLock;
+                @MouseLock.canceled += instance.OnMouseLock;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
+            }
+        }
+    }
+    public DeafultMovement2Actions @DeafultMovement2 => new DeafultMovement2Actions(this);
+
+    // Deafult Movement3
+    private readonly InputActionMap m_DeafultMovement3;
+    private IDeafultMovement3Actions m_DeafultMovement3ActionsCallbackInterface;
+    private readonly InputAction m_DeafultMovement3_Movement;
+    private readonly InputAction m_DeafultMovement3_Rotation;
+    private readonly InputAction m_DeafultMovement3_Jump;
+    private readonly InputAction m_DeafultMovement3_MouseLock;
+    private readonly InputAction m_DeafultMovement3_Sprint;
+    public struct DeafultMovement3Actions
+    {
+        private @PlayerControlls m_Wrapper;
+        public DeafultMovement3Actions(@PlayerControlls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_DeafultMovement3_Movement;
+        public InputAction @Rotation => m_Wrapper.m_DeafultMovement3_Rotation;
+        public InputAction @Jump => m_Wrapper.m_DeafultMovement3_Jump;
+        public InputAction @MouseLock => m_Wrapper.m_DeafultMovement3_MouseLock;
+        public InputAction @Sprint => m_Wrapper.m_DeafultMovement3_Sprint;
+        public InputActionMap Get() { return m_Wrapper.m_DeafultMovement3; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DeafultMovement3Actions set) { return set.Get(); }
+        public void SetCallbacks(IDeafultMovement3Actions instance)
+        {
+            if (m_Wrapper.m_DeafultMovement3ActionsCallbackInterface != null)
+            {
+                @Movement.started -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnMovement;
+                @Rotation.started -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnRotation;
+                @Rotation.performed -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnRotation;
+                @Rotation.canceled -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnRotation;
+                @Jump.started -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnJump;
+                @MouseLock.started -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnMouseLock;
+                @MouseLock.performed -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnMouseLock;
+                @MouseLock.canceled -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnMouseLock;
+                @Sprint.started -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_DeafultMovement3ActionsCallbackInterface.OnSprint;
+            }
+            m_Wrapper.m_DeafultMovement3ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Rotation.started += instance.OnRotation;
+                @Rotation.performed += instance.OnRotation;
+                @Rotation.canceled += instance.OnRotation;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @MouseLock.started += instance.OnMouseLock;
+                @MouseLock.performed += instance.OnMouseLock;
+                @MouseLock.canceled += instance.OnMouseLock;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
+            }
+        }
+    }
+    public DeafultMovement3Actions @DeafultMovement3 => new DeafultMovement3Actions(this);
+
+    // Deafult Movement4
+    private readonly InputActionMap m_DeafultMovement4;
+    private IDeafultMovement4Actions m_DeafultMovement4ActionsCallbackInterface;
+    private readonly InputAction m_DeafultMovement4_Movement;
+    private readonly InputAction m_DeafultMovement4_Rotation;
+    private readonly InputAction m_DeafultMovement4_Jump;
+    private readonly InputAction m_DeafultMovement4_MouseLock;
+    private readonly InputAction m_DeafultMovement4_Sprint;
+    public struct DeafultMovement4Actions
+    {
+        private @PlayerControlls m_Wrapper;
+        public DeafultMovement4Actions(@PlayerControlls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_DeafultMovement4_Movement;
+        public InputAction @Rotation => m_Wrapper.m_DeafultMovement4_Rotation;
+        public InputAction @Jump => m_Wrapper.m_DeafultMovement4_Jump;
+        public InputAction @MouseLock => m_Wrapper.m_DeafultMovement4_MouseLock;
+        public InputAction @Sprint => m_Wrapper.m_DeafultMovement4_Sprint;
+        public InputActionMap Get() { return m_Wrapper.m_DeafultMovement4; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DeafultMovement4Actions set) { return set.Get(); }
+        public void SetCallbacks(IDeafultMovement4Actions instance)
+        {
+            if (m_Wrapper.m_DeafultMovement4ActionsCallbackInterface != null)
+            {
+                @Movement.started -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnMovement;
+                @Rotation.started -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnRotation;
+                @Rotation.performed -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnRotation;
+                @Rotation.canceled -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnRotation;
+                @Jump.started -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnJump;
+                @MouseLock.started -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnMouseLock;
+                @MouseLock.performed -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnMouseLock;
+                @MouseLock.canceled -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnMouseLock;
+                @Sprint.started -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_DeafultMovement4ActionsCallbackInterface.OnSprint;
+            }
+            m_Wrapper.m_DeafultMovement4ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Rotation.started += instance.OnRotation;
+                @Rotation.performed += instance.OnRotation;
+                @Rotation.canceled += instance.OnRotation;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @MouseLock.started += instance.OnMouseLock;
+                @MouseLock.performed += instance.OnMouseLock;
+                @MouseLock.canceled += instance.OnMouseLock;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
+            }
+        }
+    }
+    public DeafultMovement4Actions @DeafultMovement4 => new DeafultMovement4Actions(this);
+
     // Deafult Input
     private readonly InputActionMap m_DeafultInput;
     private IDeafultInputActions m_DeafultInputActionsCallbackInterface;
@@ -550,6 +1795,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_DeafultInput_Interact;
     private readonly InputAction m_DeafultInput_up;
     private readonly InputAction m_DeafultInput_down;
+    private readonly InputAction m_DeafultInput_Joystick;
+    private readonly InputAction m_DeafultInput_Wasd;
+    private readonly InputAction m_DeafultInput_Options;
     public struct DeafultInputActions
     {
         private @PlayerControlls m_Wrapper;
@@ -560,6 +1808,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_DeafultInput_Interact;
         public InputAction @up => m_Wrapper.m_DeafultInput_up;
         public InputAction @down => m_Wrapper.m_DeafultInput_down;
+        public InputAction @Joystick => m_Wrapper.m_DeafultInput_Joystick;
+        public InputAction @Wasd => m_Wrapper.m_DeafultInput_Wasd;
+        public InputAction @Options => m_Wrapper.m_DeafultInput_Options;
         public InputActionMap Get() { return m_Wrapper.m_DeafultInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -587,6 +1838,15 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @down.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnDown;
                 @down.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnDown;
                 @down.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnDown;
+                @Joystick.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnJoystick;
+                @Joystick.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnJoystick;
+                @Joystick.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnJoystick;
+                @Wasd.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnWasd;
+                @Wasd.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnWasd;
+                @Wasd.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnWasd;
+                @Options.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnOptions;
+                @Options.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnOptions;
+                @Options.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnOptions;
             }
             m_Wrapper.m_DeafultInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -609,11 +1869,52 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @down.started += instance.OnDown;
                 @down.performed += instance.OnDown;
                 @down.canceled += instance.OnDown;
+                @Joystick.started += instance.OnJoystick;
+                @Joystick.performed += instance.OnJoystick;
+                @Joystick.canceled += instance.OnJoystick;
+                @Wasd.started += instance.OnWasd;
+                @Wasd.performed += instance.OnWasd;
+                @Wasd.canceled += instance.OnWasd;
+                @Options.started += instance.OnOptions;
+                @Options.performed += instance.OnOptions;
+                @Options.canceled += instance.OnOptions;
             }
         }
     }
     public DeafultInputActions @DeafultInput => new DeafultInputActions(this);
     public interface IDeafultMovementActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnRotation(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnMouseLock(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
+    }
+    public interface IDeafultMovement1Actions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnRotation(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnMouseLock(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
+    }
+    public interface IDeafultMovement2Actions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnRotation(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnMouseLock(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
+    }
+    public interface IDeafultMovement3Actions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnRotation(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnMouseLock(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
+    }
+    public interface IDeafultMovement4Actions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnRotation(InputAction.CallbackContext context);
@@ -629,5 +1930,8 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnUp(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);
+        void OnJoystick(InputAction.CallbackContext context);
+        void OnWasd(InputAction.CallbackContext context);
+        void OnOptions(InputAction.CallbackContext context);
     }
 }
