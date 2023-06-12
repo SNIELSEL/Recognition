@@ -6,5 +6,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "zombie", menuName = "zombie")]
 public class Zombie : ScriptableObject
 {
-    public float hp, damage, speed;
+    public float hp, damage, speed, attackSpeed;
 }

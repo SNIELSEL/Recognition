@@ -50,6 +50,7 @@ public class BaseGun : MonoBehaviour
 
     public Extra extra;
     public ShootingStats stats;
+    private AudioSource shoot;
 
     private void Start()
     {
@@ -77,6 +78,8 @@ public class BaseGun : MonoBehaviour
         ADSloc = GameObject.Find("ADS");
         hipfireLoc = GameObject.Find("Hand");
         infiniteAmmoIcon = GameObject.Find("infiniteAmmo");
+
+        shoot = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -115,6 +118,8 @@ public class BaseGun : MonoBehaviour
         extra.bloom += Random.Range(-extra.bloomMain, extra.bloomMain) * extra.cam.transform.right;
         extra.bloom -= extra.cam.transform.position;
         extra.bloom.Normalize();
+
+        shoot.Play();
 
         RaycastHit hit;
 
