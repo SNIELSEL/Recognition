@@ -189,7 +189,7 @@ public class BaseGun : MonoBehaviour
         ammoCount = extra.startAmmo;
         extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
-        extra.ammoText.color = Color.white;
+        extra.ammoText.color = Color.black;
         extra.reload = false;
     }
 }

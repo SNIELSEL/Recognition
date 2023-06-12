@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (hp <= 0)
         {
-            SceneManager.LoadScene(sceneName: "Brian Test Scene");
+            SceneManager.LoadScene(sceneBuildIndex: 0);
         }
     }
 }
