@@ -31,11 +31,13 @@ public class SceneLoad : MonoBehaviour
 
     public void Start()
     {
+        Time.timeScale = 1;
         DontDestroyOnLoad(this);
         loadingDelay = 50 * Time.deltaTime * loadingDelayMultiplier;
     }
     public void LoadGame(int levelToLoadExisting)
     {
+        Time.timeScale = 1;
         levelLoadInt = levelToLoadExisting;
         StartCoroutine(LoadAndSceneCO());
     }
@@ -43,7 +45,6 @@ public class SceneLoad : MonoBehaviour
     public void NewGame(int levelToLoadNew)
     {
         levelLoadInt = levelToLoadNew;
-        print("test");
         StartCoroutine(ContinueAndSceneCO());
     }
 

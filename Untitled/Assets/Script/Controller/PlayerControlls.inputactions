@@ -1333,6 +1333,65 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MenuController",
+            "id": "2a0a6a9a-6d7a-497e-bbc9-bed855151526",
+            "actions": [
+                {
+                    "name": "OptionButton",
+                    "type": "Button",
+                    "id": "c131d501-111e-4129-800c-66460744e7b6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LockQuit",
+                    "type": "Button",
+                    "id": "8612efce-67eb-4ae4-997c-7d5bc1915c77",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "91124ea8-a4dc-48c5-b0c3-23b8dd248c5f",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OptionButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f34aa993-15c9-4a56-ad14-2d4954aaa107",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OptionButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c991c88-c317-4fab-8de9-395c3700acdc",
+                    "path": "<Keyboard>/f10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LockQuit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
