@@ -30,26 +30,23 @@ public class ZombieAI : MonoBehaviour
 
     private void Update()
     {
-        agent.destination = target.transform.position;
-        Closest();
-
-        if (hp < 0)
-        {
-            Destroy(gameObject);
-        }
+        target = GetClosestPlayer().gameObject;    
     }
 
 
-
-    public void Closest()
+    Transform GetClosestPlayer()
     {
+        float closestDinstance = 999999999999999;
+        int closestIndex = 0;
+
         for (int i = 0; i < player.Length; i++)
         {
-            if (Vector3.Distance(transform.position, player[i].transform.position) > Vector3.Distance(transform.position, target.transform.position))
-            {
-                target = player[i];
+            float curDistance = Vector3.Distance(transform.position, player[i].transform.position);
+            if (curDistance < closestDinstance) {
+                closestDinstance = curDistance;
+                closestIndex = i;
             }
         }
+        return player[closestIndex].transform;
     }
-
 }

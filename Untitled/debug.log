@@ -33,3 +33,4 @@
 [0611/134639.528:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0611/150421.365:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0611/150421.395:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0612/131909.024:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
