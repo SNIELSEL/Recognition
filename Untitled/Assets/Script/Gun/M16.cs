@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Threading.Tasks;
+using static BaseGun;
 
 public class M16 : BaseGun
 {
@@ -7,7 +8,7 @@ public class M16 : BaseGun
 
     public override async void Shoot()
     {
-        if (shootDelay < extra.timer && ammoCount > 0)
+        if (shootDelay < extra.timer && ammoCount > 0 && extra.reload == false)
         {
 
             base.Shoot();

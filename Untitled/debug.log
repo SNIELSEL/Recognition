@@ -1,0 +1,36 @@
+[0607/150022.837:ERROR:component_installer.cc(298)] Failed to verify installation for Widevine Content Decryption Module (C:\Users\brian\AppData\Local\CEF\User Data\WidevineCdm\4.10.2557.0).: The system cannot find the path specified. (0x3)
+[0607/150524.919:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0607/190701.111:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0607/190701.119:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0607/190701.125:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0607/190701.131:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0607/190701.138:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0607/190701.141:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/232839.644:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/232840.458:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/232841.501:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/232841.539:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/232841.764:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/234749.919:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/234750.035:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/234750.046:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/234755.049:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/234755.065:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/234805.060:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/234805.075:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/234825.065:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0610/234825.083:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0611/134616.932:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0611/134616.932:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0611/134620.064:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0611/134621.947:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0611/134621.947:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0611/134631.956:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0611/134631.957:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0611/134639.500:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0611/134639.501:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0611/134639.516:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0611/134639.528:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0611/150421.365:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0611/150421.395:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0612/131909.024:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 

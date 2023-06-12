@@ -4,7 +4,7 @@ public class M4A1 : BaseGun
 {
     public override void Shoot()
     {
-        if (shootDelay < extra.timer && ammoCount > 0)
+        if (shootDelay < extra.timer && ammoCount > 0 && extra.reload == false)
         {
             base.Shoot();
             extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
