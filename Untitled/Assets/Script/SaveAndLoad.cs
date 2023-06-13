@@ -15,7 +15,10 @@ public class SaveAndLoad : MonoBehaviour
 
     private XML_SaveData tempSave;
 
-
+    public void Awake()
+    {
+        slot = 1;
+    }
     public void Start()
     {
         slot = PlayerPrefs.GetInt("SaveSlot");

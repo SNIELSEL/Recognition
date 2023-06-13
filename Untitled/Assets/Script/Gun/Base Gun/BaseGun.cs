@@ -20,6 +20,8 @@ public class BaseGun : MonoBehaviour
         public float timer;
 
         public bool infiniteAmmo, reload;
+
+        public AudioSource reloadSound;
     }
 
     public class ShootingStats
@@ -30,9 +32,11 @@ public class BaseGun : MonoBehaviour
     //Public
 
     public string nameWeapon;
-    public int ammoCount, maxDistance, damage;
+    public int ammoCount, maxDistance, damage, reloadTime;
     public float bloomRange, shootDelay, recoilMain, zoom;
     public AmmoType ammoType;
+
+    public InGameMenuController inMenuCheck;
 
     public enum AmmoType
     {
@@ -60,6 +64,8 @@ public class BaseGun : MonoBehaviour
         stats.accurate = stats.hit / stats.fired * 100;
 
         extra.startAmmo = ammoCount;
+
+        extra.reloadSound = GameObject.Find("ReloadSound").GetComponent<AudioSource>();
 
         extra.ammoText = GameObject.Find("AmmoText").GetComponent<TextMeshProUGUI>();
         extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
@@ -164,11 +170,14 @@ public class BaseGun : MonoBehaviour
 
     public virtual void ADS()
     {
-        transform.SetParent(ADSloc.transform);
-        transform.localScale = Vector3.zero;
-        transform.localRotation = Quaternion.Euler(Vector3.zero);
-        transform.localPosition = Vector3.zero;
-        transform.localScale = Vector3.one;
+        if (!inMenuCheck.inMenu)
+        {
+            transform.SetParent(ADSloc.transform);
+            transform.localScale = Vector3.zero;
+            transform.localRotation = Quaternion.Euler(Vector3.zero);
+            transform.localPosition = Vector3.zero;
+            transform.localScale = Vector3.one;
+        }
     }
 
     public virtual void Normal()
@@ -182,8 +191,10 @@ public class BaseGun : MonoBehaviour
 
     public virtual async void Reload()
     {
+        extra.reloadSound.Play();
+
         extra.reload = true;
-        await Task.Delay(1000);
+        await Task.Delay(1000 * reloadTime);
 
         print("Base reload");
         ammoCount = extra.startAmmo;

@@ -19,6 +19,8 @@ public class WaveSystem : MonoBehaviour
 
     public bool wave;
 
+    public DeathOrWinScript deathOrWinScript;
+
     private void Start()
     {
         spawnLoc = GameObject.FindGameObjectsWithTag("Spawns");
@@ -35,7 +37,8 @@ public class WaveSystem : MonoBehaviour
         {
             if (inGameEnemy.Length == 0)
             {
-                SceneManager.LoadScene(sceneBuildIndex: 0);
+                deathOrWinScript.winOrLosstext.text = ("You killed all the enemies");
+                deathOrWinScript.BeginCountdown();
             }
         }
     }

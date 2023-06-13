@@ -7,11 +7,13 @@ public class PlayerStats : MonoBehaviour
 {
     public float hp;
 
+    public DeathOrWinScript deathOrWinScript;
     private void Update()
     {
         if (hp <= 0)
         {
-            SceneManager.LoadScene(sceneBuildIndex: 0);
+            deathOrWinScript.winOrLosstext.text = ("You Died");
+            deathOrWinScript.BeginCountdown();
         }
     }
 }
