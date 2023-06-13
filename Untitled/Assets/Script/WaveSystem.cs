@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class WaveSystem : MonoBehaviour
 {
     public int roundEnemy;
-    private int spawnedEnemy;
+    public int spawnedEnemy;
 
-    private GameObject[] inGameEnemy, spawnLoc;
+    public GameObject[] inGameEnemy, spawnLoc;
 
     public float spawnSpeed;
     private float spawnTime;
@@ -27,6 +29,14 @@ public class WaveSystem : MonoBehaviour
         if(wave == true)
         {
             Spawn();
+        }
+
+        if (spawnedEnemy > roundEnemy)
+        {
+            if (inGameEnemy.Length == 0)
+            {
+                SceneManager.LoadScene(sceneBuildIndex: 0);
+            }
         }
     }
 

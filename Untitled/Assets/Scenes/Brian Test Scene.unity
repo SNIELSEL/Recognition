@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 276162888}
   m_Layer: 6
   m_Name: Enemies
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1966,7 +1966,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55264fb977e83aa4cb7bf2e087d6e741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundEnemy: 20
+  roundEnemy: 4
+  spawnedEnemy: 0
+  inGameEnemy: []
+  spawnLoc: []
   spawnSpeed: 2
   enemy:
   - {fileID: 520628935711163732, guid: 2b2a60047a6c62e4184a61adf421d155, type: 3}
