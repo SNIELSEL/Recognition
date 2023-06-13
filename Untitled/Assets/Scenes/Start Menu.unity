@@ -10283,6 +10283,7 @@ GameObject:
   - component: {fileID: 265301294}
   - component: {fileID: 265301295}
   - component: {fileID: 265301296}
+  - component: {fileID: 265301297}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -10476,7 +10477,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 18ef668738a64824e89c77869402c5e4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.166
+  m_Volume: 0.484
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10560,6 +10561,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &265301297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265301283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b485363cf952ce44988956c5d41366c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsMenu: {fileID: 848152405}
+  creditsMenu: {fileID: 2119479171}
+  startMenu: {fileID: 1540963188}
+  selectButton: {fileID: 745674963}
 --- !u!1 &296563522
 GameObject:
   m_ObjectHideFlags: 0
@@ -30076,7 +30093,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 788617951}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 2
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:

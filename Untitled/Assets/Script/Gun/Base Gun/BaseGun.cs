@@ -35,6 +35,7 @@ public class BaseGun : MonoBehaviour
     public int ammoCount, maxDistance, damage, reloadTime;
     public float bloomRange, shootDelay, recoilMain, zoom;
     public AmmoType ammoType;
+    public GameObject reloadText;
 
     public InGameMenuController inMenuCheck;
 
@@ -202,5 +203,7 @@ public class BaseGun : MonoBehaviour
 
         extra.ammoText.color = Color.black;
         extra.reload = false;
+
+        reloadText.SetActive(false);
     }
 }

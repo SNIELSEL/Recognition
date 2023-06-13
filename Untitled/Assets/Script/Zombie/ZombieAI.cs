@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class ZombieAI : MonoBehaviour
 {
@@ -14,12 +15,20 @@ public class ZombieAI : MonoBehaviour
     public GameObject target;
 
     private float timer;
-
+    public AudioSource hurtSound;
+    private ColorManager colorManager;
+    private PlayerStats playerStats;
+    public Movement144 movement144;
+    public Shoot shoot;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectsWithTag("Player");
         transform.SetParent(GameObject.Find("Enemies").transform);
+        colorManager = GameObject.Find("ColorManager").GetComponent<ColorManager>();
+        playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        movement144 = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement144>();
+        shoot = GameObject.Find("M4A1").GetComponent<Shoot>();
 
         hp = zombie.hp;
         damage = zombie.damage;
@@ -65,8 +74,18 @@ public class ZombieAI : MonoBehaviour
     {
         if(collision.transform.tag == "Player" && attackSpeed < timer)
         {
-            timer = 0;
-            collision.transform.GetComponent<PlayerStats>().hp -= damage;
+            if (!playerStats.isDead)
+            {
+                hurtSound.Play(); 
+                timer = 0;
+                collision.transform.GetComponent<PlayerStats>().hp -= damage;
+                colorManager.IncreaseColor();
+            }
+            else
+            {
+                movement144.enabled = false;
+                shoot.enabled = false;
+            }
         }
     }
 }

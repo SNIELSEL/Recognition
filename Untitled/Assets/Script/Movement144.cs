@@ -31,15 +31,15 @@ public class Movement144 : MonoBehaviour
 
     public float x, y;
 
+    public InGameMenuController menuController;
     private void Awake()
     {
         input = new PlayerControlls();
+        saveAndLoad.LoadData();
     }
 
     private void Start()
     {
-        saveAndLoad.LoadData();
-
         cam = GameObject.Find("Main Camera");
         rb = GetComponent<Rigidbody>();
 
@@ -107,7 +107,9 @@ public class Movement144 : MonoBehaviour
 
     public void Rotation()
     {
-        mouseV2 = mouse.ReadValue<Vector2>() * sens;
+        sens = saveAndLoad.sensitivity;
+
+        mouseV2 = mouse.ReadValue<Vector2>() * sens / 2;
 
         y -= mouseV2.y;
 
@@ -121,7 +123,7 @@ public class Movement144 : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
 
-        if (context.started)
+        if (context.started && !menuController.inMenu)
         {
             int layerMask = 1 << 3;
 

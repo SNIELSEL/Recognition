@@ -18,7 +18,7 @@ public class PortalMain : MonoBehaviour
         wave = GameObject.Find("Spawners").GetComponent<WaveSystem>();
         wave.wave = false;
 
-        RenderSettings.fog = false;
+        //RenderSettings.fog = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,7 +31,7 @@ public class PortalMain : MonoBehaviour
         for (int i = 0; i < player.Length; i++)
         {
             player[i].transform.position = tpLocation.transform.position;
-            RenderSettings.fog = true;
+            //RenderSettings.fog = true;
             wave.wave = true;
         }
     }

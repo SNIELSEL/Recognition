@@ -1377,6 +1377,15 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""710da1d5-3d64-44a2-80a5-5cd2d6270c78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1410,6 +1419,28 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""LockQuit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""be0fe29f-cb74-4689-87d4-303d8c9a1d71"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c29adfd6-a2a6-4711-a6c3-98f7ceee1f86"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1468,6 +1499,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_MenuController = asset.FindActionMap("MenuController", throwIfNotFound: true);
         m_MenuController_OptionButton = m_MenuController.FindAction("OptionButton", throwIfNotFound: true);
         m_MenuController_LockQuit = m_MenuController.FindAction("LockQuit", throwIfNotFound: true);
+        m_MenuController_Back = m_MenuController.FindAction("Back", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1951,12 +1983,14 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private IMenuControllerActions m_MenuControllerActionsCallbackInterface;
     private readonly InputAction m_MenuController_OptionButton;
     private readonly InputAction m_MenuController_LockQuit;
+    private readonly InputAction m_MenuController_Back;
     public struct MenuControllerActions
     {
         private @PlayerControlls m_Wrapper;
         public MenuControllerActions(@PlayerControlls wrapper) { m_Wrapper = wrapper; }
         public InputAction @OptionButton => m_Wrapper.m_MenuController_OptionButton;
         public InputAction @LockQuit => m_Wrapper.m_MenuController_LockQuit;
+        public InputAction @Back => m_Wrapper.m_MenuController_Back;
         public InputActionMap Get() { return m_Wrapper.m_MenuController; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1972,6 +2006,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @LockQuit.started -= m_Wrapper.m_MenuControllerActionsCallbackInterface.OnLockQuit;
                 @LockQuit.performed -= m_Wrapper.m_MenuControllerActionsCallbackInterface.OnLockQuit;
                 @LockQuit.canceled -= m_Wrapper.m_MenuControllerActionsCallbackInterface.OnLockQuit;
+                @Back.started -= m_Wrapper.m_MenuControllerActionsCallbackInterface.OnBack;
+                @Back.performed -= m_Wrapper.m_MenuControllerActionsCallbackInterface.OnBack;
+                @Back.canceled -= m_Wrapper.m_MenuControllerActionsCallbackInterface.OnBack;
             }
             m_Wrapper.m_MenuControllerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1982,6 +2019,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @LockQuit.started += instance.OnLockQuit;
                 @LockQuit.performed += instance.OnLockQuit;
                 @LockQuit.canceled += instance.OnLockQuit;
+                @Back.started += instance.OnBack;
+                @Back.performed += instance.OnBack;
+                @Back.canceled += instance.OnBack;
             }
         }
     }
@@ -2042,5 +2082,6 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     {
         void OnOptionButton(InputAction.CallbackContext context);
         void OnLockQuit(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
     }
 }
