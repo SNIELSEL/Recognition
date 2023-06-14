@@ -38,7 +38,7 @@ public class WaveSystem : MonoBehaviour
             Spawn();
         }
 
-        if (spawnedEnemy > roundEnemy)
+        if (spawnedEnemy == roundEnemy)
         {
             if (inGameEnemy.Length == 0)
             {
