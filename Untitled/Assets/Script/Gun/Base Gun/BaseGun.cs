@@ -49,6 +49,8 @@ public class BaseGun : MonoBehaviour
 
     //Private
 
+    private bool ads;
+
     private GameObject ADSloc, hipfireLoc, infiniteAmmoIcon;
 
     private Movement player;
@@ -56,6 +58,8 @@ public class BaseGun : MonoBehaviour
     public Extra extra;
     public ShootingStats stats;
     private AudioSource shoot;
+    private ParticleSystem flash;
+    private WeaponShake shake;
 
     private void Start()
     {
@@ -87,6 +91,8 @@ public class BaseGun : MonoBehaviour
         infiniteAmmoIcon = GameObject.Find("infiniteAmmo");
 
         shoot = GetComponent<AudioSource>();
+        flash = GameObject.Find("Flash").GetComponent<ParticleSystem>();
+        shake = GetComponent<WeaponShake>();
     }
 
     private void Update()
@@ -120,13 +126,19 @@ public class BaseGun : MonoBehaviour
 
         stats.fired += 1;
 
+        shoot.Play();
+        flash.Play();
+
+        if(ads == false)
+        {
+            shake.Shake();
+        }
+
         extra.bloom = extra.cam.transform.position + extra.cam.transform.forward * 100;
         extra.bloom += Random.Range(-extra.bloomMain, extra.bloomMain) * extra.cam.transform.up;
         extra.bloom += Random.Range(-extra.bloomMain, extra.bloomMain) * extra.cam.transform.right;
         extra.bloom -= extra.cam.transform.position;
         extra.bloom.Normalize();
-
-        shoot.Play();
 
         RaycastHit hit;
 
@@ -179,6 +191,9 @@ public class BaseGun : MonoBehaviour
             transform.localRotation = Quaternion.Euler(Vector3.zero);
             transform.localPosition = Vector3.zero;
             transform.localScale = Vector3.one;
+
+            extra.bloom = Vector3.zero;
+            ads = true;
         }
     }
 
@@ -189,6 +204,8 @@ public class BaseGun : MonoBehaviour
         transform.localRotation = Quaternion.Euler(Vector3.zero);
         transform.localPosition = Vector3.zero;
         transform.localScale = Vector3.one;
+
+        ads = false;
     }
 
     public virtual async void Reload()
