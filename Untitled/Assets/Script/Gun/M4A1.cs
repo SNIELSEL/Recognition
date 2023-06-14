@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class M4A1 : BaseGun
 {
@@ -7,10 +8,11 @@ public class M4A1 : BaseGun
         if (shootDelay < extra.timer && ammoCount > 0 && extra.reload == false)
         {
             base.Shoot();
-            extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
-            extra.cam.transform.eulerAngles -= extra.recoil;
-            
-            if(ammoCount == 0)
+
+            GameObject.Find("Player").GetComponent<Movement144>().y -= recoilMain;
+            GameObject.Find("Player").GetComponent<Movement144>().x += recoilMain / 2;
+
+            if (ammoCount == 0)
 
 
             if (extra.infiniteAmmo == false)

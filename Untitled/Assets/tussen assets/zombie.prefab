@@ -160,8 +160,8 @@ MonoBehaviour:
   attackSpeed: 0
   target: {fileID: 0}
   hurtSound: {fileID: 3386585882754075348}
-  hurtImage: {fileID: 0}
-  fadecolor: {r: 1, g: 1, b: 1, a: 0}
+  movement144: {fileID: 0}
+  shoot: {fileID: 0}
 --- !u!82 &3386585882754075348
 AudioSource:
   m_ObjectHideFlags: 0

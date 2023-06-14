@@ -13,14 +13,10 @@ public class M16 : BaseGun
 
             base.Shoot();
             ammoCount -= 1;
-            extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
-            extra.cam.transform.eulerAngles -= extra.recoil;
 
             if (ammoCount > 0)
             {
                 base.Shoot();
-                extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
-                extra.cam.transform.eulerAngles -= extra.recoil;
 
                 if (extra.infiniteAmmo == false)
                 {
@@ -36,8 +32,6 @@ public class M16 : BaseGun
             if (ammoCount > 0)
             {
                 base.Shoot();
-                extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
-                extra.cam.transform.eulerAngles -= extra.recoil;
 
                 if (extra.infiniteAmmo == false)
                 {
@@ -54,8 +48,6 @@ public class M16 : BaseGun
             if (ammoCount > 0)
             {
                 base.Shoot();
-                extra.recoil = new Vector3(recoilMain, -recoilMain / 5, 0);
-                extra.cam.transform.eulerAngles -= extra.recoil;
 
                 if (extra.infiniteAmmo == false)
                 {
