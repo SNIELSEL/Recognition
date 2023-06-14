@@ -49,6 +49,7 @@ public class ZombieAI : MonoBehaviour
 
         if (hp <= 0)
         {
+            GameObject.Find("Spawners").GetComponent<WaveSystem>().leftEnemies -= 1;
             Destroy(gameObject);
         }
     }

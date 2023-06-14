@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,7 +8,7 @@ using UnityEngine.UIElements;
 
 public class WaveSystem : MonoBehaviour
 {
-    public int roundEnemy;
+    public int roundEnemy, leftEnemies;
     public int spawnedEnemy;
 
     public GameObject[] inGameEnemy, spawnLoc;
@@ -20,10 +21,14 @@ public class WaveSystem : MonoBehaviour
     public bool wave;
 
     public DeathOrWinScript deathOrWinScript;
+    private TextMeshProUGUI text;
 
     private void Start()
     {
         spawnLoc = GameObject.FindGameObjectsWithTag("Spawns");
+        text = GameObject.Find("EnemiesAlive").GetComponent<TextMeshProUGUI>();
+
+        leftEnemies = roundEnemy;
     }
 
     private void Update()
@@ -41,6 +46,8 @@ public class WaveSystem : MonoBehaviour
                 deathOrWinScript.BeginCountdown();
             }
         }
+
+        text.text = leftEnemies.ToString() + "left";
     }
 
     public void Spawn()
@@ -48,7 +55,7 @@ public class WaveSystem : MonoBehaviour
         spawnTime += Time.deltaTime;
         inGameEnemy = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if (spawnTime >= spawnSpeed && spawnedEnemy <= roundEnemy)
+        if (spawnTime >= spawnSpeed && spawnedEnemy < roundEnemy)
         {
             spawnTime = 0;
             spawnedEnemy += 1;

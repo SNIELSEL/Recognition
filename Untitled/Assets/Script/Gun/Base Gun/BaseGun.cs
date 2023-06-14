@@ -152,6 +152,7 @@ public class BaseGun : MonoBehaviour
             if (hit.transform.tag == "Enemy")
             {
                 hit.transform.GetComponent<ZombieAI>().hp -= damage;
+                GameObject.Find("Spawners").GetComponent<WaveSystem>().leftEnemies -= 1;
             }
         }
 
