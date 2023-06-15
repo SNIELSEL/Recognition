@@ -33,5 +33,10 @@ public class ButtonSelector : MonoBehaviour
             }
         }
 
+        if(lastSelectedUI == null)
+        {
+
+        }
+
     }
 }
