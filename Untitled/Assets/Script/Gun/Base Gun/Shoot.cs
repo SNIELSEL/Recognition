@@ -5,7 +5,7 @@ public class Shoot : MonoBehaviour
 {
     public bool sniper;
 
-    public KeyCode reload;
+    //public KeyCode reload;
 
     private Movement Player;
 
@@ -21,7 +21,7 @@ public class Shoot : MonoBehaviour
         single,
         burst,
         auto,
-        akimbo
+        akimbo,
     }
 
     public void Awake()

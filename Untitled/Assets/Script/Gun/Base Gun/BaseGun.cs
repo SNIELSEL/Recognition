@@ -60,6 +60,7 @@ public class BaseGun : MonoBehaviour
     private AudioSource shoot;
     private ParticleSystem flash;
     private WeaponShake shake;
+    private float fov;
 
     private void Start()
     {
@@ -93,6 +94,8 @@ public class BaseGun : MonoBehaviour
         shoot = GetComponent<AudioSource>();
         flash = GameObject.Find("Flash").GetComponent<ParticleSystem>();
         shake = GetComponent<WeaponShake>();
+
+        fov = extra.cam.GetComponent<Camera>().fieldOfView;
     }
 
     private void Update()
@@ -194,6 +197,8 @@ public class BaseGun : MonoBehaviour
 
             extra.bloom = Vector3.zero;
             ads = true;
+
+            extra.cam.GetComponent<Camera>().fieldOfView = fov / zoom;
         }
     }
 
@@ -206,6 +211,8 @@ public class BaseGun : MonoBehaviour
         transform.localScale = Vector3.one;
 
         ads = false;
+
+        extra.cam.GetComponent<Camera>().fieldOfView = fov;
     }
 
     public virtual async void Reload()
