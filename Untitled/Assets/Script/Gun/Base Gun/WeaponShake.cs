@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class WeaponShake : MonoBehaviour
 {
-    private GameObject lockePlace;
-
     public float shake, smooth;
 
-    public Quaternion target, rotationX, rotationY;
+    private Quaternion target, rotationX, rotationY;
 
     public void Shake()
     {

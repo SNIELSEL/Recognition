@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AWP : BaseGun
 {
+    public GameObject scope;
+
     public override void Shoot()
     {
         if (shootDelay < extra.timer && ammoCount > 0 && extra.reload == false)
@@ -33,5 +35,19 @@ public class AWP : BaseGun
 
             base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
         }
+    }
+
+    public override void ADS()
+    {
+        base.ADS();
+
+        scope.SetActive(true);
+    }
+
+    public override void Normal()
+    {
+        base.Normal();
+
+        scope.SetActive(false);
     }
 }

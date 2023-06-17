@@ -22,6 +22,7 @@ public class Shoot : MonoBehaviour
         burst,
         auto,
         akimbo,
+        shotgun
     }
 
     public void Awake()
@@ -69,6 +70,15 @@ public class Shoot : MonoBehaviour
             }
         }
 
+        if (context.started && fireMode == FireMode.shotgun)
+        {
+            GetComponent<BaseGun>().Shoot();
+            GetComponent<BaseGun>().Shoot();
+            GetComponent<BaseGun>().Shoot();
+            GetComponent<BaseGun>().Shoot();
+            GetComponent<BaseGun>().Shoot();
+        }
+
         if (context.canceled)
         {
             isShooting = false;
@@ -100,6 +110,9 @@ public class Shoot : MonoBehaviour
 
     public void Reload(InputAction.CallbackContext context)
     {
-        GetComponent<BaseGun>().Reload();
+        if (GetComponent<BaseGun>().ammoCount < GetComponent<BaseGun>().extra.startAmmo)
+        {
+            GetComponent<BaseGun>().Reload();
+        }
     }
 }
