@@ -32,6 +32,12 @@ public class Movement144 : MonoBehaviour
     public float x, y;
 
     public InGameMenuController menuController;
+    public extra extraS;
+
+    public class extra
+    {
+        public float zoom, aimsens;
+    }
     private void Awake()
     {
         input = new PlayerControlls();
@@ -42,9 +48,11 @@ public class Movement144 : MonoBehaviour
     {
         cam = GameObject.Find("Main Camera");
         rb = GetComponent<Rigidbody>();
+        extraS = new extra();
 
         jumpV3.y = jumpHight;
         moveLock = movespeed;
+        extraS.zoom = 1;
     }
 
     private void OnEnable()
@@ -115,9 +123,9 @@ public class Movement144 : MonoBehaviour
 
         y = Mathf.Clamp(y, -85, 85);
 
-        transform.Rotate(0, mouseV2.x, 0 * Time.deltaTime);
+        transform.Rotate(0, mouseV2.x, 0 * Time.deltaTime / extraS.zoom);
 
-        cam.transform.localRotation = Quaternion.Euler(y, 0, 0 * Time.deltaTime);
+        cam.transform.localRotation = Quaternion.Euler(y, 0, 0 * Time.deltaTime / extraS.zoom);
     }
 
     public void Jump(InputAction.CallbackContext context)

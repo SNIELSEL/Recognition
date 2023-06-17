@@ -9,10 +9,6 @@ public class Shotgun : BaseGun
         if (shootDelay < extra.timer && ammoCount > 0 && extra.reload == false)
         {
             base.Shoot();
-            base.Shoot();
-            base.Shoot();
-            base.Shoot();
-            base.Shoot();
 
             GameObject.Find("Player").GetComponent<Movement144>().y -= recoilMain;
             GameObject.Find("Player").GetComponent<Movement144>().x += recoilMain / 2;

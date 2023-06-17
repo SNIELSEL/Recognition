@@ -36,6 +36,7 @@ public class BaseGun : MonoBehaviour
     public float bloomRange, shootDelay, recoilMain, zoom;
     public AmmoType ammoType;
     public GameObject reloadText;
+    public GameObject inpact;
 
     public InGameMenuController inMenuCheck;
 
@@ -68,7 +69,6 @@ public class BaseGun : MonoBehaviour
         stats = new ShootingStats();
 
         stats.accurate = stats.hit / stats.fired * 100;
-
         extra.startAmmo = ammoCount;
 
         extra.reloadSound = GameObject.Find("ReloadSound").GetComponent<AudioSource>();
@@ -125,7 +125,7 @@ public class BaseGun : MonoBehaviour
     public virtual void Shoot()
     {
         extra.timer = 0;
-        int Target = 1 << 6;
+        //int Target = 1 << 6;
 
         stats.fired += 1;
 
@@ -143,13 +143,13 @@ public class BaseGun : MonoBehaviour
         extra.bloom -= extra.cam.transform.position;
         extra.bloom.Normalize();
 
+        print(extra.bloom);
+
         RaycastHit hit;
 
-        if(Physics.Raycast(extra.cam.transform.position, extra.bloom, out hit, maxDistance, Target))
+        if(Physics.Raycast(extra.cam.transform.position, extra.bloom, out hit, maxDistance))
         {
-            stats.hit += 1;
-
-            Hit();
+            Instantiate(inpact, hit.point, transform.rotation);
 
             if (hit.transform.parent.tag == "targets")
             {
@@ -162,16 +162,22 @@ public class BaseGun : MonoBehaviour
                 {
                     hit.transform.GetComponent<Falling>().Hit();
                 }
+
+                Hit();
+                stats.hit += 1;
             }
 
             if (hit.transform.tag == "Enemy")
             {
                 hit.transform.GetComponent<ZombieAI>().hp -= damage;
                 GameObject.Find("Spawners").GetComponent<WaveSystem>().leftEnemies -= 1;
+
+                Hit();
+                stats.hit += 1;
             }
         }
 
-        stats.accurate = (int)(stats.hit / stats.fired * 100);
+        stats.accurate = (int)((stats.hit / stats.fired) * 50);
 
         extra.aim.text = stats.accurate.ToString() + "%";
     }
@@ -199,6 +205,8 @@ public class BaseGun : MonoBehaviour
             ads = true;
 
             extra.cam.GetComponent<Camera>().fieldOfView = fov / zoom;
+
+            GameObject.Find("Player").GetComponent<Movement144>().extraS.zoom = zoom;
         }
     }
 
@@ -213,6 +221,8 @@ public class BaseGun : MonoBehaviour
         ads = false;
 
         extra.cam.GetComponent<Camera>().fieldOfView = fov;
+
+        GameObject.Find("Player").GetComponent<Movement144>().extraS.zoom = 1;
     }
 
     public virtual async void Reload()
@@ -226,7 +236,7 @@ public class BaseGun : MonoBehaviour
         ammoCount = extra.startAmmo;
         extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
 
-        extra.ammoText.color = Color.black;
+        extra.ammoText.color = new Color (0,143,255);
         extra.reload = false;
 
         reloadText.SetActive(false);
