@@ -27,7 +27,7 @@ public class M4A1 : BaseGun
             if (ammoCount == 0)
             {
                 extra.ammoText.color = Color.red;
-                reloadText.SetActive(true);
+                extra.reloadText.SetActive(true);
             }
 
             base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;

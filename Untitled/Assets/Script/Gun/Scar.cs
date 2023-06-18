@@ -11,7 +11,7 @@ public class Scar : BaseGun
             base.Shoot();
 
             GameObject.Find("Player").GetComponent<Movement144>().y -= recoilMain;
-            GameObject.Find("Player").GetComponent<Movement144>().x += recoilMain / 2;
+            GameObject.Find("Player").GetComponent<Movement144>().x += recoilMain / 3;
 
             if (ammoCount == 0)
 
@@ -28,7 +28,7 @@ public class Scar : BaseGun
             if (ammoCount == 0)
             {
                 extra.ammoText.color = Color.red;
-                reloadText.SetActive(true);
+                extra.reloadText.SetActive(true);
             }
 
             base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
