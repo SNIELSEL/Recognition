@@ -94,8 +94,10 @@ public class Movement144 : MonoBehaviour
     {
         moveV2.x = move.ReadValue<Vector2>().x;
         moveV2.z = move.ReadValue<Vector2>().y;
+        moveV2 = moveV2.normalized;
 
         transform.Translate(moveV2 * Time.deltaTime * movespeed);
+        //rb.MovePosition(mouseV2 * Time.deltaTime * movespeed);
     }
 
     public void Sprint(InputAction.CallbackContext context)

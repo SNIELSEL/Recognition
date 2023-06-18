@@ -7,10 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2147343388261904099, guid: 4e8e3b781fafbd04e9cd2ebca723fb1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966353824279659723, guid: 4e8e3b781fafbd04e9cd2ebca723fb1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2966353824279659723, guid: 4e8e3b781fafbd04e9cd2ebca723fb1b, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5548006397277429550, guid: 4e8e3b781fafbd04e9cd2ebca723fb1b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 54e83cf1982782e4e8ed1ee3a997b4fc, type: 2}
+    - target: {fileID: 7918687305448838250, guid: 4e8e3b781fafbd04e9cd2ebca723fb1b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a683f549b388af64c9a781c5e28849b1, type: 2}
     - target: {fileID: 8301645216784185728, guid: 4e8e3b781fafbd04e9cd2ebca723fb1b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -58,6 +74,10 @@ PrefabInstance:
     - target: {fileID: 8682534343241737018, guid: 4e8e3b781fafbd04e9cd2ebca723fb1b, type: 3}
       propertyPath: m_Name
       value: Shotgun main Variant Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682534343241737018, guid: 4e8e3b781fafbd04e9cd2ebca723fb1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e8e3b781fafbd04e9cd2ebca723fb1b, type: 3}
@@ -243,6 +263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flash
       objectReference: {fileID: 0}
+    - target: {fileID: 1130322037628936658, guid: 27324eaa1efc3354a9fa8eb58425af1e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1130322037628936659, guid: 27324eaa1efc3354a9fa8eb58425af1e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -287,6 +311,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1130322038222524278, guid: 27324eaa1efc3354a9fa8eb58425af1e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27324eaa1efc3354a9fa8eb58425af1e, type: 3}
 --- !u!1001 &6911941476794876041
@@ -299,6 +327,10 @@ PrefabInstance:
     - target: {fileID: 6749477634771812484, guid: 7c686b664479bf042b6b746cf1327866, type: 3}
       propertyPath: m_Name
       value: ReloadSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749477634771812484, guid: 7c686b664479bf042b6b746cf1327866, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6749477634771812486, guid: 7c686b664479bf042b6b746cf1327866, type: 3}
       propertyPath: m_audioClip

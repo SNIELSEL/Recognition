@@ -12,6 +12,7 @@ TagManager:
   - Renderer
   - Spawns
   - Enemy
+  - Button
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - UI
   - Target
   - PostProcess
-  - 
+  - Weapons
   - 
   - 
   - 

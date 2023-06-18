@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
@@ -27,7 +28,7 @@ public class M4A1 : BaseGun
             if (ammoCount == 0)
             {
                 extra.ammoText.color = Color.red;
-                extra.reloadText.SetActive(true);
+                extra.reloadText.GetComponent<TextMeshProUGUI>().enabled = true;
             }
 
             base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;

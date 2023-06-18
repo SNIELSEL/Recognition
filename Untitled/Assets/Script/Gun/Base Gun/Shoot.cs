@@ -60,9 +60,10 @@ public class Shoot : MonoBehaviour
     }
     public void ShootV(InputAction.CallbackContext context)
     {
-        if (context.started && fireMode == FireMode.burst || fireMode == FireMode.single || fireMode == FireMode.akimbo || fireMode == FireMode.auto)
+        if (context.started && (fireMode == FireMode.burst || fireMode == FireMode.single || fireMode == FireMode.akimbo || fireMode == FireMode.auto))
         {
             GetComponent<BaseGun>().Shoot();
+            print("shot");
 
             if (fireMode == FireMode.auto)
             {
@@ -70,7 +71,7 @@ public class Shoot : MonoBehaviour
             }
         }
 
-        if (context.canceled)
+        if (context.canceled && fireMode == FireMode.auto)
         {
             isShooting = false;
         }
