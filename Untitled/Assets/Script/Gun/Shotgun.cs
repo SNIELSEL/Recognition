@@ -9,9 +9,12 @@ public class Shotgun : BaseGun
         if (shootDelay < extra.timer && ammoCount > 0 && extra.reload == false)
         {
             base.Shoot();
+            base.Shoot();
+            base.Shoot();
+            base.Shoot();
+            base.Shoot();
 
             GameObject.Find("Player").GetComponent<Movement144>().y -= recoilMain;
-            GameObject.Find("Player").GetComponent<Movement144>().x += recoilMain / 2;
 
             if (ammoCount == 0)
 
@@ -28,7 +31,7 @@ public class Shotgun : BaseGun
             if (ammoCount == 0)
             {
                 extra.ammoText.color = Color.red;
-                reloadText.SetActive(true);
+                extra.reloadText.SetActive(true);
             }
 
             base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;

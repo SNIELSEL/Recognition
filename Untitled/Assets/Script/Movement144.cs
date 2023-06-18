@@ -120,11 +120,13 @@ public class Movement144 : MonoBehaviour
         mouseV2 = mouse.ReadValue<Vector2>() * sens / 2;
 
         y -= mouseV2.y;
+        x += mouseV2.x;
 
         y = Mathf.Clamp(y, -85, 85);
 
-        transform.Rotate(0, mouseV2.x, 0 * Time.deltaTime / extraS.zoom);
+        //transform.Rotate(0, mouseV2.x, 0 * Time.deltaTime / extraS.zoom);
 
+        transform.localRotation = Quaternion.Euler(0, x, 0 * Time.deltaTime / extraS.zoom);
         cam.transform.localRotation = Quaternion.Euler(y, 0, 0 * Time.deltaTime / extraS.zoom);
     }
 

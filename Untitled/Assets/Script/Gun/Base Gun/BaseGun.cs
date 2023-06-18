@@ -7,7 +7,7 @@ public class BaseGun : MonoBehaviour
 {
     public class Extra
     {
-        public GameObject hitmarker, cam;
+        public GameObject hitmarker, cam, reloadText;
 
         public Vector3 bloom, recoil;
 
@@ -35,10 +35,8 @@ public class BaseGun : MonoBehaviour
     public int ammoCount, maxDistance, damage, reloadTime;
     public float bloomRange, shootDelay, recoilMain, zoom;
     public AmmoType ammoType;
-    public GameObject reloadText;
-    public GameObject inpact;
 
-    public InGameMenuController inMenuCheck;
+    public GameObject inpact;
 
     public enum AmmoType
     {
@@ -55,6 +53,7 @@ public class BaseGun : MonoBehaviour
     private GameObject ADSloc, hipfireLoc, infiniteAmmoIcon;
 
     private Movement player;
+    private InGameMenuController inMenuCheck;
 
     public Extra extra;
     public ShootingStats stats;
@@ -62,6 +61,7 @@ public class BaseGun : MonoBehaviour
     private ParticleSystem flash;
     private WeaponShake shake;
     private float fov;
+
 
     private void Start()
     {
@@ -96,6 +96,11 @@ public class BaseGun : MonoBehaviour
         shake = GetComponent<WeaponShake>();
 
         fov = extra.cam.GetComponent<Camera>().fieldOfView;
+
+        extra.reloadText = GameObject.Find("ReloadText");
+        inMenuCheck = GameObject.Find("Keep1").GetComponent<InGameMenuController>();
+
+        extra.reloadText.SetActive (false);
     }
 
     private void Update()
@@ -125,8 +130,6 @@ public class BaseGun : MonoBehaviour
     public virtual void Shoot()
     {
         extra.timer = 0;
-        //int Target = 1 << 6;
-
         stats.fired += 1;
 
         shoot.Play();
@@ -143,7 +146,7 @@ public class BaseGun : MonoBehaviour
         extra.bloom -= extra.cam.transform.position;
         extra.bloom.Normalize();
 
-        print(extra.bloom);
+        //print(extra.bloom);
 
         RaycastHit hit;
 
@@ -239,6 +242,6 @@ public class BaseGun : MonoBehaviour
         extra.ammoText.color = new Color (0,143,255);
         extra.reload = false;
 
-        reloadText.SetActive(false);
+        extra.reloadText.SetActive(false);
     }
 }

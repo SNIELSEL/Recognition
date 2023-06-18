@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,8 +22,7 @@ public class Shoot : MonoBehaviour
         single,
         burst,
         auto,
-        akimbo,
-        shotgun
+        akimbo
     }
 
     public void Awake()
@@ -70,15 +70,6 @@ public class Shoot : MonoBehaviour
             }
         }
 
-        if (context.started && fireMode == FireMode.shotgun)
-        {
-            GetComponent<BaseGun>().Shoot();
-            GetComponent<BaseGun>().Shoot();
-            GetComponent<BaseGun>().Shoot();
-            GetComponent<BaseGun>().Shoot();
-            GetComponent<BaseGun>().Shoot();
-        }
-
         if (context.canceled)
         {
             isShooting = false;
@@ -110,7 +101,7 @@ public class Shoot : MonoBehaviour
 
     public void Reload(InputAction.CallbackContext context)
     {
-        if (GetComponent<BaseGun>().ammoCount < GetComponent<BaseGun>().extra.startAmmo)
+        if (GetComponent<BaseGun>().ammoCount < GetComponent<BaseGun>().extra.startAmmo && GetComponent<BaseGun>().extra.reload == false)
         {
             GetComponent<BaseGun>().Reload();
         }

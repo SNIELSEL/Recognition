@@ -6,6 +6,15 @@ public class AWP : BaseGun
 {
     public GameObject scope;
 
+    /*
+    private void Start()
+    {
+        scope = GameObject.Find("Sniper zoom");
+        print(scope);
+        scope.SetActive(false);
+    }
+    */
+
     public override void Shoot()
     {
         if (shootDelay < extra.timer && ammoCount > 0 && extra.reload == false)
@@ -30,7 +39,7 @@ public class AWP : BaseGun
             if (ammoCount == 0)
             {
                 extra.ammoText.color = Color.red;
-                reloadText.SetActive(true);
+                extra.reloadText.SetActive(true);
             }
 
             base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
