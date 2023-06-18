@@ -103,6 +103,11 @@ public class BaseGun : MonoBehaviour
         extra.reloadText.GetComponent<TextMeshProUGUI>().enabled = false;
     }
 
+    private void OnEnable()
+    {
+        extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+    }
+
     private void Update()
     {
         extra.timer += Time.deltaTime;

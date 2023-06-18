@@ -45,6 +45,7 @@ public class InGameMenuController : MonoBehaviour
             movement.enabled = false;
             mouseLock.isLocked = false;
             gameUICanvas.gameObject.SetActive(false);
+            GameObject.Find("Hand").GetComponentInChildren<Shoot>().enabled = false;
         }
         else
         {
@@ -63,5 +64,6 @@ public class InGameMenuController : MonoBehaviour
         settingsMenu.SetActive(false);
         warningMenu.SetActive(false);
         gameUICanvas.gameObject.SetActive(true);
+        GameObject.Find("Hand").GetComponentInChildren<Shoot>().enabled = true;
     }
 }
