@@ -82,7 +82,7 @@ public class BaseGun : MonoBehaviour
         extra.cam = GameObject.Find("Main Camera");
         extra.fovMain = extra.cam.GetComponent<Camera>().fieldOfView;
         extra.hitmarker = GameObject.Find("HitMarker");
-        extra.hitmarker.SetActive(false);
+        //extra.hitmarker.SetActive(false);
 
         extra.startAmmo = ammoCount;
 
@@ -100,7 +100,7 @@ public class BaseGun : MonoBehaviour
         extra.reloadText = GameObject.Find("ReloadText");
         inMenuCheck = GameObject.Find("Keep1").GetComponent<InGameMenuController>();
 
-        extra.reloadText.SetActive (false);
+        extra.reloadText.GetComponent<TextMeshProUGUI>().enabled = false;
     }
 
     private void Update()
@@ -173,7 +173,6 @@ public class BaseGun : MonoBehaviour
             if (hit.transform.tag == "Enemy")
             {
                 hit.transform.GetComponent<ZombieAI>().hp -= damage;
-                GameObject.Find("Spawners").GetComponent<WaveSystem>().leftEnemies -= 1;
 
                 Hit();
                 stats.hit += 1;
@@ -187,11 +186,11 @@ public class BaseGun : MonoBehaviour
 
     public async void Hit()
     {
-        extra.hitmarker.SetActive(true);
+        extra.hitmarker.GetComponent<RawImage>().enabled = true;
 
         await Task.Delay(200);
 
-        extra.hitmarker.SetActive(false);
+        extra.hitmarker.GetComponent<RawImage>().enabled = false;
     }
 
     public virtual void ADS()
@@ -207,6 +206,7 @@ public class BaseGun : MonoBehaviour
             extra.bloom = Vector3.zero;
             ads = true;
 
+            GameObject.Find("WeaponCam").GetComponent<Camera>().fieldOfView = fov / zoom;
             extra.cam.GetComponent<Camera>().fieldOfView = fov / zoom;
 
             GameObject.Find("Player").GetComponent<Movement144>().extraS.zoom = zoom;
@@ -223,6 +223,7 @@ public class BaseGun : MonoBehaviour
 
         ads = false;
 
+        GameObject.Find("WeaponCam").GetComponent<Camera>().fieldOfView = fov;
         extra.cam.GetComponent<Camera>().fieldOfView = fov;
 
         GameObject.Find("Player").GetComponent<Movement144>().extraS.zoom = 1;
@@ -242,6 +243,6 @@ public class BaseGun : MonoBehaviour
         extra.ammoText.color = new Color (0,143,255);
         extra.reload = false;
 
-        extra.reloadText.SetActive(false);
+        extra.reloadText.GetComponent<TextMeshProUGUI>().enabled = false;
     }
 }

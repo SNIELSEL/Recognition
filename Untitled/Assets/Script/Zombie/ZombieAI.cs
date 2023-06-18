@@ -18,8 +18,9 @@ public class ZombieAI : MonoBehaviour
     public AudioSource hurtSound;
     private ColorManager colorManager;
     private PlayerStats playerStats;
-    public Movement144 movement144;
-    public Shoot shoot;
+    private Movement144 movement144;
+    private Shoot shoot;
+    private WaveSystem waveSystem;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -28,9 +29,10 @@ public class ZombieAI : MonoBehaviour
         colorManager = GameObject.Find("ColorManager").GetComponent<ColorManager>();
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         movement144 = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement144>();
-        //shoot = GameObject.Find("M4A1").GetComponent<Shoot>();
+        shoot = GameObject.Find("Hand").GetComponentInChildren<Shoot>();
+        waveSystem = GameObject.Find("Spawners").GetComponent<WaveSystem>();
 
-        hp = zombie.hp;
+        hp = zombie.hp * waveSystem.wavemiltie;
         damage = zombie.damage;
         speed = zombie.speed;
         attackSpeed = zombie.attackSpeed;

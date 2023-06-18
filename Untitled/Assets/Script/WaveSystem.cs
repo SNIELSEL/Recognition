@@ -9,7 +9,8 @@ using UnityEngine.UIElements;
 public class WaveSystem : MonoBehaviour
 {
     public int roundEnemy, leftEnemies;
-    public int spawnedEnemy;
+    private int spawnedEnemy, waveRound;
+    public float wavemiltie;
 
     public GameObject[] inGameEnemy, spawnLoc;
 
@@ -21,14 +22,19 @@ public class WaveSystem : MonoBehaviour
     public bool wave;
 
     public DeathOrWinScript deathOrWinScript;
-    private TextMeshProUGUI text;
+    private TextMeshProUGUI text, wavetext;
 
     private void Start()
     {
         spawnLoc = GameObject.FindGameObjectsWithTag("Spawns");
         text = GameObject.Find("EnemiesAlive").GetComponent<TextMeshProUGUI>();
+        wavetext = GameObject.Find("Wave").GetComponent<TextMeshProUGUI>(); 
 
         leftEnemies = roundEnemy;
+        wavemiltie = 1;
+        waveRound = 1;
+
+        wavetext.text = "Wave " + waveRound;
     }
 
     private void Update()
@@ -42,12 +48,22 @@ public class WaveSystem : MonoBehaviour
         {
             if (inGameEnemy.Length == 0)
             {
-                deathOrWinScript.winOrLosstext.text = ("You killed all the enemies");
-                deathOrWinScript.BeginCountdown();
+                //deathOrWinScript.winOrLosstext.text = ("You killed all the enemies");
+                //deathOrWinScript.BeginCountdown();
+
+                spawnedEnemy = 0;
+                roundEnemy += 3;
+                waveRound += 1;
+
+                //spawnSpeed /= 0.25f;
+                wavemiltie += 0.125f;
+
+                wavetext.text = "Wave " + waveRound;
+                leftEnemies = roundEnemy;
             }
         }
 
-        text.text = leftEnemies.ToString() + "left";
+        text.text = leftEnemies.ToString() + " Enemies left";
     }
 
     public void Spawn()
@@ -61,11 +77,6 @@ public class WaveSystem : MonoBehaviour
             spawnedEnemy += 1;
 
             Instantiate(enemy[Random.Range(0, enemy.Length)], spawnLoc[Random.Range(0, spawnLoc.Length)].transform.position, spawnLoc[Random.Range(0, spawnLoc.Length)].transform.rotation);
-        }
-
-        if (spawnedEnemy >= roundEnemy && inGameEnemy == null)
-        {
-            print("newWave");
         }
     }
 }
