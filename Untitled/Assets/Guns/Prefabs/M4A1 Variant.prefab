@@ -127,7 +127,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1d7aed2a10e796745b363f1aeb6dcaa6, type: 2}
     - target: {fileID: 5916849183574907123, guid: 72eec40e8e560634ba9d45f02dd21215, type: 3}
       propertyPath: m_Name
-      value: M4A1
+      value: M4A1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5916849183574907123, guid: 72eec40e8e560634ba9d45f02dd21215, type: 3}
       propertyPath: m_IsActive
@@ -298,7 +298,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sniper: 0
-  reload: 114
   fireMode: 2
 --- !u!114 &1991473294
 MonoBehaviour:
@@ -322,8 +321,7 @@ MonoBehaviour:
   recoilMain: 1
   zoom: 1.1
   ammoType: 0
-  reloadText: {fileID: 0}
-  inMenuCheck: {fileID: 0}
+  inpact: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
 --- !u!114 &1991473295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +350,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shake: 150
   smooth: 1
-  target: {x: 0, y: 0, z: 0, w: 1}
-  rotationX: {x: 0, y: 0, z: 0, w: 0}
-  rotationY: {x: 0, y: 0, z: 0, w: 0}

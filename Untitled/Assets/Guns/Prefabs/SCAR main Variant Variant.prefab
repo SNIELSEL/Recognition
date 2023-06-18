@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3824916543422410294, guid: cd1a19965a3791748886de7d46c95460, type: 3}
       propertyPath: m_Name
-      value: SCAR main Variant
+      value: SCAR main Variant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4494317516394689676, guid: cd1a19965a3791748886de7d46c95460, type: 3}
       propertyPath: m_RootOrder
@@ -219,9 +219,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shake: 150
   smooth: 1
-  target: {x: 0, y: 0, z: 0, w: 0}
-  rotationX: {x: 0, y: 0, z: 0, w: 0}
-  rotationY: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &2143849896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,8 +255,7 @@ MonoBehaviour:
   recoilMain: 4
   zoom: 1
   ammoType: 0
-  reloadText: {fileID: 0}
-  inMenuCheck: {fileID: 0}
+  inpact: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
 --- !u!1001 &6615832867751237015
 PrefabInstance:
   m_ObjectHideFlags: 0
