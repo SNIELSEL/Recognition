@@ -207,7 +207,7 @@ public class BaseGun : MonoBehaviour
     {
         extra.hitmarker.GetComponent<RawImage>().enabled = true;
 
-        await Task.Delay(200);
+        await Task.Delay(100);
 
         extra.hitmarker.GetComponent<RawImage>().enabled = false;
     }
@@ -255,7 +255,6 @@ public class BaseGun : MonoBehaviour
 
         extra.reload = true;
         await Task.Delay((int) upgrade.reloadBoosted);
-        print(upgrade.reloadBoosted);
 
         ammoCount = (int) upgrade.ammoBoosted;
         extra.ammoText.text = ammoCount.ToString() + "/" + (int) upgrade.ammoBoosted;

@@ -49,7 +49,7 @@ public class UpgradeUI : MonoBehaviour
             if (ui.activeSelf == false)
             {
                 ui.SetActive(true);
-                gameUI.SetActive(false);
+                //gameUI.SetActive(false);
                 move.enabled = false;
                 GameObject.Find("Keep").GetComponent<mouseLock>().isLocked = false;
                 GameObject.Find("Hand").GetComponentInChildren<Shoot>().enabled = false;
@@ -62,7 +62,7 @@ public class UpgradeUI : MonoBehaviour
             else
             {
                 ui.SetActive(false);
-                gameUI.SetActive(true);
+                //gameUI.SetActive(true);
                 move.enabled = true;
                 GameObject.Find("Keep").GetComponent<mouseLock>().isLocked = true;
                 GameObject.Find("Hand").GetComponentInChildren<Shoot>().enabled = true;
@@ -77,7 +77,7 @@ public class UpgradeUI : MonoBehaviour
         if (ui.activeSelf == false)
         {
             ui.SetActive(true);
-            gameUI.SetActive(false);
+            //gameUI.SetActive(false);
             move.enabled = false;
             GameObject.Find("Keep").GetComponent<mouseLock>().isLocked = false;
             GameObject.Find("Hand").GetComponentInChildren<Shoot>().enabled = false;
@@ -91,7 +91,7 @@ public class UpgradeUI : MonoBehaviour
         else
         {
             ui.SetActive(false);
-            gameUI.SetActive(true);
+            //gameUI.SetActive(true);
             move.enabled = true;
             GameObject.Find("Keep").GetComponent<mouseLock>().isLocked = true;
             GameObject.Find("Hand").GetComponentInChildren<Shoot>().enabled = true;
