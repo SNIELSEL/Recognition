@@ -66,3 +66,18 @@
 [0614/201520.606:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0614/201520.622:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0618/134649.742:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0618/145203.009:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0619/132108.651:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0619/175115.334:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0619/175117.072:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0619/175120.339:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0619/175122.097:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0619/175130.350:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0619/175132.108:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0619/175150.369:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0619/175152.116:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0619/175315.718:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0619/180143.929:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0619/180143.950:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0619/182230.175:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0619/193637.881:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 

@@ -467,7 +467,7 @@ MonoBehaviour:
   ammoCount: 5
   maxDistance: 900
   damage: 100
-  reloadTime: 1
+  reloadTime: 100
   bloomRange: 2
   shootDelay: 0.8
   recoilMain: 10

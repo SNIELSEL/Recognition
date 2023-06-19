@@ -29,6 +29,11 @@ public class BaseGun : MonoBehaviour
         public float fired, hit, accurate;
     }
 
+    public class Upgrade
+    {
+        public float reloadBoosted, damageBoosted, ammoBoosted;
+    }
+
     //Public
 
     public string nameWeapon;
@@ -57,16 +62,19 @@ public class BaseGun : MonoBehaviour
 
     public Extra extra;
     public ShootingStats stats;
+    public Upgrade upgrade;
+
     private AudioSource shoot;
     private ParticleSystem flash;
     private WeaponShake shake;
     private float fov;
 
 
-    private void Start()
+    private void Awake()
     {
         extra = new Extra();
         stats = new ShootingStats();
+        upgrade = new Upgrade();
 
         stats.accurate = stats.hit / stats.fired * 100;
         extra.startAmmo = ammoCount;
@@ -101,16 +109,24 @@ public class BaseGun : MonoBehaviour
         inMenuCheck = GameObject.Find("Keep1").GetComponent<InGameMenuController>();
 
         extra.reloadText.GetComponent<TextMeshProUGUI>().enabled = false;
+
+        upgrade.ammoBoosted = extra.startAmmo;
+        upgrade.damageBoosted = damage;
+        upgrade.reloadBoosted = reloadTime;
     }
 
     private void OnEnable()
     {
-        extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+        extra.ammoText.text = ammoCount.ToString() + "/" + (int) upgrade.ammoBoosted;
     }
 
     private void Update()
     {
         extra.timer += Time.deltaTime;
+
+        upgrade.ammoBoosted = GameObject.Find("Upgrades").GetComponent<UpgradeManage>().ammoBoost * extra.startAmmo;
+        upgrade.damageBoosted = GameObject.Find("Upgrades").GetComponent<UpgradeManage>().damageBoost * damage;
+        upgrade.reloadBoosted = reloadTime / GameObject.Find("Upgrades").GetComponent<UpgradeManage>().reloadBoost;
 
         /*
          
@@ -151,8 +167,6 @@ public class BaseGun : MonoBehaviour
         extra.bloom -= extra.cam.transform.position;
         extra.bloom.Normalize();
 
-        //print(extra.bloom);
-
         RaycastHit hit;
 
         if(Physics.Raycast(extra.cam.transform.position, extra.bloom, out hit, maxDistance))
@@ -177,7 +191,7 @@ public class BaseGun : MonoBehaviour
 
             if (hit.transform.tag == "Enemy")
             {
-                hit.transform.GetComponent<ZombieAI>().hp -= damage;
+                hit.transform.GetComponent<ZombieAI>().hp -= upgrade.damageBoosted;
 
                 Hit();
                 stats.hit += 1;
@@ -236,14 +250,15 @@ public class BaseGun : MonoBehaviour
 
     public virtual async void Reload()
     {
+        extra.reloadSound.pitch = 0.6f / (upgrade.reloadBoosted / reloadTime);
         extra.reloadSound.Play();
 
         extra.reload = true;
-        await Task.Delay(1000 * reloadTime);
+        await Task.Delay((int) upgrade.reloadBoosted);
+        print(upgrade.reloadBoosted);
 
-        print("Base reload");
-        ammoCount = extra.startAmmo;
-        extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+        ammoCount = (int) upgrade.ammoBoosted;
+        extra.ammoText.text = ammoCount.ToString() + "/" + (int) upgrade.ammoBoosted;
 
         extra.ammoText.color = new Color (0,143,255);
         extra.reload = false;

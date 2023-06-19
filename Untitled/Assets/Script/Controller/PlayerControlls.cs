@@ -1178,6 +1178,15 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Upgrade"",
+                    ""type"": ""Button"",
+                    ""id"": ""480294c2-4bf7-48e0-bda2-44d95a1228e4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1477,6 +1486,17 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""action"": ""weapon4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7828f9eb-7500-4d79-b465-8f59d0cb60d8"",
+                    ""path"": ""<Keyboard>/f12"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Upgrade"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1623,6 +1643,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_DeafultInput_weapon2 = m_DeafultInput.FindAction("weapon2", throwIfNotFound: true);
         m_DeafultInput_weapon3 = m_DeafultInput.FindAction("weapon3", throwIfNotFound: true);
         m_DeafultInput_weapon4 = m_DeafultInput.FindAction("weapon4", throwIfNotFound: true);
+        m_DeafultInput_Upgrade = m_DeafultInput.FindAction("Upgrade", throwIfNotFound: true);
         // MenuController
         m_MenuController = asset.FindActionMap("MenuController", throwIfNotFound: true);
         m_MenuController_OptionButton = m_MenuController.FindAction("OptionButton", throwIfNotFound: true);
@@ -2025,6 +2046,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_DeafultInput_weapon2;
     private readonly InputAction m_DeafultInput_weapon3;
     private readonly InputAction m_DeafultInput_weapon4;
+    private readonly InputAction m_DeafultInput_Upgrade;
     public struct DeafultInputActions
     {
         private @PlayerControlls m_Wrapper;
@@ -2042,6 +2064,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         public InputAction @weapon2 => m_Wrapper.m_DeafultInput_weapon2;
         public InputAction @weapon3 => m_Wrapper.m_DeafultInput_weapon3;
         public InputAction @weapon4 => m_Wrapper.m_DeafultInput_weapon4;
+        public InputAction @Upgrade => m_Wrapper.m_DeafultInput_Upgrade;
         public InputActionMap Get() { return m_Wrapper.m_DeafultInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2090,6 +2113,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @weapon4.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnWeapon4;
                 @weapon4.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnWeapon4;
                 @weapon4.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnWeapon4;
+                @Upgrade.started -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnUpgrade;
+                @Upgrade.performed -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnUpgrade;
+                @Upgrade.canceled -= m_Wrapper.m_DeafultInputActionsCallbackInterface.OnUpgrade;
             }
             m_Wrapper.m_DeafultInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -2133,6 +2159,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @weapon4.started += instance.OnWeapon4;
                 @weapon4.performed += instance.OnWeapon4;
                 @weapon4.canceled += instance.OnWeapon4;
+                @Upgrade.started += instance.OnUpgrade;
+                @Upgrade.performed += instance.OnUpgrade;
+                @Upgrade.canceled += instance.OnUpgrade;
             }
         }
     }
@@ -2241,6 +2270,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnWeapon2(InputAction.CallbackContext context);
         void OnWeapon3(InputAction.CallbackContext context);
         void OnWeapon4(InputAction.CallbackContext context);
+        void OnUpgrade(InputAction.CallbackContext context);
     }
     public interface IMenuControllerActions
     {
