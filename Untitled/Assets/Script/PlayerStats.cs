@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static BaseGun;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -15,11 +16,12 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        text = GameObject.Find("Hp").GetComponent<TextMeshProUGUI>();
+        text = GameObject.Find("Hp").GetComponent<TextMeshProUGUI>();;
     }
     private void Update()
     {
         text.text = ((int)(hp)).ToString();
+
         if (hp <= 0)
         {
             hp = 0;

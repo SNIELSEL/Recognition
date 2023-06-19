@@ -20,6 +20,11 @@ public class AWP : BaseGun
     {
         if (shootDelay < extra.timer && ammoCount > 0 && extra.reload == false)
         {
+            if(GameObject.Find("Upgrades").GetComponent<UpgradeManage>().dubbleShot == true)
+            {
+                base.Shoot();
+            }
+
             base.Shoot();
 
             GameObject.Find("Player").GetComponent<Movement144>().y -= recoilMain;
@@ -30,7 +35,7 @@ public class AWP : BaseGun
 
                 if (extra.infiniteAmmo == false)
 
-                    base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+                    base.extra.ammoText.text = ammoCount.ToString() + "/" + (int)upgrade.ammoBoosted;
 
             if (extra.infiniteAmmo == false)
             {
@@ -43,7 +48,7 @@ public class AWP : BaseGun
                 extra.reloadText.GetComponent<TextMeshProUGUI>().enabled = true;
             }
 
-            base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+            base.extra.ammoText.text = ammoCount.ToString() + "/" + (int)upgrade.ammoBoosted;
         }
     }
 

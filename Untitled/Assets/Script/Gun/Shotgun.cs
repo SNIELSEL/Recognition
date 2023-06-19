@@ -15,6 +15,15 @@ public class Shotgun : BaseGun
             base.Shoot();
             base.Shoot();
 
+            if (GameObject.Find("Upgrades").GetComponent<UpgradeManage>().dubbleShot == true)
+            {
+                base.Shoot();
+                base.Shoot();
+                base.Shoot();
+                base.Shoot();
+                base.Shoot();
+            }
+
             GameObject.Find("Player").GetComponent<Movement144>().y -= recoilMain;
 
             if (ammoCount == 0)
@@ -22,7 +31,7 @@ public class Shotgun : BaseGun
 
                 if (extra.infiniteAmmo == false)
 
-                    base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+                    base.extra.ammoText.text = ammoCount.ToString() + "/" + (int)upgrade.ammoBoosted;
 
             if (extra.infiniteAmmo == false)
             {
@@ -35,7 +44,7 @@ public class Shotgun : BaseGun
                 extra.reloadText.GetComponent<TextMeshProUGUI>().enabled = true;
             }
 
-            base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+            base.extra.ammoText.text = ammoCount.ToString() + "/" + (int)upgrade.ammoBoosted;
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Scar : BaseGun
@@ -8,6 +9,11 @@ public class Scar : BaseGun
     {
         if (shootDelay < extra.timer && ammoCount > 0 && extra.reload == false)
         {
+            if (GameObject.Find("Upgrades").GetComponent<UpgradeManage>().dubbleShot == true)
+            {
+                base.Shoot();
+            }
+
             base.Shoot();
 
             GameObject.Find("Player").GetComponent<Movement144>().y -= recoilMain;
@@ -18,7 +24,7 @@ public class Scar : BaseGun
 
                 if (extra.infiniteAmmo == false)
 
-                    base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+                    base.extra.ammoText.text = ammoCount.ToString() + "/" + (int) upgrade.ammoBoosted;
 
             if (extra.infiniteAmmo == false)
             {
@@ -28,10 +34,10 @@ public class Scar : BaseGun
             if (ammoCount == 0)
             {
                 extra.ammoText.color = Color.red;
-                extra.reloadText.SetActive(true);
+                extra.reloadText.GetComponent<TextMeshProUGUI>().enabled = true;
             }
 
-            base.extra.ammoText.text = ammoCount.ToString() + "/" + extra.startAmmo;
+            base.extra.ammoText.text = ammoCount.ToString() + "/" + (int) upgrade.ammoBoosted;
         }
     }
 }

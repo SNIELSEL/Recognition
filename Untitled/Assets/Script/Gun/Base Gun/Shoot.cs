@@ -20,9 +20,7 @@ public class Shoot : MonoBehaviour
     public enum FireMode
     {
         single,
-        burst,
-        auto,
-        akimbo
+        auto
     }
 
     public void Awake()
@@ -60,10 +58,9 @@ public class Shoot : MonoBehaviour
     }
     public void ShootV(InputAction.CallbackContext context)
     {
-        if (context.started && (fireMode == FireMode.burst || fireMode == FireMode.single || fireMode == FireMode.akimbo || fireMode == FireMode.auto))
+        if (context.started && (fireMode == FireMode.single || fireMode == FireMode.auto))
         {
             GetComponent<BaseGun>().Shoot();
-            print("shot");
 
             if (fireMode == FireMode.auto)
             {
@@ -88,21 +85,15 @@ public class Shoot : MonoBehaviour
 
         else
         {
-            if (fireMode != FireMode.akimbo)
-            {
-                GetComponent<BaseGun>().ADS();
-            }
-
-            else
-            {
-                GetComponent<BaseGun>().Shoot();
-            }
+            GetComponent<BaseGun>().ADS();
         }
     }
 
     public void Reload(InputAction.CallbackContext context)
     {
-        if (GetComponent<BaseGun>().ammoCount < GetComponent<BaseGun>().extra.startAmmo && GetComponent<BaseGun>().extra.reload == false)
+        print("reload");
+
+        if (GetComponent<BaseGun>().ammoCount < GetComponent<BaseGun>().upgrade.ammoBoosted && GetComponent<BaseGun>().extra.reload == false)
         {
             GetComponent<BaseGun>().Reload();
         }

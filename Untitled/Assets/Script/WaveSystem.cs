@@ -24,6 +24,8 @@ public class WaveSystem : MonoBehaviour
     public DeathOrWinScript deathOrWinScript;
     private TextMeshProUGUI text, wavetext;
 
+    private bool Upgrade;
+
     private void Start()
     {
         spawnLoc = GameObject.FindGameObjectsWithTag("Spawns");
@@ -46,20 +48,10 @@ public class WaveSystem : MonoBehaviour
 
         if (spawnedEnemy == roundEnemy)
         {
-            if (inGameEnemy.Length == 0)
+            if (inGameEnemy.Length == 0 && Upgrade == false)
             {
-                //deathOrWinScript.winOrLosstext.text = ("You killed all the enemies");
-                //deathOrWinScript.BeginCountdown();
-
-                spawnedEnemy = 0;
-                roundEnemy += 3;
-                waveRound += 1;
-
-                //spawnSpeed /= 0.25f;
-                wavemiltie += 0.125f;
-
-                wavetext.text = "Wave " + waveRound;
-                leftEnemies = roundEnemy;
+                Upgrade = true;
+                GameObject.Find("Keep1").GetComponent<UpgradeUI>().click();
             }
         }
 
@@ -78,5 +70,20 @@ public class WaveSystem : MonoBehaviour
 
             Instantiate(enemy[Random.Range(0, enemy.Length)], spawnLoc[Random.Range(0, spawnLoc.Length)].transform.position, spawnLoc[Random.Range(0, spawnLoc.Length)].transform.rotation);
         }
+    }
+
+    public void NewWave()
+    {
+        spawnedEnemy = 0;
+        roundEnemy += 3;
+        waveRound += 1;
+
+        //spawnSpeed /= 0.25f;
+        wavemiltie += 0.125f;
+
+        wavetext.text = "Wave " + waveRound;
+        leftEnemies = roundEnemy;
+
+        Upgrade = false;
     }
 }

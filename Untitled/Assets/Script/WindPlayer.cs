@@ -11,7 +11,7 @@ public class WindPlayer : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             windStorm.Play();
-            RenderSettings.fog = true;
+            RenderSettings.fogDensity = 0.05f;
         }
     }
 }
