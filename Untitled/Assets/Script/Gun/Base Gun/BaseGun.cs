@@ -11,7 +11,7 @@ public class BaseGun : MonoBehaviour
 
         public Vector3 bloom, recoil;
 
-        public float bloomMain, fovMain;
+        public float fovMain;
 
         public int startAmmo;
 
@@ -162,8 +162,8 @@ public class BaseGun : MonoBehaviour
         }
 
         extra.bloom = extra.cam.transform.position + extra.cam.transform.forward * 100;
-        extra.bloom += Random.Range(-extra.bloomMain, extra.bloomMain) * extra.cam.transform.up;
-        extra.bloom += Random.Range(-extra.bloomMain, extra.bloomMain) * extra.cam.transform.right;
+        extra.bloom += Random.Range(-bloomRange, bloomRange) * extra.cam.transform.up;
+        extra.bloom += Random.Range(-bloomRange, bloomRange) * extra.cam.transform.right;
         extra.bloom -= extra.cam.transform.position;
         extra.bloom.Normalize();
 
