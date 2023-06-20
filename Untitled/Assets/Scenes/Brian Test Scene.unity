@@ -4190,7 +4190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 827275216, guid: 8d76814845cf0e44193907bda25451d3, type: 3}
+  m_Sprite: {fileID: -271070861, guid: abd1ce2e4c19eee48aab2232217d5323, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4227,7 +4227,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 03435af3b269a4042a29b0ae941df15a, type: 2}
   - {fileID: 11400000, guid: d6d9c388959b6674ba3190ff9a937683, type: 2}
   upgradeManager: {fileID: 0}
-  test: 0
 --- !u!1 &814748952
 GameObject:
   m_ObjectHideFlags: 0
@@ -6207,7 +6206,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 827275216, guid: 8d76814845cf0e44193907bda25451d3, type: 3}
+  m_Sprite: {fileID: -271070861, guid: abd1ce2e4c19eee48aab2232217d5323, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6244,7 +6243,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 03435af3b269a4042a29b0ae941df15a, type: 2}
   - {fileID: 11400000, guid: d6d9c388959b6674ba3190ff9a937683, type: 2}
   upgradeManager: {fileID: 0}
-  test: 0
 --- !u!1001 &1275891405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9581,7 +9579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 827275216, guid: 8d76814845cf0e44193907bda25451d3, type: 3}
+  m_Sprite: {fileID: -271070861, guid: abd1ce2e4c19eee48aab2232217d5323, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9618,7 +9616,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 03435af3b269a4042a29b0ae941df15a, type: 2}
   - {fileID: 11400000, guid: d6d9c388959b6674ba3190ff9a937683, type: 2}
   upgradeManager: {fileID: 333136706}
-  test: 0
 --- !u!1 &2082589971
 GameObject:
   m_ObjectHideFlags: 0
