@@ -15,8 +15,6 @@ public class UpgradeButton : MonoBehaviour
     private RawImage image;
     public UpgradeManage upgradeManager;
 
-    public bool test;
-
     private void Start()
     {
         name = gameObject.transform.Find("Name").GetComponent<TextMeshProUGUI>();
@@ -29,7 +27,16 @@ public class UpgradeButton : MonoBehaviour
     private void OnEnable()
     {
         active = upgrade[Random.Range(0, upgrade.Length)];
-        GetComponent<Button>().onClick.AddListener(() => upgradeManager.Pickup(active));
+
+        if (upgradeManager.dubbleShot == true && active.upgradeName == "Dubble shot")
+        {
+            OnEnable();
+        }
+
+        else
+        {
+            GetComponent<Button>().onClick.AddListener(() => upgradeManager.Pickup(active));
+        }
     }
 
     private void OnDisable()
