@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4497538723847372946}
   - component: {fileID: 4497538723847372947}
   - component: {fileID: 3386585882754075348}
+  - component: {fileID: 7434520000232914598}
   m_Layer: 6
   m_Name: zombie
   m_TagString: Enemy
@@ -160,8 +161,6 @@ MonoBehaviour:
   attackSpeed: 0
   target: {fileID: 0}
   hurtSound: {fileID: 3386585882754075348}
-  movement144: {fileID: 0}
-  shoot: {fileID: 0}
 --- !u!82 &3386585882754075348
 AudioSource:
   m_ObjectHideFlags: 0
@@ -174,7 +173,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b548c4e4f6c8d114590d52273b3cde6c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.59
+  m_Volume: 0.852
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -258,3 +257,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7434520000232914598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520628935711163732}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 3
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

@@ -124,9 +124,12 @@ public class BaseGun : MonoBehaviour
     {
         extra.timer += Time.deltaTime;
 
-        upgrade.ammoBoosted = GameObject.Find("Upgrades").GetComponent<UpgradeManage>().ammoBoost * extra.startAmmo;
-        upgrade.damageBoosted = GameObject.Find("Upgrades").GetComponent<UpgradeManage>().damageBoost * damage;
-        upgrade.reloadBoosted = reloadTime / GameObject.Find("Upgrades").GetComponent<UpgradeManage>().reloadBoost;
+        if(GameObject.Find("Upgrades") != null)
+        {
+            upgrade.ammoBoosted = GameObject.Find("Upgrades").GetComponent<UpgradeManage>().ammoBoost * extra.startAmmo;
+            upgrade.damageBoosted = GameObject.Find("Upgrades").GetComponent<UpgradeManage>().damageBoost * damage;
+            upgrade.reloadBoosted = reloadTime / GameObject.Find("Upgrades").GetComponent<UpgradeManage>().reloadBoost;
+        }
 
         /*
          
@@ -159,13 +162,28 @@ public class BaseGun : MonoBehaviour
         if(ads == false)
         {
             shake.Shake();
+
+            extra.bloom = extra.cam.transform.position + extra.cam.transform.forward * 100;
+            extra.bloom += Random.Range(-bloomRange, bloomRange) * extra.cam.transform.up;
+            extra.bloom += Random.Range(-bloomRange, bloomRange) * extra.cam.transform.right;
+            extra.bloom -= extra.cam.transform.position;
+            extra.bloom.Normalize();
         }
 
-        extra.bloom = extra.cam.transform.position + extra.cam.transform.forward * 100;
-        extra.bloom += Random.Range(-bloomRange, bloomRange) * extra.cam.transform.up;
-        extra.bloom += Random.Range(-bloomRange, bloomRange) * extra.cam.transform.right;
-        extra.bloom -= extra.cam.transform.position;
-        extra.bloom.Normalize();
+        else
+        {
+            extra.bloom = extra.cam.transform.forward;
+        }
+
+
+        if (transform.GetComponent<Shotgun>() == true)
+        {
+            extra.bloom = extra.cam.transform.position + extra.cam.transform.forward * 100;
+            extra.bloom += Random.Range(-bloomRange, bloomRange) * extra.cam.transform.up;
+            extra.bloom += Random.Range(-bloomRange, bloomRange) * extra.cam.transform.right;
+            extra.bloom -= extra.cam.transform.position;
+            extra.bloom.Normalize();
+        }
 
         RaycastHit hit;
 
@@ -223,6 +241,7 @@ public class BaseGun : MonoBehaviour
             transform.localScale = Vector3.one;
 
             extra.bloom = Vector3.zero;
+            
             ads = true;
 
             GameObject.Find("WeaponCam").GetComponent<Camera>().fieldOfView = fov / zoom;

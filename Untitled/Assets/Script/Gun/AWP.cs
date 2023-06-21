@@ -56,6 +56,7 @@ public class AWP : BaseGun
     {
         base.ADS();
 
+        transform.GetComponent<WeaponSway>().enabled = false;
         scope.SetActive(true);
     }
 
@@ -63,6 +64,7 @@ public class AWP : BaseGun
     {
         base.Normal();
 
+        transform.GetComponent<WeaponSway>().enabled = true;
         scope.SetActive(false);
     }
 }

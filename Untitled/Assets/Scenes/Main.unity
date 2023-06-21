@@ -2106,7 +2106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408768567}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.71, z: 0}
+  m_LocalPosition: {x: -159.9, y: 2.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2228,6 +2228,114 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c131d501-111e-4129-800c-66460744e7b6
     m_ActionName: MenuController/OptionButton[/Keyboard/escape,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 16cbbd7e-ec28-4737-990b-9ba0484a2fed
+    m_ActionName: Deafult Movement1/Movement[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 84a6f3b5-475f-4b89-b02d-fc1f5c1918cc
+    m_ActionName: Deafult Movement1/Rotation[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd20f74c-90a5-4caf-9c05-591f957cb3ca
+    m_ActionName: Deafult Movement1/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2636892e-417d-428a-a412-4f0983a5fd11
+    m_ActionName: Deafult Movement1/Mouse Lock[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6be5d6e7-93f1-4edf-b468-b63a7923174f
+    m_ActionName: Deafult Movement1/Sprint[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 53e59157-9b87-4eda-a563-5d72b3c987c5
+    m_ActionName: Deafult Movement2/Movement[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 945dfa86-10c7-4848-a9f0-45499006a28e
+    m_ActionName: Deafult Movement2/Rotation[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 30596622-8879-4cec-a1fc-8837435e8fbd
+    m_ActionName: Deafult Movement2/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f9e96d6a-f108-4ef6-a7c9-1b096feb619b
+    m_ActionName: Deafult Movement2/Mouse Lock[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d6420061-a129-4734-a4af-4bad38a467b0
+    m_ActionName: Deafult Movement2/Sprint[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b44a6de7-c699-467c-90f8-dac71ff51fd4
+    m_ActionName: Deafult Movement3/Movement[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4ee1f515-27e1-4cf7-81bf-2d20d6d93203
+    m_ActionName: Deafult Movement3/Rotation[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8487ef1b-2a44-4563-91ee-857ab4c589df
+    m_ActionName: Deafult Movement3/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fc962136-f661-4429-881b-55d053e9e254
+    m_ActionName: Deafult Movement3/Mouse Lock[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ac21c161-c56c-41e5-bf9b-c48ce86705fd
+    m_ActionName: Deafult Movement3/Sprint[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 77f7523e-7fd1-4c9f-989f-1ac1f68c979a
+    m_ActionName: Deafult Movement4/Movement[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: de92aca9-942e-4b45-a123-1fed0b64e781
+    m_ActionName: Deafult Movement4/Rotation[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 78489907-aa9d-45c2-851d-44382aa9d658
+    m_ActionName: Deafult Movement4/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 655f4f2c-25df-4d9e-8729-a7724015e8c4
+    m_ActionName: Deafult Movement4/Mouse Lock[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3d9d6397-328a-40a8-8c07-d1b21a1125f7
+    m_ActionName: Deafult Movement4/Sprint[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c7d6b117-682b-4ede-a500-1df43c05f861
+    m_ActionName: Deafult Input/weapon1[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 132065b1-9480-4650-9ec8-e848e2b0d764
+    m_ActionName: Deafult Input/weapon2[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4a388efc-0318-4bbc-8c56-3c417f27b0b8
+    m_ActionName: Deafult Input/weapon3[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 402183f2-ee98-4dcf-a476-b7ed244dee26
+    m_ActionName: Deafult Input/weapon4[/Keyboard/4]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 480294c2-4bf7-48e0-bda2-44d95a1228e4
+    m_ActionName: Deafult Input/Upgrade[/Keyboard/f12]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8612efce-67eb-4ae4-997c-7d5bc1915c77
+    m_ActionName: MenuController/LockQuit[/Keyboard/f10]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 710da1d5-3d64-44a2-80a5-5cd2d6270c78
+    m_ActionName: MenuController/Back[/Keyboard/backspace]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Deafult Movement
@@ -2251,6 +2359,7 @@ MonoBehaviour:
   saveAndLoad: {fileID: 1838698939}
   x: 0
   y: 0
+  menuController: {fileID: 0}
 --- !u!1 &1509695625 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1338244076479394619, guid: c48f7fa04ac516743936380ad63bb46d, type: 3}
@@ -2272,11 +2381,13 @@ MonoBehaviour:
   ammoCount: 30
   maxDistance: 300
   damage: 30
+  reloadTime: 0
   bloomRange: 1
   shootDelay: 0.1
   recoilMain: 1
   zoom: 1
   ammoType: 0
+  inpact: {fileID: 0}
 --- !u!114 &1509695629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2290,7 +2401,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sniper: 0
-  reload: 114
   fireMode: 2
 --- !u!1 &1518869177
 GameObject:
@@ -2656,7 +2766,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sniper: 0
-  reload: 114
   fireMode: 1
 --- !u!114 &1793530182
 MonoBehaviour:
@@ -2674,11 +2783,13 @@ MonoBehaviour:
   ammoCount: 18
   maxDistance: 50
   damage: 15
+  reloadTime: 0
   bloomRange: 1
   shootDelay: 0.8
   recoilMain: 0.5
   zoom: 1
   ammoType: 0
+  inpact: {fileID: 0}
   burstDelayMS: 100
 --- !u!1 &1799011186
 GameObject:
