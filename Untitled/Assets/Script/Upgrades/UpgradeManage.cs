@@ -8,7 +8,7 @@ public class UpgradeManage : MonoBehaviour
     public bool test;
 
     public float hpboost, damageBoost, reloadBoost, ammoBoost;
-    public bool dubbleShot;
+    public bool dubbleShot, enemyVision;
 
     private void Start()
     {
@@ -67,6 +67,11 @@ public class UpgradeManage : MonoBehaviour
                     if(slots[i].Upgrade.upgradeName == "Dubble shot")
                     {
                         dubbleShot = true;
+                    }
+
+                    if (slots[i].Upgrade.upgradeName == "Enemy Vision")
+                    {
+                        enemyVision = true;
                     }
 
                 }

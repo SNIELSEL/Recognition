@@ -27,8 +27,14 @@ public class UpgradeButton : MonoBehaviour
     private void OnEnable()
     {
         active = upgrade[Random.Range(0, upgrade.Length)];
+        upgradeManager = GameObject.Find("Upgrades").GetComponent<UpgradeManage>();
 
         if (upgradeManager.dubbleShot == true && active.upgradeName == "Dubble shot")
+        {
+            OnEnable();
+        }
+
+        else if (upgradeManager.enemyVision == true && active.upgradeName == "Enemy Vision")
         {
             OnEnable();
         }

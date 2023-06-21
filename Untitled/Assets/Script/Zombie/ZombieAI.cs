@@ -21,6 +21,8 @@ public class ZombieAI : MonoBehaviour
     private Movement144 movement144;
     private Shoot shoot;
     private WaveSystem waveSystem;
+    private UpgradeManage upgradeManage;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -31,6 +33,7 @@ public class ZombieAI : MonoBehaviour
         movement144 = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement144>();
         shoot = GameObject.Find("Hand").GetComponentInChildren<Shoot>();
         waveSystem = GameObject.Find("Spawners").GetComponent<WaveSystem>();
+        upgradeManage = GameObject.Find("Upgrades").GetComponent<UpgradeManage>();
 
         hp = zombie.hp * waveSystem.wavemiltie;
         damage = zombie.damage;
@@ -46,6 +49,7 @@ public class ZombieAI : MonoBehaviour
     {
         target = GetClosestPlayer().gameObject;
         agent.destination = target.transform.position;
+        //transform.LookAt(agent.destination);
 
         timer += Time.deltaTime;
 
@@ -53,6 +57,16 @@ public class ZombieAI : MonoBehaviour
         {
             GameObject.Find("Spawners").GetComponent<WaveSystem>().leftEnemies -= 1;
             Destroy(gameObject);
+        }
+
+        if (Vector3.Distance(transform.position, target.transform.position) < 50 && upgradeManage.enemyVision == true)
+        {
+            transform.GetComponent<Outline>().enabled = true;
+        }
+
+        else
+        {
+            transform.GetComponent<Outline>().enabled = false;
         }
     }
 
