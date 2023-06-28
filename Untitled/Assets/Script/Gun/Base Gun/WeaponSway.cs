@@ -9,12 +9,14 @@ public class WeaponSway : MonoBehaviour
     public float smooth, sway;
 
     private PlayerControlls input;
+    private Movement144 move;
 
     private InputAction mouse;
 
     private void Awake()
     {
         input = new PlayerControlls();
+        move = GameObject.Find("Player").GetComponent<Movement144>();
     }
 
     private void OnEnable()
@@ -30,8 +32,8 @@ public class WeaponSway : MonoBehaviour
 
     private void Update()
     {
-        float x = mouse.ReadValue<Vector2>().x * sway;
-        float y = mouse.ReadValue<Vector2>().y * sway;
+        float x = mouse.ReadValue<Vector2>().x * (sway * move.sens);
+        float y = mouse.ReadValue<Vector2>().y * (sway * move.sens);
 
         Quaternion rotationX = Quaternion.AngleAxis(-y, Vector3.right);
         Quaternion rotationY = Quaternion.AngleAxis(x, Vector3.up);
