@@ -10,6 +10,7 @@ public class InGameMenuController : MonoBehaviour
 {
     public GameObject uiObjects;
     public GameObject settingsMenu;
+    public GameObject controlsMenu;
     public GameObject startMenu;
     public GameObject warningMenu;
     public Canvas gameUICanvas;
@@ -62,6 +63,7 @@ public class InGameMenuController : MonoBehaviour
         mouseLock.isLocked = true;
         startMenu.SetActive(true);
         settingsMenu.SetActive(false);
+        controlsMenu.SetActive(false);
         warningMenu.SetActive(false);
         gameUICanvas.gameObject.SetActive(true);
         GameObject.Find("Hand").GetComponentInChildren<Shoot>().enabled = true;

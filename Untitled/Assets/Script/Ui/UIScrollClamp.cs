@@ -1,3 +1,4 @@
+using sc.terrain.proceduralpainter;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,17 +7,30 @@ public class UIScrollClamp : MonoBehaviour
 {
     public RectTransform rectTransform;
     public float clampedValue;
+    public float left;
+    public float right;
+    private float startvalue;
+    public Vector2 positionCheck;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        
+        startvalue = clampedValue;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        //rectTransform.position.y = clampedValue;
-        clampedValue = Mathf.Clamp(clampedValue, -0, 0);
+        positionCheck = rectTransform.anchoredPosition;
+
+        if(positionCheck.y < 0)
+        {
+            clampedValue = 0;
+            rectTransform.offsetMin = new Vector2(left, rectTransform.offsetMin.y);
+            rectTransform.offsetMax = new Vector2(-right, rectTransform.offsetMax.y);
+        }
+        else
+        {
+            clampedValue = startvalue;
+        }
+
+        rectTransform.anchoredPosition3D = Vector3.ClampMagnitude(rectTransform.anchoredPosition3D, clampedValue);
     }
 }
