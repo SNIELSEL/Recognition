@@ -108,12 +108,13 @@ public class Movement144 : MonoBehaviour
         moveV2.z = move.ReadValue<Vector2>().y;
         moveV2 = moveV2.normalized;
 
-        //transform.Translate(moveV2 * Time.deltaTime * movespeed);
-        //rb.MovePosition(mouseV2 * Time.deltaTime * movespeed);
+        RaycastHit hit;
 
-        Vector3 inputDirection = transform.right * moveV2.x + transform.forward * moveV2.z;
-        //Vector3 inputDirection = new Vector3(moveV2.x, 0.0f, moveV2.y).normalized;
-        characterController.Move(inputDirection.normalized * (movespeed * Time.deltaTime) + new Vector3(0, jumpVol, 0) * Time.deltaTime);
+        //Debug.DrawRay(transform.position, moveV2, Color.green , 0.5f);
+        if (!Physics.Raycast(cam.transform.position, moveV2, out hit, 0.25f))
+        {
+            transform.Translate(moveV2 * movespeed * Time.deltaTime);
+        }
     }
 
     public void Sprint(InputAction.CallbackContext context)
@@ -146,12 +147,11 @@ public class Movement144 : MonoBehaviour
         cam.transform.localRotation = Quaternion.Euler(y, 0, 0 * Time.deltaTime);
     }
 
-    public async void Jump(InputAction.CallbackContext context)
+    public void Jump(InputAction.CallbackContext context)
     {
-
         if (context.started && !menuController.inMenu && grounded == true)
         {
-            jumpVol = Mathf.Sqrt(jumpHight);
+            rb.AddForce(jumpV3 * jumpHight, ForceMode.Impulse);
         }
     }
 }
