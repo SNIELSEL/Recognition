@@ -19,7 +19,7 @@ public class Movement144 : MonoBehaviour
 
     private GameObject cam;
 
-    private bool grounded, sprinting;
+    public bool grounded, sprinting;
     private RaycastHit ground;
     private Rigidbody rb;
 

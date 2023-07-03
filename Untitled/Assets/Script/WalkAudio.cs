@@ -14,6 +14,8 @@ public class WalkAudio : MonoBehaviour
     private PlayerControlls playerControls;
     private Vector2 movementInput;
 
+    public Movement144 movement144;
+
     private void Awake()
     {
         inVoid = true;
@@ -34,7 +36,7 @@ public class WalkAudio : MonoBehaviour
         transform.Translate(movement * movementSpeed * Time.deltaTime);
 
         // Play walking sound if the player is moving
-        if (movement.magnitude > 0 && onMars)
+        if (movement.magnitude > 0 && onMars && movement144.grounded)
         {
             if (!audioSource.isPlaying)
             {
@@ -45,7 +47,7 @@ public class WalkAudio : MonoBehaviour
         }
         
         
-        if (movement.magnitude > 0 && inVoid)
+        if (movement.magnitude > 0 && inVoid && movement144.grounded)
         {
             if (!audioSource.isPlaying)
             {
@@ -55,7 +57,7 @@ public class WalkAudio : MonoBehaviour
             }
         }
 
-        if (movement.magnitude > 0)
+        if (movement.magnitude > 0 && movement144.grounded)
         {
 
         }
