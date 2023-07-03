@@ -96,3 +96,5 @@
 [0620/221646.658:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0621/125658.036:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
 [0621/154601.440:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0628/150232.482:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0703/134124.170:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 

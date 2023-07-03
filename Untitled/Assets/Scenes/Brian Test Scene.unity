@@ -3657,6 +3657,7 @@ GameObject:
   - component: {fileID: 728409251}
   - component: {fileID: 728409250}
   - component: {fileID: 728409249}
+  - component: {fileID: 7197384991110681527}
   - component: {fileID: 7197384991110681523}
   - component: {fileID: 728409247}
   - component: {fileID: 728409246}
@@ -3922,7 +3923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 10
   sens: 1
-  jumpHight: 75
+  jumpHight: 250
   saveAndLoad: {fileID: 1290639190}
   x: 0
   y: 0
@@ -25254,6 +25255,24 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   camera: {x: 0, y: 0, z: 0}
   enemy: {x: 0, y: 0, z: 0}
+--- !u!143 &7197384991110681527
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728409244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.50000006
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7437237937716819620
 GameObject:
   m_ObjectHideFlags: 0
