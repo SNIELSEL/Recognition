@@ -1,43 +1,73 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static Coffee.UIExtensions.UIParticleAttractor;
 
 public class WalkAudio : MonoBehaviour
 {
-    public PlayerControlls menuControlls;
-    private InputAction walk;
+    public float movementSpeed = 5f;
+    public AudioSource audioSource;
+    public AudioClip voidWalkingSound;
+    public AudioClip marsWalkingSound;
 
-    public AudioSource walkSound;
-    public bool walkSoundPlaying;
-    public void Awake()
+    public bool onMars;
+    public bool inVoid;
+
+    private PlayerControlls playerControls;
+    private Vector2 movementInput;
+
+    private void Awake()
     {
-        menuControlls = new PlayerControlls();
+        inVoid = true;
+        playerControls = new PlayerControlls();
+
+        // Assign the movement input action
+        playerControls.DeafultMovement.Movement.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
+        playerControls.DeafultMovement.Movement.canceled += ctx => movementInput = Vector2.zero;
+
+        // Enable the player controls
+        playerControls.DeafultMovement.Enable();
     }
-    public void Start()
+
+    private void Update()
     {
-        walk = menuControlls.DeafultMovement.Movement;
-        walk.Enable();
-        walk.performed += Walk;
-        walk.canceled += CancelAudio;
-    }
-    public void Walk(InputAction.CallbackContext context)
-    {
-        if (!walkSoundPlaying)
+        // Move the player based on input
+        Vector3 movement = new Vector3(movementInput.x, 0f, movementInput.y);
+        transform.Translate(movement * movementSpeed * Time.deltaTime);
+
+        // Play walking sound if the player is moving
+        if (movement.magnitude > 0 && onMars)
         {
-            walkSoundPlaying = true;
-            walkSound.Play();
+            if (!audioSource.isPlaying)
+            {
+                audioSource.pitch = Random.Range(1f, 1.2f);
+                audioSource.clip = marsWalkingSound;
+                audioSource.Play();
+            }
+        }
+        
+        
+        if (movement.magnitude > 0 && inVoid)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.pitch = 1;
+                audioSource.clip = voidWalkingSound;
+                audioSource.Play();
+            }
+        }
+
+        if (movement.magnitude > 0)
+        {
+
         }
         else
         {
-
+            audioSource.Stop();
         }
     }
 
-    public void CancelAudio(InputAction.CallbackContext context)
+    private void OnDestroy()
     {
-        walkSound.Stop();
-        walkSoundPlaying = false;
+        // Disable the player controls
+        playerControls.DeafultMovement.Disable();
     }
 }
