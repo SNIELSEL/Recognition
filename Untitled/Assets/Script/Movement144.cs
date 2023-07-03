@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class Movement144 : MonoBehaviour
 {
     public float movespeed, sens, jumpHight;
-    private float moveLock;
+    private float moveLock, jumpVol;
 
     private PlayerControlls input;
 
@@ -22,7 +19,6 @@ public class Movement144 : MonoBehaviour
 
     private GameObject cam;
 
-
     private bool grounded, sprinting;
     private RaycastHit ground;
     private Rigidbody rb;
@@ -33,6 +29,8 @@ public class Movement144 : MonoBehaviour
 
     public InGameMenuController menuController;
     public extra extraS;
+
+    private CharacterController characterController;
 
     public class extra
     {
@@ -49,6 +47,7 @@ public class Movement144 : MonoBehaviour
         cam = GameObject.Find("Main Camera");
         rb = GetComponent<Rigidbody>();
         extraS = new extra();
+        characterController = GetComponent<CharacterController>();
 
         jumpV3.y = jumpHight;
         moveLock = movespeed;
@@ -83,6 +82,19 @@ public class Movement144 : MonoBehaviour
     private void Update()
     {
         Rotation();
+
+
+        int layerMask = 1 << 3;
+        if (Physics.Raycast(transform.position, -transform.up, out ground, 1.5f, layerMask))
+        {
+            grounded = true;
+        }
+
+        else
+        {
+            jumpVol -= Time.deltaTime * 10;
+            grounded = false;
+        }
     }
 
     private void FixedUpdate()
@@ -96,8 +108,12 @@ public class Movement144 : MonoBehaviour
         moveV2.z = move.ReadValue<Vector2>().y;
         moveV2 = moveV2.normalized;
 
-        transform.Translate(moveV2 * Time.deltaTime * movespeed);
+        //transform.Translate(moveV2 * Time.deltaTime * movespeed);
         //rb.MovePosition(mouseV2 * Time.deltaTime * movespeed);
+
+        Vector3 inputDirection = transform.right * moveV2.x + transform.forward * moveV2.z;
+        //Vector3 inputDirection = new Vector3(moveV2.x, 0.0f, moveV2.y).normalized;
+        characterController.Move(inputDirection.normalized * (movespeed * Time.deltaTime) + new Vector3(0, jumpVol, 0) * Time.deltaTime);
     }
 
     public void Sprint(InputAction.CallbackContext context)
@@ -130,17 +146,12 @@ public class Movement144 : MonoBehaviour
         cam.transform.localRotation = Quaternion.Euler(y, 0, 0 * Time.deltaTime);
     }
 
-    public void Jump(InputAction.CallbackContext context)
+    public async void Jump(InputAction.CallbackContext context)
     {
 
-        if (context.started && !menuController.inMenu)
+        if (context.started && !menuController.inMenu && grounded == true)
         {
-            int layerMask = 1 << 3;
-
-            if (Physics.Raycast(transform.position, -transform.up, out ground, 1.5f, layerMask))
-            {
-                rb.AddForce(jumpV3 * jumpHight, ForceMode.Impulse);
-            }
+            jumpVol = Mathf.Sqrt(jumpHight);
         }
     }
 }
