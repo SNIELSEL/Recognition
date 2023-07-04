@@ -175,6 +175,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4851102543677274569, guid: d9c365b61f593eb458c631287d29688c, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851102543677274569, guid: d9c365b61f593eb458c631287d29688c, type: 3}
       propertyPath: m_FocalLength
       value: 14.3010435
       objectReference: {fileID: 0}
@@ -835,6 +839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windStorm: {fileID: 213209764}
+  walkAudio: {fileID: 0}
 --- !u!1 &220706204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4851102543677274575, guid: d9c365b61f593eb458c631287d29688c, type: 3}
@@ -3484,6 +3489,8 @@ MonoBehaviour:
   movespeed: 10
   sens: 1
   jumpHight: 75
+  grounded: 0
+  sprinting: 0
   saveAndLoad: {fileID: 1290639190}
   x: 0
   y: 0
@@ -5920,7 +5927,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.990566, g: 0.80178624, b: 0.630785, a: 1}
+  m_Color: {r: 0.35859224, g: 0.41509432, b: 0.41509432, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -11599,8 +11606,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b82ee89d506304cac19ecd79589579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSound: {fileID: 0}
-  walkSoundPlaying: 0
+  movementSpeed: 5
+  audioSource: {fileID: 0}
+  voidWalkingSound: {fileID: 0}
+  marsWalkingSound: {fileID: 0}
+  onMars: 0
+  inVoid: 0
+  movement144: {fileID: 0}
 --- !u!114 &7197384991110681526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11655,6 +11667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiObjects: {fileID: 7437237938540764763}
   settingsMenu: {fileID: 9215436298288664904}
+  controlsMenu: {fileID: 0}
   startMenu: {fileID: 2949966075683249781}
   warningMenu: {fileID: 7437237938730437691}
   gameUICanvas: {fileID: 2082589975}
