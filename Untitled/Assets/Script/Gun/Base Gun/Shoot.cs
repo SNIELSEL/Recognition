@@ -96,6 +96,7 @@ public class Shoot : MonoBehaviour
         if (GetComponent<BaseGun>().ammoCount < GetComponent<BaseGun>().upgrade.ammoBoosted && GetComponent<BaseGun>().extra.reload == false)
         {
             GetComponent<BaseGun>().Reload();
+            GetComponentInChildren<Animation>().Play();
         }
     }
 }

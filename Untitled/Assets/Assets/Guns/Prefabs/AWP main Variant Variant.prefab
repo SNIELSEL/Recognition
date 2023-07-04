@@ -544,6 +544,27 @@ MonoBehaviour:
   ammoType: 3
   inpact: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
   scope: {fileID: 0}
+--- !u!1 &8389262383033163278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2931366926019804777, guid: de978e3ab46880c4ea808c35f05cdee3, type: 3}
+  m_PrefabInstance: {fileID: 6684163183403343975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &8861784021833278196
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8389262383033163278}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 614073c981b237246a37e3699313d7f1, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 614073c981b237246a37e3699313d7f1, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &6684163183698174395
 PrefabInstance:
   m_ObjectHideFlags: 0
