@@ -12,6 +12,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1b6033e84160bf5468c43773a39e69fe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1b6033e84160bf5468c43773a39e69fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1557.2184
       objectReference: {fileID: 0}
@@ -55,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4398ea45c7e4a034ca26a134c3e83e8c, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 1b6033e84160bf5468c43773a39e69fe, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -229568087109051561, guid: 02d4abf8befb1e14aada7a875b3208e5, type: 3}
     - target: {fileID: 919132149155446097, guid: 1b6033e84160bf5468c43773a39e69fe, type: 3}
       propertyPath: m_Name
       value: low polly zombie Variant
