@@ -1157,6 +1157,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 736838675330652518, guid: 9ef4256ff60d66a429d7b4cab21eba49, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.9998779
+      objectReference: {fileID: 0}
     - target: {fileID: 736838675497667048, guid: 9ef4256ff60d66a429d7b4cab21eba49, type: 3}
       propertyPath: movement
       value: 
@@ -3068,6 +3072,7 @@ MonoBehaviour:
   - {fileID: 520628935711163732, guid: 972511d55928ae944b45a757472e77e4, type: 3}
   wave: 0
   deathOrWinScript: {fileID: 843572852}
+  difficulty: 0
 --- !u!4 &995017527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 540874123741949620, guid: 544f1d2f99c03f34788c63192511cff5, type: 3}
