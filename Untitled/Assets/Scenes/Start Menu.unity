@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5154,8 +5154,8 @@ RectTransform:
   m_GameObject: {fileID: 99769632}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 7.36, y: 7.36, z: 7.36}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1640327038}
   m_Father: {fileID: 201916239}
@@ -5216,6 +5216,7 @@ GameObject:
   - component: {fileID: 108078370}
   - component: {fileID: 108078369}
   - component: {fileID: 108078368}
+  - component: {fileID: 108078371}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -5344,6 +5345,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108078366}
   m_CullTransparentMesh: 1
+--- !u!114 &108078371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108078366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 108078368}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &154441247
 GameObject:
   m_ObjectHideFlags: 0
@@ -10314,6 +10344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 201916239}
   - component: {fileID: 201916240}
+  - component: {fileID: 201916241}
   m_Layer: 5
   m_Name: Fulscreen Toggle
   m_TagString: Untagged
@@ -10330,7 +10361,7 @@ RectTransform:
   m_GameObject: {fileID: 201916238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.3599997, y: 7.3599997, z: 7.3599997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 99769633}
@@ -10403,6 +10434,35 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
+--- !u!114 &201916241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201916238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 201916240}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &265301283
 GameObject:
   m_ObjectHideFlags: 0
@@ -10424,6 +10484,7 @@ GameObject:
   - component: {fileID: 265301295}
   - component: {fileID: 265301296}
   - component: {fileID: 265301297}
+  - component: {fileID: 265301298}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -10617,7 +10678,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 18ef668738a64824e89c77869402c5e4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.484
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10717,6 +10778,18 @@ MonoBehaviour:
   creditsMenu: {fileID: 2119479171}
   startMenu: {fileID: 1540963188}
   selectButton: {fileID: 745674963}
+--- !u!114 &265301298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265301283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3fff3c2fd129024d9b0071e1d2087aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &277102050
 GameObject:
   m_ObjectHideFlags: 0
@@ -16689,6 +16762,7 @@ GameObject:
   - component: {fileID: 673336660}
   - component: {fileID: 673336659}
   - component: {fileID: 673336658}
+  - component: {fileID: 673336661}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -16835,6 +16909,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673336656}
   m_CullTransparentMesh: 1
+--- !u!114 &673336661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673336656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 673336658}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &689689108
 GameObject:
   m_ObjectHideFlags: 0
@@ -16982,6 +17085,7 @@ GameObject:
   - component: {fileID: 745674965}
   - component: {fileID: 745674964}
   - component: {fileID: 745674963}
+  - component: {fileID: 745674966}
   m_Layer: 5
   m_Name: new Game
   m_TagString: Untagged
@@ -17005,10 +17109,10 @@ RectTransform:
   m_Father: {fileID: 296563523}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.77698, y: -17.279106}
-  m_SizeDelta: {x: 133.55396, y: 27.286901}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &745674963
 MonoBehaviour:
@@ -17026,7 +17130,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 987126805}
-    m_SelectOnDown: {fileID: 1728144711}
+    m_SelectOnDown: {fileID: 774871656}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -17128,6 +17232,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745674961}
   m_CullTransparentMesh: 1
+--- !u!114 &745674966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745674961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 745674963}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &774871654
 GameObject:
   m_ObjectHideFlags: 0
@@ -17140,6 +17273,7 @@ GameObject:
   - component: {fileID: 774871658}
   - component: {fileID: 774871657}
   - component: {fileID: 774871656}
+  - component: {fileID: 774871659}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -17163,10 +17297,10 @@ RectTransform:
   m_Father: {fileID: 296563523}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.77698, y: -43.897316}
-  m_SizeDelta: {x: 133.55396, y: 27.286901}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774871656
 MonoBehaviour:
@@ -17183,7 +17317,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1728144711}
+    m_SelectOnUp: {fileID: 745674963}
     m_SelectOnDown: {fileID: 898894841}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -17286,6 +17420,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774871654}
   m_CullTransparentMesh: 1
+--- !u!114 &774871659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774871654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 774871656}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &788617950
 GameObject:
   m_ObjectHideFlags: 0
@@ -17390,7 +17553,7 @@ RectTransform:
   m_GameObject: {fileID: 801122766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5181694, y: 0.5181694, z: 0.5181694}
+  m_LocalScale: {x: 4.56, y: 4.56, z: 4.56}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 201916239}
@@ -17398,7 +17561,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -76.30145, y: -5.4920197}
+  m_AnchoredPosition: {x: -487, y: -9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &801122768
@@ -17484,7 +17647,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -21.165504, w: 18.673565}
+  m_margin: {x: 0, y: 3.975031, z: 15.2688675, w: 18.673565}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -17686,6 +17849,7 @@ GameObject:
   - component: {fileID: 898894843}
   - component: {fileID: 898894842}
   - component: {fileID: 898894841}
+  - component: {fileID: 898894844}
   m_Layer: 5
   m_Name: Credit
   m_TagString: Untagged
@@ -17709,10 +17873,10 @@ RectTransform:
   m_Father: {fileID: 296563523}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.77698, y: -70.515526}
-  m_SizeDelta: {x: 133.55396, y: 27.286901}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &898894841
 MonoBehaviour:
@@ -17832,6 +17996,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898894839}
   m_CullTransparentMesh: 1
+--- !u!114 &898894844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898894839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 898894841}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &906038351
 GameObject:
   m_ObjectHideFlags: 0
@@ -18107,6 +18300,7 @@ GameObject:
   - component: {fileID: 987126807}
   - component: {fileID: 987126806}
   - component: {fileID: 987126805}
+  - component: {fileID: 987126808}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -18130,10 +18324,10 @@ RectTransform:
   m_Father: {fileID: 296563523}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.77698, y: -97.133736}
-  m_SizeDelta: {x: 133.55396, y: 27.286901}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987126805
 MonoBehaviour:
@@ -18229,6 +18423,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987126803}
   m_CullTransparentMesh: 1
+--- !u!114 &987126808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987126803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 987126805}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &990373375
 GameObject:
   m_ObjectHideFlags: 0
@@ -23630,6 +23853,7 @@ GameObject:
   - component: {fileID: 1075232600}
   - component: {fileID: 1075232599}
   - component: {fileID: 1075232598}
+  - component: {fileID: 1075232602}
   m_Layer: 5
   m_Name: Mars
   m_TagString: Untagged
@@ -23747,11 +23971,40 @@ RectTransform:
   m_Father: {fileID: 1303184012}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 66.77698, y: -14.463211}
+  m_SizeDelta: {x: 133.55396, y: 25.473803}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1075232602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075232597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1075232598}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1081147153
 GameObject:
   m_ObjectHideFlags: 0
@@ -23975,6 +24228,7 @@ GameObject:
   - component: {fileID: 1155646332}
   - component: {fileID: 1155646331}
   - component: {fileID: 1155646330}
+  - component: {fileID: 1155646334}
   m_Layer: 5
   m_Name: Snow
   m_TagString: Untagged
@@ -24092,11 +24346,40 @@ RectTransform:
   m_Father: {fileID: 1303184012}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 66.77698, y: -40.94963}
+  m_SizeDelta: {x: 133.55396, y: 25.473803}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1155646334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155646329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1155646330}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1179905107
 GameObject:
   m_ObjectHideFlags: 0
@@ -24109,6 +24392,7 @@ GameObject:
   - component: {fileID: 1179905111}
   - component: {fileID: 1179905110}
   - component: {fileID: 1179905109}
+  - component: {fileID: 1179905112}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -24255,6 +24539,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179905107}
   m_CullTransparentMesh: 1
+--- !u!114 &1179905112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179905107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1179905109}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1208546443
 GameObject:
   m_ObjectHideFlags: 0
@@ -24538,6 +24851,7 @@ GameObject:
   - component: {fileID: 1246616882}
   - component: {fileID: 1246616881}
   - component: {fileID: 1246616880}
+  - component: {fileID: 1246616883}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -24684,6 +24998,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246616878}
   m_CullTransparentMesh: 1
+--- !u!114 &1246616883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246616878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1246616880}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1274065651
 GameObject:
   m_ObjectHideFlags: 0
@@ -25403,8 +25746,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.5, y: -0.5}
-  m_SizeDelta: {x: -35, y: -13}
+  m_AnchoredPosition: {x: -63.749996, y: -0.5}
+  m_SizeDelta: {x: -147.50002, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1397642134
 MonoBehaviour:
@@ -25726,6 +26069,22 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1444059897}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -31073,7 +31432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1540963189
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31650,6 +32009,7 @@ GameObject:
   - component: {fileID: 1728144713}
   - component: {fileID: 1728144712}
   - component: {fileID: 1728144711}
+  - component: {fileID: 1728144714}
   m_Layer: 5
   m_Name: Load Game
   m_TagString: Untagged
@@ -31772,6 +32132,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728144709}
   m_CullTransparentMesh: 1
+--- !u!114 &1728144714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728144709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1728144711}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1765054259
 GameObject:
   m_ObjectHideFlags: 0
@@ -32032,6 +32421,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 265301298}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1804099165}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1804099165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32077,7 +32482,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 788617951}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2
+  m_MaxValue: 0.5
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -37327,7 +37732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2004077723
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37396,6 +37801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2008954960}
+  - component: {fileID: 2008954961}
   m_Layer: 5
   m_Name: difficulty
   m_TagString: Untagged
@@ -37424,6 +37830,20 @@ RectTransform:
   m_AnchoredPosition: {x: 1498, y: -112}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2008954961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008954959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e64b0a901def2e42abdc2705742286a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 1397642134}
+  difficulty: 0
 --- !u!1 &2053755953
 GameObject:
   m_ObjectHideFlags: 0
