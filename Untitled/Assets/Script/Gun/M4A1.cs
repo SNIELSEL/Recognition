@@ -39,4 +39,10 @@ public class M4A1 : BaseGun
             base.extra.ammoText.text = ammoCount.ToString() + "/" + (int)upgrade.ammoBoosted;
         }
     }
+
+    public override void Reload()
+    {
+        GetComponentInChildren<Animation>()["ReloadM4A1"].speed = reloadTime / upgrade.reloadBoosted;
+        base.Reload();
+    }
 }

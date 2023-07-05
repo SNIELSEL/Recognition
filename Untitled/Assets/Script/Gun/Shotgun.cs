@@ -47,4 +47,9 @@ public class Shotgun : BaseGun
             base.extra.ammoText.text = ammoCount.ToString() + "/" + (int)upgrade.ammoBoosted;
         }
     }
+    public override void Reload()
+    {
+        GetComponentInChildren<Animation>()["ReloadShotgun"].speed = reloadTime / upgrade.reloadBoosted;
+        base.Reload();
+    }
 }
