@@ -733,6 +733,7 @@ GameObject:
   - component: {fileID: 130502968129920091}
   - component: {fileID: 130502968129920090}
   - component: {fileID: 130502968129920093}
+  - component: {fileID: 3590515894170564468}
   m_Layer: 0
   m_Name: Keep
   m_TagString: Untagged
@@ -875,7 +876,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.163
   m_Pitch: 0.66
   Loop: 0
   Mute: 0
@@ -959,6 +960,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3590515894170564468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130502968129920085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3fff3c2fd129024d9b0071e1d2087aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &130502968164970350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1120,7 @@ GameObject:
   - component: {fileID: 130502968216727464}
   - component: {fileID: 130502968216727465}
   - component: {fileID: 130502968216727466}
+  - component: {fileID: 2868700618763081116}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -1263,6 +1277,35 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d6d9c388959b6674ba3190ff9a937683, type: 2}
   - {fileID: 11400000, guid: 2165637ec2ab87a4dbdcd8de5bdea4c8, type: 2}
   upgradeManager: {fileID: 0}
+--- !u!114 &2868700618763081116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130502968216727463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3590515894170564468}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 130502968216727465}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &130502968239986599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,6 +1816,7 @@ GameObject:
   - component: {fileID: 130502968396980769}
   - component: {fileID: 130502968396980766}
   - component: {fileID: 130502968396980771}
+  - component: {fileID: 7142383694210264656}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -1929,6 +1973,35 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d6d9c388959b6674ba3190ff9a937683, type: 2}
   - {fileID: 11400000, guid: 2165637ec2ab87a4dbdcd8de5bdea4c8, type: 2}
   upgradeManager: {fileID: 130502969156323395}
+--- !u!114 &7142383694210264656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130502968396980764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3590515894170564468}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 130502968396980766}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &130502968466927507
 GameObject:
   m_ObjectHideFlags: 0
@@ -4817,6 +4890,7 @@ GameObject:
   - component: {fileID: 130502969665495563}
   - component: {fileID: 130502969665495560}
   - component: {fileID: 130502969665495565}
+  - component: {fileID: 7978931163607334562}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -4973,6 +5047,35 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d6d9c388959b6674ba3190ff9a937683, type: 2}
   - {fileID: 11400000, guid: 2165637ec2ab87a4dbdcd8de5bdea4c8, type: 2}
   upgradeManager: {fileID: 0}
+--- !u!114 &7978931163607334562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130502969665495558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3590515894170564468}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 130502969665495560}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &130502969681059353
 GameObject:
   m_ObjectHideFlags: 0

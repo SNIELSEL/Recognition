@@ -870,6 +870,10 @@ PrefabInstance:
       propertyPath: movement144
       value: 
       objectReference: {fileID: 728409247}
+    - target: {fileID: 130502968129920093, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
+      propertyPath: m_Volume
+      value: 0.058
+      objectReference: {fileID: 0}
     - target: {fileID: 130502968216727462, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

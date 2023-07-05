@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 736838675330652517}
   - component: {fileID: 736838675330652516}
   - component: {fileID: 736838675330652519}
+  - component: {fileID: 4079112600157767457}
   m_Layer: 5
   m_Name: Yes
   m_TagString: Untagged
@@ -304,6 +305,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4079112600157767457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736838675330652513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7851320333899107690}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 736838675330652519}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &736838675497667045
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +350,7 @@ GameObject:
   - component: {fileID: 736838675497667053}
   - component: {fileID: 736838675497667057}
   - component: {fileID: 736838675497667056}
+  - component: {fileID: 7851320333899107690}
   m_Layer: 0
   m_Name: Keep1
   m_TagString: Untagged
@@ -448,6 +479,18 @@ MonoBehaviour:
   left: 184
   right: -184
   positionCheck: {x: 184, y: 0}
+--- !u!114 &7851320333899107690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736838675497667045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3fff3c2fd129024d9b0071e1d2087aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &736838675712860442
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +544,7 @@ GameObject:
   - component: {fileID: 736838676388874759}
   - component: {fileID: 736838676388874758}
   - component: {fileID: 736838676388874753}
+  - component: {fileID: 3674807052110425903}
   m_Layer: 5
   m_Name: No
   m_TagString: Untagged
@@ -647,6 +691,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3674807052110425903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736838676388874755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7851320333899107690}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 736838676388874753}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &736838676582216570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1194,7 @@ GameObject:
   - component: {fileID: 1363579289324647332}
   - component: {fileID: 1363579289324647333}
   - component: {fileID: 1363579289324647335}
+  - component: {fileID: 1211343881181799415}
   m_Layer: 5
   m_Name: VolumeSlider
   m_TagString: Untagged
@@ -1234,6 +1308,35 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   saveAndLoad: {fileID: 0}
+--- !u!114 &1211343881181799415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363579289324647339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7851320333899107690}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1363579289324647333}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1363579289367545137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,6 +1617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1363579289519044358}
   - component: {fileID: 1363579289519044353}
+  - component: {fileID: 6235142876260687996}
   m_Layer: 5
   m_Name: SensSlide
   m_TagString: Untagged
@@ -1590,7 +1694,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1363579290516829059}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2
+  m_MaxValue: 0.5
   m_WholeNumbers: 0
   m_Value: 1.5
   m_OnValueChanged:
@@ -1608,6 +1712,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6235142876260687996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363579289519044357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7851320333899107690}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1363579289519044353}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1363579289532590141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,6 +2151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1363579289963599379}
   - component: {fileID: 1363579289963599372}
+  - component: {fileID: 5157862119535759268}
   m_Layer: 5
   m_Name: Fulscreen Toggle
   m_TagString: Untagged
@@ -2107,6 +2241,35 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
+--- !u!114 &5157862119535759268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363579289963599378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7851320333899107690}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1363579289963599372}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1363579290085930108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,6 +2683,7 @@ GameObject:
   - component: {fileID: 1363579290569319432}
   - component: {fileID: 1363579290569319439}
   - component: {fileID: 1363579290569319438}
+  - component: {fileID: 8279324182780219291}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -2666,6 +2830,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8279324182780219291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363579290569319436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7851320333899107690}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1363579290569319438}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1363579290770298217
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,6 +3795,7 @@ GameObject:
   - component: {fileID: 5043966553650037395}
   - component: {fileID: 5043966553650037398}
   - component: {fileID: 5043966553650037399}
+  - component: {fileID: 6186949177413711890}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -3762,6 +3956,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67088fe675ae84419fb1471eaca4962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6186949177413711890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043966553650037393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7851320333899107690}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5043966553650037395}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5043966553681199142
 GameObject:
   m_ObjectHideFlags: 0
@@ -3776,6 +3999,7 @@ GameObject:
   - component: {fileID: 5043966553681199144}
   - component: {fileID: 5043966553681199148}
   - component: {fileID: 5043966553681199149}
+  - component: {fileID: 3526993762257798137}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -3960,6 +4184,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67088fe675ae84419fb1471eaca4962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3526993762257798137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043966553681199142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7851320333899107690}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5043966553681199144}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5043966553892213974
 GameObject:
   m_ObjectHideFlags: 0
@@ -4244,6 +4497,7 @@ GameObject:
   - component: {fileID: 5043966554029901397}
   - component: {fileID: 5043966554029901400}
   - component: {fileID: 5043966554029901401}
+  - component: {fileID: 8236485779380917003}
   m_Layer: 5
   m_Name: ToMenu
   m_TagString: Untagged
@@ -4428,6 +4682,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67088fe675ae84419fb1471eaca4962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8236485779380917003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043966554029901395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7851320333899107690}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5043966554029901397}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5043966554645735682
 GameObject:
   m_ObjectHideFlags: 0
@@ -5644,6 +5927,7 @@ GameObject:
   - component: {fileID: 7858682802582924746}
   - component: {fileID: 7858682802582924747}
   - component: {fileID: 7858682802582924744}
+  - component: {fileID: 6631638146386314694}
   m_Layer: 5
   m_Name: Controlls
   m_TagString: Untagged
@@ -5828,6 +6112,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67088fe675ae84419fb1471eaca4962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6631638146386314694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7858682802582924742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7851320333899107690}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7858682802582924746}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7858682802637092329
 GameObject:
   m_ObjectHideFlags: 0
@@ -8147,6 +8460,7 @@ GameObject:
   - component: {fileID: 7975970813722719121}
   - component: {fileID: 7975970813722719120}
   - component: {fileID: 7975970813722719127}
+  - component: {fileID: 6171720180813644356}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -8293,6 +8607,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6171720180813644356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975970813722719126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7851320333899107690}
+          m_TargetAssemblyTypeName: ButtonHoverSelect, Assembly-CSharp
+          m_MethodName: HoverSelect
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7975970813722719127}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7975970813854620107
 GameObject:
   m_ObjectHideFlags: 0
