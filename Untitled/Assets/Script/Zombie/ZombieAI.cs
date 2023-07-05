@@ -37,7 +37,7 @@ public class ZombieAI : MonoBehaviour
 
         hp = zombie.hp * waveSystem.wavemiltie;
         damage = zombie.damage;
-        speed = zombie.speed;
+        speed = zombie.speed * waveSystem.extra.diffSpeed;
         attackSpeed = zombie.attackSpeed;
 
         agent.speed = speed;

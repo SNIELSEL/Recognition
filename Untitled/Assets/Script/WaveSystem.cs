@@ -26,8 +26,24 @@ public class WaveSystem : MonoBehaviour
 
     private bool Upgrade;
 
+    public Difficulty difficulty;
+    public Extra extra;
+
+    public enum Difficulty
+    {
+        Easy,
+        Normal,
+        Hard
+    }
+
+    public class Extra
+    {
+        public float diffMulti, diffSpeed;
+    }
+
     private void Start()
     {
+        extra = new Extra();
         spawnLoc = GameObject.FindGameObjectsWithTag("Spawns");
         text = GameObject.Find("EnemiesAlive").GetComponent<TextMeshProUGUI>();
         wavetext = GameObject.Find("Wave").GetComponent<TextMeshProUGUI>(); 
@@ -37,6 +53,24 @@ public class WaveSystem : MonoBehaviour
         waveRound = 1;
 
         wavetext.text = "Wave " + waveRound;
+
+        if (difficulty == Difficulty.Easy)
+        {
+            extra.diffMulti = .5f;
+            extra.diffSpeed = .7f;
+        }
+
+        else if (difficulty == Difficulty.Normal)
+        {
+            extra.diffMulti = 1;
+            extra.diffSpeed = 1;
+        }
+
+        else if (difficulty == Difficulty.Hard)
+        {
+            extra.diffMulti = 2;
+            extra.diffSpeed = 1.5f;
+        }
     }
 
     private void Update()
@@ -75,11 +109,11 @@ public class WaveSystem : MonoBehaviour
     public void NewWave()
     {
         spawnedEnemy = 0;
-        roundEnemy += 3;
+        roundEnemy += 4;
         waveRound += 1;
 
         //spawnSpeed /= 0.25f;
-        wavemiltie += 0.125f;
+        wavemiltie += 0.125f * extra.diffMulti;
 
         wavetext.text = "Wave " + waveRound;
         leftEnemies = roundEnemy;
