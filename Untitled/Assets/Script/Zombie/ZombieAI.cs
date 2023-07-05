@@ -87,7 +87,7 @@ public class ZombieAI : MonoBehaviour
         return player[closestIndex].transform;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if(collision.transform.tag == "Player" && attackSpeed < timer)
         {
