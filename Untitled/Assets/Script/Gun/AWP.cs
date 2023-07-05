@@ -67,4 +67,10 @@ public class AWP : BaseGun
         transform.GetComponent<WeaponSway>().enabled = true;
         scope.SetActive(false);
     }
+
+    public override void Reload()
+    {
+        GetComponentInChildren<Animation>()["ReloadM4A1"].speed = reloadTime / upgrade.reloadBoosted;
+        base.Reload();
+    }
 }
