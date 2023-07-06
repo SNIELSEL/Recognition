@@ -40,8 +40,9 @@ public class BaseGun : MonoBehaviour
     public int ammoCount, maxDistance, damage, reloadTime;
     public float bloomRange, shootDelay, recoilMain, zoom;
     public AmmoType ammoType;
+    public AudioSource hitSound;
 
-    public GameObject inpact;
+    public GameObject inpact, HitSoundObject;
 
     public enum AmmoType
     {
@@ -186,6 +187,7 @@ public class BaseGun : MonoBehaviour
         }
 
         RaycastHit hit;
+        
 
         if(Physics.Raycast(extra.cam.transform.position, extra.bloom, out hit, maxDistance))
         {
@@ -209,6 +211,9 @@ public class BaseGun : MonoBehaviour
 
             if (hit.transform.tag == "Enemy")
             {
+                //hitSound.Play();
+                Instantiate(HitSoundObject , hit.point, transform.rotation);
+
                 hit.transform.GetComponent<ZombieAI>().hp -= upgrade.damageBoosted;
 
                 Hit();

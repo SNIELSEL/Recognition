@@ -12,6 +12,7 @@ public class SaveAndLoad : MonoBehaviour
     public int slot;
     public float sensitivity;
     public float volume;
+    public int difficulty;
 
     private XML_SaveData tempSave;
 
@@ -42,11 +43,11 @@ public class SaveAndLoad : MonoBehaviour
         tempSave.slot = slot;
         tempSave.sensitivity = sensitivity;
         tempSave.volume = volume;
-
+        tempSave.difficulty = difficulty;
 
         XmlSerializer serializer = new XmlSerializer(typeof(XML_SaveData));
 
-        using (FileStream stream = new FileStream(Application.persistentDataPath + "/SaveData" +slot + ".xml", FileMode.Create))
+        using (FileStream stream = new FileStream(Application.persistentDataPath + "/SettingsData" +slot + ".xml", FileMode.Create))
         {
             serializer.Serialize(stream, tempSave);
         }
@@ -60,13 +61,14 @@ public class SaveAndLoad : MonoBehaviour
         {
             XmlSerializer serializer = new XmlSerializer(typeof(XML_SaveData));
 
-            using (FileStream stream = new FileStream(Application.persistentDataPath + "/SaveData" + slot + ".xml", FileMode.Open))
+            using (FileStream stream = new FileStream(Application.persistentDataPath + "/SettingsData" + slot + ".xml", FileMode.Open))
             {
                 tempSave = serializer.Deserialize(stream) as XML_SaveData;
 
                 slot = tempSave.slot;
                 sensitivity = tempSave.sensitivity;
                 volume = tempSave.volume;
+                difficulty = tempSave.difficulty;
             }
         }
         catch
@@ -102,4 +104,5 @@ public class SaveAndLoad : MonoBehaviour
         public int slot;
         public float sensitivity;
         public float volume;
-    }
+        public int difficulty;
+}

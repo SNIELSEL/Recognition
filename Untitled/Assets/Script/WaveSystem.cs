@@ -28,6 +28,7 @@ public class WaveSystem : MonoBehaviour
 
     public Difficulty difficulty;
     public Extra extra;
+    public SaveAndLoad saveAndLoad;
 
     public enum Difficulty
     {
@@ -43,6 +44,22 @@ public class WaveSystem : MonoBehaviour
 
     private void Start()
     {
+        saveAndLoad.LoadData();
+        if(saveAndLoad.difficulty == 0)
+        {
+            difficulty = Difficulty.Easy;
+        }
+
+        else if (saveAndLoad.difficulty == 1)
+        {
+            difficulty = Difficulty.Normal;
+        }
+
+        else if (saveAndLoad.difficulty == 2)
+        {
+            difficulty = Difficulty.Hard;
+        }
+
         extra = new Extra();
         spawnLoc = GameObject.FindGameObjectsWithTag("Spawns");
         text = GameObject.Find("EnemiesAlive").GetComponent<TextMeshProUGUI>();

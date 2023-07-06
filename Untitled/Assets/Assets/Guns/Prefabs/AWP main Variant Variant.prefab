@@ -542,7 +542,9 @@ MonoBehaviour:
   recoilMain: 10
   zoom: 5
   ammoType: 3
+  hitSound: {fileID: 4433525416930879459, guid: 7d5c32711bc662545a79f728a20883e5, type: 3}
   inpact: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
+  HitSoundObject: {fileID: 4433525416930879461, guid: 7d5c32711bc662545a79f728a20883e5, type: 3}
   scope: {fileID: 0}
 --- !u!1 &8389262383033163278 stripped
 GameObject:
