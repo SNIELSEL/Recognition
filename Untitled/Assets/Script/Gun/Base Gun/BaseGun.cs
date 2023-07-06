@@ -211,7 +211,6 @@ public class BaseGun : MonoBehaviour
 
             if (hit.transform.tag == "Enemy")
             {
-                //hitSound.Play();
                 Instantiate(HitSoundObject , hit.point, transform.rotation);
 
                 hit.transform.GetComponent<ZombieAI>().hp -= upgrade.damageBoosted;
