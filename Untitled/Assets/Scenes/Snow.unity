@@ -642,7 +642,9 @@ MonoBehaviour:
   recoilMain: 3
   zoom: 1
   ammoType: 0
+  hitSound: {fileID: 0}
   inpact: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
+  HitSoundObject: {fileID: 0}
 --- !u!1 &123024621
 GameObject:
   m_ObjectHideFlags: 0
@@ -5194,7 +5196,9 @@ MonoBehaviour:
   recoilMain: 1
   zoom: 1.1
   ammoType: 0
+  hitSound: {fileID: 4433525416930879459, guid: 7d5c32711bc662545a79f728a20883e5, type: 3}
   inpact: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
+  HitSoundObject: {fileID: 4433525416930879461, guid: 7d5c32711bc662545a79f728a20883e5, type: 3}
   burstDelayMS: 100
 --- !u!1 &787566280
 GameObject:
@@ -5621,6 +5625,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
     - target: {fileID: 1991473294, guid: ddb8c1f32606f2347ba21a879f3d8274, type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 4433525416930879459, guid: 7d5c32711bc662545a79f728a20883e5, type: 3}
+    - target: {fileID: 1991473294, guid: ddb8c1f32606f2347ba21a879f3d8274, type: 3}
       propertyPath: bloomRange
       value: 3
       objectReference: {fileID: 0}
@@ -5636,6 +5644,10 @@ PrefabInstance:
       propertyPath: inMenuCheck
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1991473294, guid: ddb8c1f32606f2347ba21a879f3d8274, type: 3}
+      propertyPath: HitSoundObject
+      value: 
+      objectReference: {fileID: 4433525416930879461, guid: 7d5c32711bc662545a79f728a20883e5, type: 3}
     - target: {fileID: 1708628656459790857, guid: ddb8c1f32606f2347ba21a879f3d8274, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6736,6 +6748,7 @@ MonoBehaviour:
   wave: 0
   deathOrWinScript: {fileID: 843572852}
   difficulty: 0
+  saveAndLoad: {fileID: 843572854}
 --- !u!4 &995017527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 540874123741949620, guid: 544f1d2f99c03f34788c63192511cff5, type: 3}
@@ -10699,6 +10712,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
     - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 4433525416930879459, guid: 7d5c32711bc662545a79f728a20883e5, type: 3}
+    - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
       propertyPath: bloomRange
       value: 10
       objectReference: {fileID: 0}
@@ -10722,6 +10739,10 @@ PrefabInstance:
       propertyPath: maxDistance
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
+      propertyPath: HitSoundObject
+      value: 
+      objectReference: {fileID: 4433525416930879461, guid: 7d5c32711bc662545a79f728a20883e5, type: 3}
     - target: {fileID: 1452288832, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
       propertyPath: m_Volume
       value: 0.2

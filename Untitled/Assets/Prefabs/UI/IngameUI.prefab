@@ -349,7 +349,6 @@ GameObject:
   - component: {fileID: 736838675497667054}
   - component: {fileID: 736838675497667053}
   - component: {fileID: 736838675497667057}
-  - component: {fileID: 736838675497667056}
   - component: {fileID: 7851320333899107690}
   m_Layer: 0
   m_Name: Keep1
@@ -462,23 +461,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeSelected: {fileID: 0}
---- !u!114 &736838675497667056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736838675497667045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d43abdf8435cec4f9686df7a414330f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 7975970812478332709}
-  clampedValue: 940
-  left: 184
-  right: -184
-  positionCheck: {x: 184, y: 0}
 --- !u!114 &7851320333899107690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8052,6 +8034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7975970812478332709}
   - component: {fileID: 7975970812478332710}
+  - component: {fileID: 9143798345591217563}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -8118,6 +8101,23 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &9143798345591217563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975970812478332708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d43abdf8435cec4f9686df7a414330f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectTransform: {fileID: 7975970812478332709}
+  clampedValue: 940
+  left: 184
+  right: -184
+  positionCheck: {x: 184, y: 0}
 --- !u!1 &7975970812791661236
 GameObject:
   m_ObjectHideFlags: 0

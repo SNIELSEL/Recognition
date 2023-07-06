@@ -15,6 +15,7 @@ public class UIScrollClamp : MonoBehaviour
     public void Start()
     {
         startvalue = clampedValue;
+        rectTransform = this.GetComponent<RectTransform>();
     }
     public void Update()
     {
