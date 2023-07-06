@@ -872,9 +872,13 @@ PrefabInstance:
       propertyPath: movement144
       value: 
       objectReference: {fileID: 728409247}
+    - target: {fileID: 130502968129920090, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
+      propertyPath: marsWalkingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 97044618b02ef164f9271f6106dc5ee0, type: 3}
     - target: {fileID: 130502968129920093, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
       propertyPath: m_Volume
-      value: 0.058
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 130502968216727462, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1443,7 +1447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213209762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.7, y: -42.32, z: -0.75}
+  m_LocalPosition: {x: 46.54, y: -42.32, z: -0.75}
   m_LocalScale: {x: 11.84, y: 10.87, z: 12.61}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1572,7 +1576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windStorm: {fileID: 213209764}
-  walkAudio: {fileID: 0}
+  walkAudio: {fileID: 1822312883}
 --- !u!1001 &217071806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3834,6 +3838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 579717314}
+  - component: {fileID: 579717315}
   m_Layer: 0
   m_Name: map snow
   m_TagString: Ground
@@ -3863,6 +3868,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &579717315
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579717313}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 34d4c6f5f73e20d4488b815dd72e394b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.05
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &590990449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4478,7 +4579,6 @@ GameObject:
   - component: {fileID: 7197384991110681523}
   - component: {fileID: 728409247}
   - component: {fileID: 728409246}
-  - component: {fileID: 7197384991110681525}
   - component: {fileID: 7197384991110681526}
   m_Layer: 0
   m_Name: Player
@@ -11228,6 +11328,17 @@ MonoBehaviour:
   minFalloff: 1
   max: 835.24
   maxFalloff: 1
+--- !u!114 &1822312883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 130502968129920090, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
+  m_PrefabInstance: {fileID: 157637098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b82ee89d506304cac19ecd79589579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1825337195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13268,25 +13379,6 @@ MonoBehaviour:
   hp: 100
   deathOrWinScript: {fileID: 843572852}
   isDead: 0
---- !u!114 &7197384991110681525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728409244}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14b82ee89d506304cac19ecd79589579, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 5
-  audioSource: {fileID: 0}
-  voidWalkingSound: {fileID: 0}
-  marsWalkingSound: {fileID: 0}
-  onMars: 0
-  inVoid: 0
-  movement144: {fileID: 0}
 --- !u!114 &7197384991110681526
 MonoBehaviour:
   m_ObjectHideFlags: 0
