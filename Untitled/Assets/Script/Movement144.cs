@@ -97,6 +97,16 @@ public class Movement144 : MonoBehaviour
 
         if (sprinting == true)
         {
+            movespeed = moveLock * 1.5f;
+        }
+
+        if (sprinting == false)
+        {
+            movespeed = moveLock;
+        }
+
+        if (sprinting == true)
+        {
             stamina -= Time.deltaTime * 15;
         }
 
@@ -140,13 +150,11 @@ public class Movement144 : MonoBehaviour
             if (sprinting == true)
             {
                 sprinting = false;
-                movespeed = moveLock;
             }
 
             else if (sprinting == false)
             {
                 sprinting = true;
-                movespeed = moveLock * 1.5f;
             }
         }
     }
