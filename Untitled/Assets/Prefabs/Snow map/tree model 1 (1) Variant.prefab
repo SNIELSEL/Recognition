@@ -77,7 +77,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c120e267686e78f498a143cd6c92f084, type: 2}
     - target: {fileID: 4834618860369040559, guid: e5279ee8ef821a84981f4d93abd96781, type: 3}
       propertyPath: m_Name
-      value: tree model 1 (1)
+      value: tree model 1 (1) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834618860369040559, guid: e5279ee8ef821a84981f4d93abd96781, type: 3}
+      propertyPath: m_TagString
+      value: Snow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834618860399553365, guid: e5279ee8ef821a84981f4d93abd96781, type: 3}
+      propertyPath: m_TagString
+      value: Snow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834618861729691781, guid: e5279ee8ef821a84981f4d93abd96781, type: 3}
+      propertyPath: m_TagString
+      value: Snow
       objectReference: {fileID: 0}
     - target: {fileID: 4834618862111401850, guid: e5279ee8ef821a84981f4d93abd96781, type: 3}
       propertyPath: m_RootOrder
