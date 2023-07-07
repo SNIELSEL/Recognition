@@ -4880,7 +4880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8925167675985755334}
   - component: {fileID: 7794632811199521270}
-  - component: {fileID: 2909682004919907781}
+  - component: {fileID: 2920493345775391974}
   m_Layer: 0
   m_Name: Inpact
   m_TagString: Untagged
@@ -4918,7 +4918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 1
---- !u!82 &2909682004919907781
+--- !u!82 &2920493345775391974
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4928,15 +4928,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6715929a916f0eb4e924a248036f0757, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 43a174d6c3a048d4fa92d700b77085ef, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 129
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
