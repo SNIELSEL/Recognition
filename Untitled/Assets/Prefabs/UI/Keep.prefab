@@ -775,6 +775,7 @@ MonoBehaviour:
   slot: 1
   sensitivity: 1
   volume: 1
+  difficulty: 0
 --- !u!114 &130502968129920086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,6 +823,7 @@ MonoBehaviour:
   settingsMenu: {fileID: 0}
   creditsMenu: {fileID: 0}
   startMenu: {fileID: 0}
+  mapSelect: {fileID: 0}
   selectButton: {fileID: 0}
 --- !u!114 &130502968129920091
 MonoBehaviour:
