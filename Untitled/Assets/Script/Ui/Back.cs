@@ -12,6 +12,7 @@ public class Back : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject creditsMenu;
     public GameObject startMenu;
+    public GameObject mapSelect;
     public Button selectButton;
 
     public void Awake()
@@ -29,6 +30,7 @@ public class Back : MonoBehaviour
             settingsMenu.SetActive(false);
             creditsMenu.SetActive(false);
             startMenu.SetActive(true);
+            mapSelect.SetActive(false);
             selectButton.Select();
         }
     }

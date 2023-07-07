@@ -5271,7 +5271,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 1, b: 0.8207519, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0, g: 1, b: 1, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.7019608}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -10790,6 +10790,7 @@ MonoBehaviour:
   settingsMenu: {fileID: 848152405}
   creditsMenu: {fileID: 2119479171}
   startMenu: {fileID: 1540963188}
+  mapSelect: {fileID: 2004077722}
   selectButton: {fileID: 745674963}
 --- !u!114 &265301298
 MonoBehaviour:
@@ -16559,7 +16560,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190246
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 3
@@ -23755,8 +23756,8 @@ MonoBehaviour:
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1246616880}
     m_SelectOnDown: {fileID: 1155646330}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnLeft: {fileID: 108078368}
+    m_SelectOnRight: {fileID: 108078368}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.7607843, g: 0.96862745, b: 1, a: 1}
@@ -24130,8 +24131,8 @@ MonoBehaviour:
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1075232598}
     m_SelectOnDown: {fileID: 1246616880}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnLeft: {fileID: 108078368}
+    m_SelectOnRight: {fileID: 108078368}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.7607843, g: 0.96862745, b: 1, a: 1}
@@ -24989,7 +24990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.8585174, a: 1}
+  m_Color: {r: 0.6846361, g: 1, b: 0.955478, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -25950,7 +25951,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_SelectedColor: {r: 0.6862745, g: 0.9960785, b: 0.9568628, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -32259,7 +32260,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 788617951}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 0.5
+  m_MaxValue: 0.8
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
