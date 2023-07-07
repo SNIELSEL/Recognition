@@ -40,9 +40,8 @@ public class BaseGun : MonoBehaviour
     public int ammoCount, maxDistance, damage, reloadTime;
     public float bloomRange, shootDelay, recoilMain, zoom;
     public AmmoType ammoType;
-    public AudioSource hitSound;
 
-    public GameObject inpact, HitSoundObject;
+    public GameObject[] inpact;
 
     public enum AmmoType
     {
@@ -191,8 +190,6 @@ public class BaseGun : MonoBehaviour
 
         if(Physics.Raycast(extra.cam.transform.position, extra.bloom, out hit, maxDistance))
         {
-            Instantiate(inpact, hit.point, transform.rotation);
-
             if (hit.transform.parent.tag == "targets")
             {
                 if (hit.transform.tag == "tile")
@@ -211,12 +208,20 @@ public class BaseGun : MonoBehaviour
 
             if (hit.transform.tag == "Enemy")
             {
-                Instantiate(HitSoundObject , hit.point, transform.rotation);
-
                 hit.transform.GetComponent<ZombieAI>().hp -= upgrade.damageBoosted;
-
+                Instantiate(inpact[0], hit.point, transform.rotation);
                 Hit();
                 stats.hit += 1;
+            }
+
+            else if (hit.transform.tag == "Snow")
+            {
+                Instantiate(inpact[1], hit.point, transform.rotation);
+            }
+
+            else if (hit.transform.tag == "Mars")
+            {
+                Instantiate(inpact[2], hit.point, transform.rotation);
             }
         }
 
