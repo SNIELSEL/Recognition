@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Movement144 : MonoBehaviour
 {
     public float movespeed, sens, jumpHight;
-    private float moveLock, jumpVol;
+    private float moveLock, jumpVol, stamina;
 
     private PlayerControlls input;
 
@@ -52,6 +52,8 @@ public class Movement144 : MonoBehaviour
         jumpV3.y = jumpHight;
         moveLock = movespeed;
         extraS.zoom = 1;
+
+        stamina = 100;
     }
 
     private void OnEnable()
@@ -83,8 +85,22 @@ public class Movement144 : MonoBehaviour
     {
         Rotation();
 
+        if (stamina < 100 && sprinting == false)
+        {
+            stamina += Time.deltaTime * 5;
+        }
 
-        int layerMask = 1 << 3;
+        if (stamina <= 1)
+        {
+            sprinting = false;
+        }
+
+        if (sprinting == true)
+        {
+            stamina -= Time.deltaTime * 15;
+        }
+
+            int layerMask = 1 << 3;
         if (Physics.Raycast(transform.position, -transform.up, out ground, 1.5f, layerMask))
         {
             grounded = true;
@@ -119,16 +135,19 @@ public class Movement144 : MonoBehaviour
 
     public void Sprint(InputAction.CallbackContext context)
     {
-        if (sprinting == true)
+        if (context.started)
         {
-            sprinting = false;
-            movespeed = moveLock;
-        }
+            if (sprinting == true)
+            {
+                sprinting = false;
+                movespeed = moveLock;
+            }
 
-        else if (sprinting == false)
-        {
-            sprinting = true;
-            movespeed = moveLock * 1.5f;
+            else if (sprinting == false)
+            {
+                sprinting = true;
+                movespeed = moveLock * 1.5f;
+            }
         }
     }
 
