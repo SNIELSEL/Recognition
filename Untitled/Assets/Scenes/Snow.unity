@@ -8028,7 +8028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
       propertyPath: recoilMain
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
       propertyPath: reloadText
@@ -8036,7 +8036,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
       propertyPath: reloadTime
-      value: 10
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
+      propertyPath: shootDelay
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
       propertyPath: inMenuCheck
