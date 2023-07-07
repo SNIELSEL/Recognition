@@ -4,6 +4,7 @@ using System.Xml;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class UpgradeButton : MonoBehaviour
@@ -28,6 +29,7 @@ public class UpgradeButton : MonoBehaviour
     {
         active = upgrade[Random.Range(0, upgrade.Length)];
         upgradeManager = GameObject.Find("Upgrades").GetComponent<UpgradeManage>();
+        GameObject.Find("WeaponCam").GetComponent<PlayerInput>().enabled = false;
 
         if (upgradeManager.dubbleShot == true && active.upgradeName == "Dubble shot")
         {
@@ -48,6 +50,7 @@ public class UpgradeButton : MonoBehaviour
     private void OnDisable()
     {
         GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("WeaponCam").GetComponent<PlayerInput>().enabled = true;
     }
 
     private void Update()

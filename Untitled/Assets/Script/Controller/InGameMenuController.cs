@@ -47,6 +47,7 @@ public class InGameMenuController : MonoBehaviour
             mouseLock.isLocked = false;
             gameUICanvas.gameObject.SetActive(false);
             GameObject.Find("Hand").GetComponentInChildren<Shoot>().enabled = false;
+            GameObject.Find("WeaponCam").GetComponent<PlayerInput>().enabled = false;
         }
         else
         {
@@ -67,5 +68,6 @@ public class InGameMenuController : MonoBehaviour
         warningMenu.SetActive(false);
         gameUICanvas.gameObject.SetActive(true);
         GameObject.Find("Hand").GetComponentInChildren<Shoot>().enabled = true;
+        GameObject.Find("WeaponCam").GetComponent<PlayerInput>().enabled = true;
     }
 }
