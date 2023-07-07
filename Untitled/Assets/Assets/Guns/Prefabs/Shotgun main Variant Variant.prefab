@@ -329,13 +329,16 @@ MonoBehaviour:
   ammoCount: 16
   maxDistance: 15
   damage: 10
-  reloadTime: 1000
+  reloadTime: 2500
   bloomRange: 5
   shootDelay: 0.5
-  recoilMain: 5
+  recoilMain: 10
   zoom: 1
   ammoType: 2
-  inpact: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
+  inpact:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1452288833
 MonoBehaviour:
   m_ObjectHideFlags: 0
