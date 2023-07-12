@@ -1057,9 +1057,25 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1126029260, guid: 531a53c9be2349b4f9fb7e8474aa6fa1, type: 3}
+      propertyPath: shootDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1126029260, guid: 531a53c9be2349b4f9fb7e8474aa6fa1, type: 3}
       propertyPath: HitSoundObject
       value: 
       objectReference: {fileID: 4433525416930879461, guid: 7d5c32711bc662545a79f728a20883e5, type: 3}
+    - target: {fileID: 1126029260, guid: 531a53c9be2349b4f9fb7e8474aa6fa1, type: 3}
+      propertyPath: inpact.Array.data[0]
+      value: 
+      objectReference: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
+    - target: {fileID: 1126029260, guid: 531a53c9be2349b4f9fb7e8474aa6fa1, type: 3}
+      propertyPath: inpact.Array.data[1]
+      value: 
+      objectReference: {fileID: 8925167675985755333, guid: 806dee1f547d52e41a625d8accad82b6, type: 3}
+    - target: {fileID: 1126029260, guid: 531a53c9be2349b4f9fb7e8474aa6fa1, type: 3}
+      propertyPath: inpact.Array.data[2]
+      value: 
+      objectReference: {fileID: 8925167675985755333, guid: a5e55ab5ef80849479e43ad3c07e41e4, type: 3}
     - target: {fileID: 1126029261, guid: 531a53c9be2349b4f9fb7e8474aa6fa1, type: 3}
       propertyPath: m_Volume
       value: 0.2
@@ -1707,6 +1723,7 @@ GameObject:
   - component: {fileID: 728409247}
   - component: {fileID: 728409246}
   - component: {fileID: 7197384991110681526}
+  - component: {fileID: 7197384991110681527}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2245,6 +2262,18 @@ PrefabInstance:
       propertyPath: HitSoundObject
       value: 
       objectReference: {fileID: 4433525416930879461, guid: 7d5c32711bc662545a79f728a20883e5, type: 3}
+    - target: {fileID: 1991473294, guid: ddb8c1f32606f2347ba21a879f3d8274, type: 3}
+      propertyPath: inpact.Array.data[0]
+      value: 
+      objectReference: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
+    - target: {fileID: 1991473294, guid: ddb8c1f32606f2347ba21a879f3d8274, type: 3}
+      propertyPath: inpact.Array.data[1]
+      value: 
+      objectReference: {fileID: 8925167675985755333, guid: 806dee1f547d52e41a625d8accad82b6, type: 3}
+    - target: {fileID: 1991473294, guid: ddb8c1f32606f2347ba21a879f3d8274, type: 3}
+      propertyPath: inpact.Array.data[2]
+      value: 
+      objectReference: {fileID: 8925167675985755333, guid: a5e55ab5ef80849479e43ad3c07e41e4, type: 3}
     - target: {fileID: 1708628656459790857, guid: ddb8c1f32606f2347ba21a879f3d8274, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4187,7 +4216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
       propertyPath: recoilMain
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
       propertyPath: reloadText
@@ -4195,7 +4224,11 @@ PrefabInstance:
       objectReference: {fileID: 261908569}
     - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
       propertyPath: reloadTime
-      value: 10
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
+      propertyPath: shootDelay
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
       propertyPath: inMenuCheck
@@ -4209,6 +4242,18 @@ PrefabInstance:
       propertyPath: HitSoundObject
       value: 
       objectReference: {fileID: 4433525416930879461, guid: 7d5c32711bc662545a79f728a20883e5, type: 3}
+    - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
+      propertyPath: inpact.Array.data[0]
+      value: 
+      objectReference: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
+    - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
+      propertyPath: inpact.Array.data[1]
+      value: 
+      objectReference: {fileID: 8925167675985755333, guid: 806dee1f547d52e41a625d8accad82b6, type: 3}
+    - target: {fileID: 1452288831, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
+      propertyPath: inpact.Array.data[2]
+      value: 
+      objectReference: {fileID: 8925167675985755333, guid: a5e55ab5ef80849479e43ad3c07e41e4, type: 3}
     - target: {fileID: 1452288832, guid: 872826e83a58e634b92d01ba05aba90f, type: 3}
       propertyPath: m_Volume
       value: 0.2
@@ -5809,6 +5854,14 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   camera: {x: 0, y: 0, z: 0}
   enemy: {x: 0, y: 0, z: 0}
+--- !u!81 &7197384991110681527
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728409244}
+  m_Enabled: 1
 --- !u!114 &7437237937716819625 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 736838675497667048, guid: 9ef4256ff60d66a429d7b4cab21eba49, type: 3}
@@ -5851,6 +5904,18 @@ PrefabInstance:
       propertyPath: HitSoundObject
       value: 
       objectReference: {fileID: 4433525416930879461, guid: 7d5c32711bc662545a79f728a20883e5, type: 3}
+    - target: {fileID: 778981086, guid: c8f856d7c3e60674e8f57d872496651b, type: 3}
+      propertyPath: inpact.Array.data[0]
+      value: 
+      objectReference: {fileID: 8925167675985755333, guid: 19609106166df234683912e89c699c86, type: 3}
+    - target: {fileID: 778981086, guid: c8f856d7c3e60674e8f57d872496651b, type: 3}
+      propertyPath: inpact.Array.data[1]
+      value: 
+      objectReference: {fileID: 8925167675985755333, guid: 806dee1f547d52e41a625d8accad82b6, type: 3}
+    - target: {fileID: 778981086, guid: c8f856d7c3e60674e8f57d872496651b, type: 3}
+      propertyPath: inpact.Array.data[2]
+      value: 
+      objectReference: {fileID: 8925167675985755333, guid: a5e55ab5ef80849479e43ad3c07e41e4, type: 3}
     - target: {fileID: 223600471998648726, guid: c8f856d7c3e60674e8f57d872496651b, type: 3}
       propertyPath: m_IsActive
       value: 1
