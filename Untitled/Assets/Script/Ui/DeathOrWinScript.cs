@@ -15,6 +15,9 @@ public class DeathOrWinScript : MonoBehaviour
 
     public SceneLoad sceneLoad;
     public mouseLock mouseLock;
+    public SaveAndLoad SaveAndLoad;
+    public WaveSystem waveSystem;
+    public PlayFabManager playFabManager;
 
     public void BeginCountdown()
     {
@@ -28,6 +31,10 @@ public class DeathOrWinScript : MonoBehaviour
 
     public IEnumerator CountDown()
     {
+        if(SaveAndLoad.difficulty == 0)
+        {
+            playFabManager.SendLeaderBoard(waveSystem.waveRound);
+        }
         countdownText.text = ("5");
         yield return new WaitForSeconds(1);
         countdownText.text = ("4");

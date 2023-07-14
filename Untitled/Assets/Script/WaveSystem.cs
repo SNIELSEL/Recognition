@@ -8,8 +8,8 @@ using UnityEngine.UIElements;
 
 public class WaveSystem : MonoBehaviour
 {
-    public int roundEnemy, leftEnemies;
-    private int spawnedEnemy, waveRound;
+    public int roundEnemy, leftEnemies, waveRound;
+    private int spawnedEnemy;
     public float wavemiltie;
 
     public GameObject[] inGameEnemy, spawnLoc;

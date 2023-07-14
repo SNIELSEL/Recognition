@@ -750,6 +750,18 @@ PrefabInstance:
       propertyPath: sceneLoad
       value: 
       objectReference: {fileID: 1902458479}
+    - target: {fileID: 130502968129920089, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
+      propertyPath: waveSystem
+      value: 
+      objectReference: {fileID: 957376053}
+    - target: {fileID: 130502968129920089, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
+      propertyPath: SaveAndLoad
+      value: 
+      objectReference: {fileID: 843572854}
+    - target: {fileID: 130502968129920089, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
+      propertyPath: playFabManager
+      value: 
+      objectReference: {fileID: 1822312884}
     - target: {fileID: 130502968129920090, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
       propertyPath: movement144
       value: 
@@ -1029,6 +1041,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 130502968129920088, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
+--- !u!1 &157637099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 130502968129920085, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
+  m_PrefabInstance: {fileID: 157637098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &184309769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 540874122920977555, guid: 544f1d2f99c03f34788c63192511cff5, type: 3}
@@ -5445,7 +5462,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 130502968129920089, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
   m_PrefabInstance: {fileID: 157637098}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 157637099}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b797cf8400dee04ea61c6aa4695b2e2, type: 3}
@@ -5456,7 +5473,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 130502968129920086, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
   m_PrefabInstance: {fileID: 157637098}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 157637099}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8951c205c9b10243bd0735602220ed5, type: 3}
@@ -5467,7 +5484,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 130502968129920087, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
   m_PrefabInstance: {fileID: 157637098}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 157637099}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f559a6841f60714daa9f9101c826645, type: 3}
@@ -5752,6 +5769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roundEnemy: 5
   leftEnemies: 0
+  waveRound: 0
   wavemiltie: 0
   inGameEnemy: []
   spawnLoc: []
@@ -9122,10 +9140,22 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 130502968129920090, guid: 794786e3755d5054dba24dcb2be22f6b, type: 3}
   m_PrefabInstance: {fileID: 157637098}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 157637099}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14b82ee89d506304cac19ecd79589579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1822312884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157637099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b6b763cda541d46bd11d9581e9f13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1835222470
