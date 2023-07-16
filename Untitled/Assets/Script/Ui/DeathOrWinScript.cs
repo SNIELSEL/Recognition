@@ -41,6 +41,9 @@ public class DeathOrWinScript : MonoBehaviour
         yield return new WaitForSeconds(1);
         countdownText.text = ("3");
         yield return new WaitForSeconds(1);
+
+        playFabManager.GetLeaderBoard();
+
         countdownText.text = ("2");
         yield return new WaitForSeconds(1);
         countdownText.text = ("1");

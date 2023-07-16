@@ -53,4 +53,23 @@ public class PlayFabManager : MonoBehaviour
     {
         Debug.Log("Successfull leaderboard sent");
     }
+
+    public void GetLeaderBoard()
+    {
+        var request = new GetLeaderboardRequest
+        {
+            StatisticName = "Mars LeaderBoard Easy",
+            StartPosition = 0,
+            MaxResultsCount = 10
+        };
+        PlayFabClientAPI.GetLeaderboard(request, OnLeaderBoardGet, OnError);
+    }
+
+    void OnLeaderBoardGet(GetLeaderboardResult result)
+    {
+        foreach(var item in result.Leaderboard)
+        {
+            Debug.Log(item.Position + " " + item.PlayFabId + " " + item.StatValue);
+        }
+    }
 }
