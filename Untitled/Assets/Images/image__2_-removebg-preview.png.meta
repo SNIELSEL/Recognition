@@ -137,6 +137,153 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: image__2_-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 278
+        width: 266
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3949d66c087172847a96354ea5d6b6ee
+      internalID: -651576218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: image__2_-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 197
+        width: 263
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71bc7b2d868cc1459c746304a33d5ce
+      internalID: -1333591693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: image__2_-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 197
+        width: 259
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8416db9fd70a7de408b4fb22e659585a
+      internalID: 1577085043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: image__2_-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 114
+        width: 266
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2872d24116f25479a51d5c644c6221
+      internalID: 1128790187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: image__2_-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 35
+        width: 269
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12d3818d2324cc4eb0bacb2032a1d3e
+      internalID: -708657528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: image__2_-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 34
+        width: 269
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0727ca9c5fd81724b8cdd8ca8b5f077f
+      internalID: -764029254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: image__2_-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 114
+        width: 261
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 113, y: 13, z: 1, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918388d040c3e27418c5f46e4a9befbb
+      internalID: 1123481848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -148,7 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      image__2_-removebg-preview_3: 1577085043
       image__2_-removebg-preview_0: -1657293263
+      image__2_-removebg-preview_4: 1128790187
+      image__2_-removebg-preview_2: -1333591693
+      image__2_-removebg-preview_7: 1123481848
+      image__2_-removebg-preview_5: -708657528
+      image__2_-removebg-preview_1: -651576218
+      image__2_-removebg-preview_6: -764029254
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
