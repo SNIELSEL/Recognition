@@ -5433,6 +5433,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b6b763cda541d46bd11d9581e9f13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameWindow: {fileID: 0}
+  mainUI: {fileID: 0}
+  rowPrefab: {fileID: 0}
+  rowsParent: {fileID: 0}
+  saveScores: 0
+  notFirstLogin: 0
+  playername: 
+  saveAndLoad: {fileID: 1290639190}
 --- !u!1001 &540874124143424070
 PrefabInstance:
   m_ObjectHideFlags: 0
