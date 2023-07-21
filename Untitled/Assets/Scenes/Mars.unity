@@ -3001,6 +3001,7 @@ MonoBehaviour:
   deathOrWinScript: {fileID: 1290639192}
   difficulty: 0
   saveAndLoad: {fileID: 1290639190}
+  playFabManager: {fileID: 130502969403181827}
 --- !u!1001 &1063557335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5435,10 +5436,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameWindow: {fileID: 0}
   mainUI: {fileID: 0}
+  nameField: {fileID: 0}
   rowPrefab: {fileID: 0}
-  rowsParent: {fileID: 0}
-  saveScores: 0
-  notFirstLogin: 0
+  leaderboardlistTransforms: []
+  leaderboardNamesList:
+  - Mars LeaderBoard Easy
+  - Mars LeaderBoard Normal
+  - Mars LeaderBoard Hard
+  currentSelectedLeaderboard: 0
+  currentLeaderboardToSendDataTo: 0
+  saveWaveForLeaderBoard: 0
+  DeniedName: 0
   playername: 
   saveAndLoad: {fileID: 1290639190}
 --- !u!1001 &540874124143424070

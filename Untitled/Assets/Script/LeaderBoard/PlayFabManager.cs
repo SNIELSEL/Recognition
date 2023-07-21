@@ -14,10 +14,14 @@ public class PlayFabManager : MonoBehaviour
 
     [Header("ScoreBoard")]
     public GameObject rowPrefab;
-    public Transform rowsParent;
+    public Transform[] leaderboardlistTransforms;
+    public string[] leaderboardNamesList;
+    public int currentSelectedLeaderboard;
+    public int currentLeaderboardToSendDataTo;
 
     [Header("eventTriggersOrChecks")]
     public bool saveWaveForLeaderBoard;
+    public bool DeniedName;
     public string playername;
 
     [Header("scripts")]
@@ -30,6 +34,7 @@ public class PlayFabManager : MonoBehaviour
 
         saveAndLoad.LoadData();
         saveWaveForLeaderBoard = saveAndLoad.saveWaveForLeaderBoard;
+        DeniedName = saveAndLoad.DeniedName;
     }
 
     public void DontSaveScores()
@@ -39,7 +44,9 @@ public class PlayFabManager : MonoBehaviour
 
         playername = null;
         saveWaveForLeaderBoard = false;
+        DeniedName = true;
 
+        saveAndLoad.DeniedName = DeniedName;
         saveAndLoad.saveWaveForLeaderBoard = saveWaveForLeaderBoard;
         saveAndLoad.SaveData();
     }
@@ -67,7 +74,7 @@ public class PlayFabManager : MonoBehaviour
             playername = result.InfoResultPayload.PlayerProfile.DisplayName;
         }
 
-        if (playername == null || playername == SystemInfo.deviceUniqueIdentifier)
+        if (playername == null && !DeniedName|| playername == SystemInfo.deviceUniqueIdentifier && !DeniedName)
         {
             mainUI.SetActive(false);
             nameWindow.SetActive(true);
@@ -95,6 +102,9 @@ public class PlayFabManager : MonoBehaviour
         mainUI.SetActive(true);
         
         saveWaveForLeaderBoard = true;
+        DeniedName = false;
+
+        saveAndLoad.DeniedName = DeniedName;
         saveAndLoad.saveWaveForLeaderBoard = saveWaveForLeaderBoard;
         saveAndLoad.SaveData();
     }
@@ -115,7 +125,7 @@ public class PlayFabManager : MonoBehaviour
             {
                 new StatisticUpdate
                 {
-                    StatisticName = "Mars LeaderBoard Easy",
+                    StatisticName = leaderboardNamesList[currentLeaderboardToSendDataTo],
                     Value = waves
                 }
             }
@@ -126,30 +136,40 @@ public class PlayFabManager : MonoBehaviour
 
     void OnLeaderBoardUpdate(UpdatePlayerStatisticsResult result)
     {
-        Debug.Log("Successfull leaderboard sent");
+        Debug.Log("Successfull leaderboard sent to " + leaderboardNamesList[currentLeaderboardToSendDataTo]);
+    }
+
+    public void SetLeaderboardTogetDataFrom(int numberToSetIntsTo)
+    {
+        currentLeaderboardToSendDataTo = numberToSetIntsTo;
     }
 
     public void GetLeaderBoard()
     {
         var request = new GetLeaderboardRequest
         {
-            StatisticName = "Mars LeaderBoard Easy",
+            StatisticName = leaderboardNamesList[currentLeaderboardToSendDataTo],
             StartPosition = 0,
             MaxResultsCount = 10
         };
         PlayFabClientAPI.GetLeaderboard(request, OnLeaderBoardGet, OnError);
     }
 
+    public void SetSelectedLeaderboardInt(int numberToSetIntsTo)
+    {
+        currentSelectedLeaderboard = numberToSetIntsTo;
+    }
+
     void OnLeaderBoardGet(GetLeaderboardResult result)
     {
-        foreach(Transform item in rowsParent)
+        foreach(Transform item in leaderboardlistTransforms[currentSelectedLeaderboard])
         {
             Destroy(item.gameObject);
         }
 
         foreach(var item in result.Leaderboard)
         {
-            GameObject newRow = Instantiate(rowPrefab, rowsParent);
+            GameObject newRow = Instantiate(rowPrefab, leaderboardlistTransforms[currentSelectedLeaderboard]);
             TextMeshProUGUI[] texts = newRow.GetComponentsInChildren<TextMeshProUGUI>();
 
             texts[0].text = (item.Position + 1).ToString();

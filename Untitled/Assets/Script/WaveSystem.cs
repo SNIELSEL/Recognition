@@ -29,6 +29,7 @@ public class WaveSystem : MonoBehaviour
     public Difficulty difficulty;
     public Extra extra;
     public SaveAndLoad saveAndLoad;
+    public PlayFabManager playFabManager;
 
     public enum Difficulty
     {
@@ -48,16 +49,22 @@ public class WaveSystem : MonoBehaviour
         if(saveAndLoad.difficulty == 0)
         {
             difficulty = Difficulty.Easy;
+
+            playFabManager.currentLeaderboardToSendDataTo = 0;
         }
 
         else if (saveAndLoad.difficulty == 1)
         {
             difficulty = Difficulty.Normal;
+
+            playFabManager.currentLeaderboardToSendDataTo = 1;
         }
 
         else if (saveAndLoad.difficulty == 2)
         {
             difficulty = Difficulty.Hard;
+
+            playFabManager.currentLeaderboardToSendDataTo = 2;
         }
 
         extra = new Extra();
