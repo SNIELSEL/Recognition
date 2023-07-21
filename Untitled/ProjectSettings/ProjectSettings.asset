@@ -18,7 +18,7 @@ PlayerSettings:
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.6784314, g: 0.6784314, b: 0.6784314, a: 1}
   m_ShowUnitySplashScreen: 1
-  m_ShowUnitySplashLogo: 0
+  m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 0
   m_SplashScreenAnimation: 2
   m_SplashScreenLogoStyle: 1
@@ -40,9 +40,9 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
+  - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
+    duration: 2
   - logo: {fileID: 21300000, guid: 71b5f0e455ddb9a419393390691c9546, type: 3}
-    duration: 3
-  - logo: {fileID: 21300000, guid: 64da14e7289b8a1468ae6e28a55f2245, type: 3}
     duration: 3
   - logo: {fileID: 21300000, guid: 65c6a60e465a13d46bc8f614f507eafc, type: 3}
     duration: 4

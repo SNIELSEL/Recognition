@@ -8,8 +8,8 @@ using UnityEngine.UIElements;
 
 public class WaveSystem : MonoBehaviour
 {
-    public int roundEnemy, leftEnemies;
-    private int spawnedEnemy, waveRound;
+    public int roundEnemy, leftEnemies, waveRound;
+    private int spawnedEnemy;
     public float wavemiltie;
 
     public GameObject[] inGameEnemy, spawnLoc;
@@ -26,9 +26,12 @@ public class WaveSystem : MonoBehaviour
 
     private bool Upgrade;
 
+    private string currentSceneName;
+
     public Difficulty difficulty;
     public Extra extra;
     public SaveAndLoad saveAndLoad;
+    public PlayFabManager playFabManager;
 
     public enum Difficulty
     {
@@ -44,20 +47,50 @@ public class WaveSystem : MonoBehaviour
 
     private void Start()
     {
+        currentSceneName = SceneManager.GetActiveScene().name;
+
         saveAndLoad.LoadData();
+
         if(saveAndLoad.difficulty == 0)
         {
             difficulty = Difficulty.Easy;
+
+            if (currentSceneName == "Mars")
+            {
+                playFabManager.currentLeaderboardToSendDataTo = 0;
+            }
+            else if (currentSceneName == "Snow")
+            {
+                playFabManager.currentLeaderboardToSendDataTo = 3;
+            }
         }
 
         else if (saveAndLoad.difficulty == 1)
         {
             difficulty = Difficulty.Normal;
+
+            if (currentSceneName == "Mars")
+            {
+                playFabManager.currentLeaderboardToSendDataTo = 1;
+            }
+            else if (currentSceneName == "Snow")
+            {
+                playFabManager.currentLeaderboardToSendDataTo = 4;
+            }
         }
 
         else if (saveAndLoad.difficulty == 2)
         {
             difficulty = Difficulty.Hard;
+
+            if(currentSceneName == "Mars")
+            {
+                playFabManager.currentLeaderboardToSendDataTo = 2;
+            }
+            else if(currentSceneName == "Snow")
+            {
+                playFabManager.currentLeaderboardToSendDataTo = 5;
+            }
         }
 
         extra = new Extra();
