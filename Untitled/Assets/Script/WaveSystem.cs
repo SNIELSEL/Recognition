@@ -26,6 +26,8 @@ public class WaveSystem : MonoBehaviour
 
     private bool Upgrade;
 
+    private string currentSceneName;
+
     public Difficulty difficulty;
     public Extra extra;
     public SaveAndLoad saveAndLoad;
@@ -45,26 +47,50 @@ public class WaveSystem : MonoBehaviour
 
     private void Start()
     {
+        currentSceneName = SceneManager.GetActiveScene().name;
+
         saveAndLoad.LoadData();
+
         if(saveAndLoad.difficulty == 0)
         {
             difficulty = Difficulty.Easy;
 
-            playFabManager.currentLeaderboardToSendDataTo = 0;
+            if (currentSceneName == "Mars")
+            {
+                playFabManager.currentLeaderboardToSendDataTo = 0;
+            }
+            else if (currentSceneName == "Snow")
+            {
+                playFabManager.currentLeaderboardToSendDataTo = 3;
+            }
         }
 
         else if (saveAndLoad.difficulty == 1)
         {
             difficulty = Difficulty.Normal;
 
-            playFabManager.currentLeaderboardToSendDataTo = 1;
+            if (currentSceneName == "Mars")
+            {
+                playFabManager.currentLeaderboardToSendDataTo = 1;
+            }
+            else if (currentSceneName == "Snow")
+            {
+                playFabManager.currentLeaderboardToSendDataTo = 4;
+            }
         }
 
         else if (saveAndLoad.difficulty == 2)
         {
             difficulty = Difficulty.Hard;
 
-            playFabManager.currentLeaderboardToSendDataTo = 2;
+            if(currentSceneName == "Mars")
+            {
+                playFabManager.currentLeaderboardToSendDataTo = 2;
+            }
+            else if(currentSceneName == "Snow")
+            {
+                playFabManager.currentLeaderboardToSendDataTo = 5;
+            }
         }
 
         extra = new Extra();
