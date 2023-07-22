@@ -15,6 +15,8 @@ public class Back : MonoBehaviour
     public GameObject mapSelect;
     public Button selectButton;
 
+    public PlayFabManager playFabManager;
+
     public void Awake()
     {
         menuControlls = new PlayerControlls();
@@ -27,11 +29,14 @@ public class Back : MonoBehaviour
 
         void BackToMenu(InputAction.CallbackContext context)
         {
-            settingsMenu.SetActive(false);
-            creditsMenu.SetActive(false);
-            startMenu.SetActive(true);
-            mapSelect.SetActive(false);
-            selectButton.Select();
+            if (!playFabManager.inNamingmenu)
+            {
+                settingsMenu.SetActive(false);
+                creditsMenu.SetActive(false);
+                startMenu.SetActive(true);
+                mapSelect.SetActive(false);
+                selectButton.Select();
+            }
         }
     }
 }

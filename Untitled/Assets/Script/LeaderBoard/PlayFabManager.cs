@@ -23,6 +23,7 @@ public class PlayFabManager : MonoBehaviour
     public bool saveWaveForLeaderBoard;
     public bool DeniedName;
     public string playername;
+    public bool inNamingmenu;
 
     [Header("scripts")]
     public SaveAndLoad saveAndLoad;
@@ -45,6 +46,7 @@ public class PlayFabManager : MonoBehaviour
         playername = null;
         saveWaveForLeaderBoard = false;
         DeniedName = true;
+        inNamingmenu = false;
 
         saveAndLoad.DeniedName = DeniedName;
         saveAndLoad.saveWaveForLeaderBoard = saveWaveForLeaderBoard;
@@ -76,6 +78,8 @@ public class PlayFabManager : MonoBehaviour
 
         if (playername == null && !DeniedName|| playername == SystemInfo.deviceUniqueIdentifier && !DeniedName)
         {
+            inNamingmenu = true;
+
             mainUI.SetActive(false);
             nameWindow.SetActive(true);
             saveWaveForLeaderBoard = true;
@@ -103,6 +107,7 @@ public class PlayFabManager : MonoBehaviour
         
         saveWaveForLeaderBoard = true;
         DeniedName = false;
+        inNamingmenu = false;
 
         saveAndLoad.DeniedName = DeniedName;
         saveAndLoad.saveWaveForLeaderBoard = saveWaveForLeaderBoard;
@@ -142,6 +147,11 @@ public class PlayFabManager : MonoBehaviour
     public void SetLeaderboardTogetDataFrom(int numberToSetIntsTo)
     {
         currentLeaderboardToSendDataTo = numberToSetIntsTo;
+    }
+
+    public void ChangingUsernameFromSettings()
+    {
+        inNamingmenu = true;
     }
 
     public void GetLeaderBoard()

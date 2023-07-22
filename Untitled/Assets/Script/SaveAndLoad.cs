@@ -9,6 +9,7 @@ using UnityEngine.LowLevel;
 
 public class SaveAndLoad : MonoBehaviour
 {
+    [Header("SettingsData")]
     public int slot;
     public float sensitivity;
     public float volume;
@@ -16,7 +17,9 @@ public class SaveAndLoad : MonoBehaviour
     public bool saveWaveForLeaderBoard;
     public bool DeniedName;
 
-    private XML_SaveData tempSave;
+    [Header("WaveData")]
+    public int waveRound;
+
 
     public void Awake()
     {
@@ -56,7 +59,6 @@ public class SaveAndLoad : MonoBehaviour
             serializer.Serialize(stream, tempSave);
         }
     }
-
     public void LoadData()
     {
         XML_SaveData tempSave = new XML_SaveData();
@@ -82,6 +84,42 @@ public class SaveAndLoad : MonoBehaviour
             SaveData();
         }
     }
+
+    public void SaveWaveData()
+    {
+        Xml_SaveWaveData tempSave = new Xml_SaveWaveData();
+
+        tempSave.waveRound = waveRound + 10;
+
+        XmlSerializer serializer = new XmlSerializer(typeof(Xml_SaveWaveData));
+
+        using (FileStream stream = new FileStream(Application.persistentDataPath + "/WaveData" + slot + ".xml", FileMode.Create))
+        {
+            serializer.Serialize(stream, tempSave);
+        }
+    }
+
+    public void LoadWaveData()
+    {
+        Xml_SaveWaveData tempSave = new Xml_SaveWaveData();
+
+        try
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Xml_SaveWaveData));
+
+            using (FileStream stream = new FileStream(Application.persistentDataPath + "/GameData" + slot + ".xml", FileMode.Open))
+            {
+                tempSave = serializer.Deserialize(stream) as Xml_SaveWaveData;
+
+                waveRound = tempSave.waveRound - 10;
+            }
+        }
+        catch
+        {
+            SaveData();
+        }
+    }
+
 }
     [System.Serializable]
     public class XML_SaveData
@@ -92,4 +130,10 @@ public class SaveAndLoad : MonoBehaviour
         public int difficulty;
         public bool saveWaveForLeaderBoard;
         public bool DeniedName;
-}
+    }
+
+    [System.Serializable]
+    public class Xml_SaveWaveData
+    {
+        public int waveRound; 
+    }

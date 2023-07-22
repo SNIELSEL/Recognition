@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 public class WaveSystem : MonoBehaviour
 {
-    public int roundEnemy, leftEnemies, waveRound;
+    public int roundEnemy, leftEnemies, waveRound, lastWaveRound;
     private int spawnedEnemy;
     public float wavemiltie;
 
@@ -101,6 +101,9 @@ public class WaveSystem : MonoBehaviour
         leftEnemies = roundEnemy;
         wavemiltie = 1;
         waveRound = 1;
+        lastWaveRound = 0;
+        saveAndLoad.waveRound = waveRound + 10;
+        saveAndLoad.SaveWaveData();
 
         wavetext.text = "Wave " + waveRound;
 
@@ -160,14 +163,40 @@ public class WaveSystem : MonoBehaviour
     {
         spawnedEnemy = 0;
         roundEnemy += 4;
-        waveRound += 1;
+
+        saveAndLoad.LoadWaveData();
+        waveRound = saveAndLoad.waveRound - 10;
+
+
+        StartCoroutine(SaveTheWaveData());
 
         //spawnSpeed /= 0.25f;
         wavemiltie += 0.125f * extra.diffMulti;
 
-        wavetext.text = "Wave " + waveRound;
         leftEnemies = roundEnemy;
 
         Upgrade = false;
+    }
+
+    public IEnumerator SaveTheWaveData()
+    {
+        yield return new WaitForSeconds(0.2f);
+        if(waveRound == lastWaveRound + 1)
+        {
+            waveRound += 1;
+            lastWaveRound += 1;
+            wavetext.text = "Wave " + waveRound;
+            saveAndLoad.waveRound = waveRound + 10;
+            saveAndLoad.SaveWaveData();
+        }
+        else
+        {
+            waveRound = lastWaveRound;
+            waveRound += 1;
+
+            wavetext.text = "Wave " + waveRound;
+            saveAndLoad.waveRound = waveRound + 10;
+            saveAndLoad.SaveWaveData();
+        }
     }
 }

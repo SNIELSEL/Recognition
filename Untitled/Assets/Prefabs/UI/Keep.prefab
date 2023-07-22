@@ -776,6 +776,8 @@ MonoBehaviour:
   sensitivity: 1
   volume: 1
   difficulty: 0
+  saveWaveForLeaderBoard: 0
+  DeniedName: 0
 --- !u!114 &130502968129920086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,12 +804,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beganCountDown: 0
+  beginLoading: 0
+  endLoading: 0
+  fadeInColor: {r: 0, g: 0, b: 0, a: 0}
+  fadeInSpeed: 0
+  fadeOutSpeed: 0
+  deathImage: {fileID: 0}
   returnMessageObjects: {fileID: 130502969368248272}
   countdownText: {fileID: 130502968882054923}
   winOrLosstext: {fileID: 130502968102358568}
   scenetoload: 0
   sceneLoad: {fileID: 0}
   mouseLock: {fileID: 130502968129920086}
+  saveAndLoad: {fileID: 130502968129920087}
+  waveSystem: {fileID: 0}
+  playFabManager: {fileID: 0}
 --- !u!114 &130502968129920088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,6 +836,7 @@ MonoBehaviour:
   startMenu: {fileID: 0}
   mapSelect: {fileID: 0}
   selectButton: {fileID: 0}
+  playFabManager: {fileID: 0}
 --- !u!114 &130502968129920091
 MonoBehaviour:
   m_ObjectHideFlags: 0
