@@ -6037,6 +6037,7 @@ MonoBehaviour:
   saveWaveForLeaderBoard: 1
   DeniedName: 0
   playername: 
+  inNamingmenu: 0
   saveAndLoad: {fileID: 265301290}
 --- !u!1 &70462432
 GameObject:
@@ -13302,6 +13303,7 @@ MonoBehaviour:
   startMenu: {fileID: 1540963188}
   mapSelect: {fileID: 2004077722}
   selectButton: {fileID: 745674963}
+  playFabManager: {fileID: 70349372}
 --- !u!114 &265301298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20215,6 +20217,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1575865471}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 70349372}
+        m_TargetAssemblyTypeName: PlayFabManager, Assembly-CSharp
+        m_MethodName: ChangingUsernameFromSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -31742,7 +31756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.77698, y: -12.460693}
+  m_AnchoredPosition: {x: 66.776855, y: -12.460693}
   m_SizeDelta: {x: 133.55396, y: 21.023802}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1075232602
@@ -32526,7 +32540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.77698, y: -35.95215}
+  m_AnchoredPosition: {x: 66.776855, y: -35.95215}
   m_SizeDelta: {x: 133.55396, y: 21.023802}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1155646334

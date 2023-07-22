@@ -78,12 +78,15 @@ public class SceneLoad : MonoBehaviour
 
         while (!op.isDone)
         {
+            int numOfRoundedDecimals = 1;
             float progress = Mathf.Clamp01(op.progress / .9f);
+            progress = Mathf.Round(progress * Mathf.Pow(10, numOfRoundedDecimals)) / Mathf.Pow(10, numOfRoundedDecimals);
             progressSlider.value = progress;
             loadingText.text = progress * 100f + "%";
 
             yield return null;
         }
+
         yield return new WaitForSeconds(3);
         loadingGameObjects.SetActive(false);
         beginLoading = false;
