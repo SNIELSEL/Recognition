@@ -5540,7 +5540,7 @@ MonoBehaviour:
   deleteDelay: 4
   fadeInSpeed: 1
   fadeOutSpeed: 1.5
-  loadingDelayMultiplier: 1
+  loadingDelayMultiplier: 2
   loadingColor: {r: 0, g: 0, b: 0, a: 0}
   beginLoading: 0
   endLoading: 0

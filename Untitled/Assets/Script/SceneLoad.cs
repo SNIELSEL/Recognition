@@ -72,8 +72,6 @@ public class SceneLoad : MonoBehaviour
         loadingGameObjects.SetActive(true);
         AsyncOperation op = SceneManager.LoadSceneAsync(levelLoadInt);
         
-        op.allowSceneActivation = false;
-        yield return new WaitForSeconds(2);
         op.allowSceneActivation = true;
 
         while (!op.isDone)
