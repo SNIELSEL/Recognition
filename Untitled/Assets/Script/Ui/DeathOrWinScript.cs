@@ -78,6 +78,7 @@ public class DeathOrWinScript : MonoBehaviour
 
     public IEnumerator CountDown()
     {
+        saveAndLoad.LoadWaveData();
         if(playFabManager.saveWaveForLeaderBoard)
         {
             playFabManager.SendLeaderBoard(waveSystem.waveRound);
